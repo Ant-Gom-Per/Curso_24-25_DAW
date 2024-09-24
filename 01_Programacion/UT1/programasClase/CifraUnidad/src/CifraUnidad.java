@@ -1,5 +1,5 @@
 /*
-plate
+Este programa te muestra la unidad de un número dado. Se ha resuelto de dos formas diferentes.
  */
 import java.util.Scanner;
 public class CifraUnidad {
