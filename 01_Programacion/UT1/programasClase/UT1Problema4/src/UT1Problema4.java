@@ -1,5 +1,6 @@
 /*
 Autor:Antonio Gómez Pérez
+Este programa resuelve una ecuacion de dos incognitas por el metodo de Cramer
  */
 
 public class UT1Problema4 {
