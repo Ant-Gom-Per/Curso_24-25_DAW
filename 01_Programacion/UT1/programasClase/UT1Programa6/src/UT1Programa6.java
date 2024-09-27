@@ -12,7 +12,7 @@ public class UT1Programa6 {
         
         int precioBebida, dineroIntroducido, cantidadCambio, cantidadMonedas;
         
-        System.out.println("-MAQUINA DE BABIDAS-");
+        System.out.println("-MAQUINA DE BEBIDAS-");
         System.out.println("--------------------");
         System.out.print("Introduce el precio en centimos (máximo 100) de la bebida seleccionada : ");
         precioBebida = teclado.nextInt();
