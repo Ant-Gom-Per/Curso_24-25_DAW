@@ -21,6 +21,7 @@ public class UT1Problema4 {
         valorY = determinanteY / determinante;
         pruebaY1 = (5.9 - (2.1 * valorX)) / 0.55;
         pruebaY2 = (44.5 - (3.4 * valorX)) / 50.2;
+        
         System.out.println("SOLUCIÓN POR CRAMER");
         System.out.println("-------------------");
         System.out.printf("X = %.2f\n", valorX);

@@ -4,7 +4,7 @@ Este programa nos muestra un incremento de la población de un país en el perio
  */
 import java.util.Scanner;
 
-public class UT1Programa2 {
+public class UT1Problema2 {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
