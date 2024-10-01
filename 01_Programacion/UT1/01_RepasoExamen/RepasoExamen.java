@@ -13,7 +13,7 @@ public class RepasoExamen{
         int maximo = 99999;
         byte diaSemana = 1;        
         short diaAnyo = 300;
-        long poblacionMundial = 6775235741;
+        long poblacionMundial = 6775235741L;
         
         System.out.println("-- EJERCICIOS DE VARIABLES Y TIPOS DE DATOS--");
         System.out.println("El valor de la variable casado es: " + estado.equals(estado2));
