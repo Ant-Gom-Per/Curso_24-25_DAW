@@ -1,6 +1,8 @@
 /**
-Por: Antonio
- */
+ Por: Antonio Gómez Pérez
+ Este progama nos dice si hemos acertado, o no, un número.
+ Para ello empleamos el condicional doble else.
+*/
 import java.util.Scanner;
 
 public class Adivina241 {

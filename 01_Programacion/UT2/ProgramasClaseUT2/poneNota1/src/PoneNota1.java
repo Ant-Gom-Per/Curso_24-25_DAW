@@ -1,5 +1,7 @@
 /*
-Autor:
+Autor: Antonio Gómez Pérez
+Este programa nos muestra nuestra claificacion en función a la nota introducida.
+Para ello empleamos el condicional múltiple else if
  */
 import java.util.Scanner;
 

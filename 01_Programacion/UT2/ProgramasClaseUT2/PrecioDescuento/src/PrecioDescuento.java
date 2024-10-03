@@ -3,6 +3,7 @@
 /**
  * @author Antonio Gómez Pérez
  * Este programa nos hace un descuento o incremento dependiendo de la cantidad introducida.
+ * Empleamos el condicional simple if
  */
 import java.util.Scanner;
 
