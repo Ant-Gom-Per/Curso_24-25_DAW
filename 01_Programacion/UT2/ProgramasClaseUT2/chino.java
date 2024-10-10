@@ -7,6 +7,7 @@ public class chino {
             b = 100;
             c = a % b;
             System.out.println("Resultado c: "+ c);
+           
             while(c > 11){
                 c -= 12;          
             }  
