@@ -10,7 +10,7 @@ public class UT2Problema3 {
         
         Scanner teclado = new Scanner(System.in);
         
-        int anyoNacimiento;
+        int anyoNacimiento, anyoAnimal;
         String animal = "";
         
         System.out.print("Introduce tu año de nacimiento: ");
@@ -19,10 +19,9 @@ public class UT2Problema3 {
         if(anyoNacimiento <= 0){
             System.out.println("ERROR!!, dato no válido.");
         }else{
-          while(anyoNacimiento > 11){
-              anyoNacimiento -= 12;              
-          }
-            switch(anyoNacimiento){
+            anyoAnimal = (anyoNacimiento % 12);
+            
+            switch(anyoAnimal){
                 case 0:
                     animal = "Rata";
                     break;
@@ -61,6 +60,7 @@ public class UT2Problema3 {
                     break;
             }
             System.out.println("El animal de tu horscopo chino es: " + animal);
+            System.out.println(anyoAnimal);
         }
     }  
 }

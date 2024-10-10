@@ -3,10 +3,13 @@ public class chino {
     
         int a,b,c;
 
-            a = 2002;
+            a = 1702;
             b = 100;
             c = a % b;
             System.out.println("Resultado c: "+ c);
+            if(c < 12){
+                c += 4;
+            }
             while(c > 11){
                 c -= 12;          
             }  
