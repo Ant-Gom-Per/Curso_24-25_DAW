@@ -20,13 +20,13 @@ public class UT2Problema2 {
         peso = teclado.nextDouble();
         teclado.nextLine();
         if(peso <= 0){
-            System.out.println("ERROR!!, el dato de peso no es válido.");
+            System.out.println("\nERROR!!, el dato de peso no es válido.");
         }else{
             System.out.print("Introduce tu altura en cm: ");
                 altura = teclado.nextDouble();
                 teclado.nextLine();        
             if(altura <= 0){
-                System.out.println("ERROR!!, el dato de altura no es válido");            
+                System.out.println("\nERROR!!, el dato de altura no es válido");            
             }else{ 
                 
                 alturaFormula = Math.pow(altura / 100,2.5);
@@ -53,7 +53,8 @@ public class UT2Problema2 {
                 }
                 System.out.printf("\nTu indice IMC (Oxford 2003) es %.2f ",imcOxford);
                 System.out.println("(" + resultadoImc + diferenciaImc + ")");
-            }
-        }        
+            }            
+        }
+        teclado.close();
     }    
 }

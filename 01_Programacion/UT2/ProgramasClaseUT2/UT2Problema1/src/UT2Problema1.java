@@ -10,17 +10,19 @@ public class UT2Problema1 {
         
         Scanner teclado = new Scanner(System.in);
         
-        double sueldoMensual, sueldoAnual, impuestos, totalPagar;
+        double  sueldoAnual, totalPagar;
+        int sueldoMensual, impuestos, ayuda;
         
         System.out.println("Calculadora de impuestos");
         System.out.println("------------------------");
         System.out.print("Introduce tu sueldo bruto mensual en euros: ");
-        sueldoMensual = teclado.nextDouble();
+        sueldoMensual = teclado.nextInt();
         teclado.nextLine();
         sueldoAnual = sueldoMensual * 12;
+        teclado.close();
         
         if(sueldoMensual <= 0){
-            System.out.println("\nERROR!!, dato no válido");
+            System.out.println("\nERROR!!, dato no válido.");
         }else{
             if(sueldoAnual > 40000){
                 impuestos = 30;
@@ -29,14 +31,14 @@ public class UT2Problema1 {
             }else{
                 impuestos = 0;
             }
-            System.out.printf("\nTu sueldo es de %.2f € al año.", sueldoAnual);
+            System.out.printf("\nTu sueldo anual es de %.2f €", sueldoAnual);
             totalPagar = (impuestos * sueldoAnual) / 100;
             if(sueldoAnual <= 15000){
-                double ayuda = 1500;
-                System.out.printf("\nTe toca pagar %.2f € y recibes una ayuda de %.0f €\n", totalPagar, ayuda);
+                ayuda = 1500;
+                System.out.printf("\nTe toca pagar %.2f € y recibes una ayuda de %d €\n", totalPagar, ayuda);
             }else{
-                System.out.printf("\nTe toca pagar %.2f € y no recibes ayuda.\n",totalPagar );
-            }           
+                System.out.printf("\nTe toca pagar %.2f € y no recibes ninguna ayuda.\n",totalPagar );
+            }            
         }       
     }    
 }
