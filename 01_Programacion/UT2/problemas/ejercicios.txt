@@ -1,0 +1,47 @@
+1.- Demanar 10 nombres enters i mostrar per pantalla la seua suma.
+
+2.- Igual que l'anterior, però en comptes de 10 nombres enters es demanarà a l'usuari que indique la quantitat de números a introduir.
+
+3.- Demanar un nombre enter i mostrar una a una les seues xifres començant per les unitats.
+
+4.- Demanar un nombre enter positiu i calcular el seu factorial.
+
+5.- Programar un codi que imprimisca per pantalla la sèrie de números de Fibonacci menors de 10000. 
+
+6.- Dibuixar un quadrat de n elements de longitud utilitzant *
+
+7.- Mostrar les taules de multiplicar de l'1 al 10
+
+8.- Mostrar per pantalla un triangle amb asteriscos l'altura dels quals decidirà l'usuari.
+
+*
+**
+***
+****
+*****
+******
+*******
+********
+
+
+9.- Igual que l'anterior, però mostrar invertit.
+
+********
+*******
+******
+*****
+****
+***
+**
+*
+
+10.- (Opcional) Igual que l'exercici 8, però alineat a la dreta.
+
+       *
+      **
+     ***
+    ****
+   *****
+  ******
+ *******
+********
