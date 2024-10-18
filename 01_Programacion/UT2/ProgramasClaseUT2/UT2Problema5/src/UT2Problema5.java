@@ -12,7 +12,7 @@ public class UT2Problema5 {
         int contAlumnos = 0, contAprobado = 0, contSuspenso = 0;
         System.out.print("Introduce un valor: ");       
         
-        while(teclado.hasNextDouble() && (valorNota = teclado.nextDouble()) >=0 && valorNota <= 10){       
+        while(teclado.hasNextDouble() && (valorNota = teclado.nextDouble()) >=0 && valorNota <=10){       
             teclado.nextLine();
             contAlumnos ++;
             sumaNota += valorNota; 
