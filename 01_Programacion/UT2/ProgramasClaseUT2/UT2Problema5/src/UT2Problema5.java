@@ -1,5 +1,6 @@
 /*
 Por Antonio Gomez Pérez
+Este programa te pide por teclado que introduzcas una serie de calificaciones y al final te muestra un informe sobre ellas.
  */
 import java.util.Scanner;
 public class UT2Problema5 {
@@ -8,7 +9,7 @@ public class UT2Problema5 {
         
         Scanner teclado = new Scanner(System.in);
         
-        double valorNota = 0, sumaNota = 0, sumAprobado=0, sumSuspenso=0, notaMayor=0, notaMenor=11, menorNotAprobado =11, mayorNotSuspenso =0;
+         double valorNota = 0, sumaNota = 0, sumAprobado=0, sumSuspenso=0, notaMayor=0, notaMenor=11, menorNotAprobado =11, mayorNotSuspenso =0;
         int contAlumnos = 0, contAprobado = 0, contSuspenso = 0;
         
         System.out.println("----------------------------");
@@ -51,23 +52,21 @@ public class UT2Problema5 {
             }
         }       
         if(contAlumnos == 0){
-        System.out.println("\nNo se han introducido notas.");
+        System.out.println("\nNo se han introducido notas");
         }else{
-            System.out.println("\n- Se ha evaluado un total de " + contAlumnos + " alumnos.");
+            System.out.println("\n- Se ha evaluado un total de " + contAlumnos + " alumnos");
             double mediaNota = sumaNota / contAlumnos;
             System.out.printf("- La nota media del curso ha sido un %.2f \n", mediaNota);            
-            double porceNotaApro = (100 * contAprobado)/contAlumnos;
-            System.out.print("- Han aprobado " + contAprobado);
-            System.out.printf(" alumnos, lo que supone el %.2f  del total \n", porceNotaApro);
+            double porceNotaApro = (100 * contAprobado)/contAlumnos;            
+            System.out.printf("- Han aprobado %d alumnos, lo que supone el %.2f%% del total \n",contAprobado, porceNotaApro);
             double mediAprobados = sumAprobado / contAprobado;
             if (contAprobado == 0){
                 System.out.println("- La nota media de los alumnos aprobados no existe, por que no hay ningún aprobado.");
             }else{
                 System.out.printf("- La nota media de los alumnos aprobados es de %.2f\n", mediAprobados);
             }            
-            double porceNotaSuspe = (100 * contSuspenso)/contAlumnos;
-            System.out.print("- Han suspendido " + contSuspenso);
-            System.out.printf(" alumnos, lo que supone el %.2f del total \n", porceNotaSuspe);
+            double porceNotaSuspe = (100 * contSuspenso)/contAlumnos;           
+            System.out.printf("- Han suspendido %d alumnos, lo que supone el %.2f%% del total \n",contSuspenso, porceNotaSuspe);
             double mediSuspensos = sumSuspenso / contSuspenso;
             if (contSuspenso == 0){
                 System.out.println("- La nota media de los alumnos suspensos no existe, por que no hay ningún suspendido.");
@@ -79,10 +78,10 @@ public class UT2Problema5 {
             }else{
                 System.out.printf("- La nota más alta ha sido %.2f \n", mayorNotSuspenso);
             }            
-           if(notaMenor != 11){
+            if(notaMenor != 11){
                 System.out.printf("- La nota más baja ha sido %.2f \n", notaMenor);
-           }else{
-               System.out.printf("- La nota más baja ha sido %.2f \n", menorNotAprobado);
+            }else{
+                System.out.printf("- La nota más baja ha sido %.2f \n", menorNotAprobado);
            }            
         }       
     }

@@ -51,23 +51,21 @@ public class Puebas {
             }
         }       
         if(contAlumnos == 0){
-        System.out.println("\nNo se han introducido notas.");
+        System.out.println("\nNo se han introducido notas");
         }else{
-            System.out.println("\n- Se ha evaluado un total de " + contAlumnos + " alumnos.");
+            System.out.println("\n- Se ha evaluado un total de " + contAlumnos + " alumnos");
             double mediaNota = sumaNota / contAlumnos;
             System.out.printf("- La nota media del curso ha sido un %.2f \n", mediaNota);            
-            double porceNotaApro = (100 * contAprobado)/contAlumnos;
-            System.out.print("- Han aprobado " + contAprobado);
-            System.out.printf(" alumnos, lo que supone el %.2f  del total \n", porceNotaApro);
+            double porceNotaApro = (100 * contAprobado)/contAlumnos;            
+            System.out.printf("- Han aprobado %d alumnos, lo que supone el %.2f%% del total \n",contAprobado, porceNotaApro);
             double mediAprobados = sumAprobado / contAprobado;
             if (contAprobado == 0){
                 System.out.println("- La nota media de los alumnos aprobados no existe, por que no hay ningún aprobado.");
             }else{
                 System.out.printf("- La nota media de los alumnos aprobados es de %.2f\n", mediAprobados);
             }            
-            double porceNotaSuspe = (100 * contSuspenso)/contAlumnos;
-            System.out.print("- Han suspendido " + contSuspenso);
-            System.out.printf(" alumnos, lo que supone el %.2f del total \n", porceNotaSuspe);
+            double porceNotaSuspe = (100 * contSuspenso)/contAlumnos;           
+            System.out.printf("- Han suspendido %d alumnos, lo que supone el %.2f%% del total \n",contSuspenso, porceNotaSuspe);
             double mediSuspensos = sumSuspenso / contSuspenso;
             if (contSuspenso == 0){
                 System.out.println("- La nota media de los alumnos suspensos no existe, por que no hay ningún suspendido.");
