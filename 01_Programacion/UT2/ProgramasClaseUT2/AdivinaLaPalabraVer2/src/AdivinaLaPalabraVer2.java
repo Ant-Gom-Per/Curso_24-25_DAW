@@ -1,16 +1,16 @@
-/*
-Version de pruebas de AdivinaLaPalabraVer2
+/** *
+ * @author Antonio Gómez Pérez
+ * Este programa te pide que adivines una palabra.
  */
 import java.util.Scanner;
-public class Puebas {
+
+public class AdivinaLaPalabraVer2 {
 
     public static void main(String[] args) {
-        
         Scanner teclado = new Scanner(System.in);
         
-        String palabraSecreta = "murcielago";
-        int intentos =1;
-        
+        String palabraSecreta = "conejo";
+        int intentos;
         
         System.out.println("**************************");
         System.out.println("** ADIVINA **   /)_/)   **");
@@ -26,26 +26,12 @@ public class Puebas {
         System.out.println("** 4.- Para salir del juego pulsa 0 en el número de intentos.                        **");
         System.out.println("***************************************************************************************");
         
-        while (intentos > 0){
-            System.out.print("¿Cuantos intentos quieres tener?: ");
-            while(teclado.hasNextInt() && (intentos = teclado.nextInt()) > 0 && intentos <=10){
-                teclado.nextLine();                
-                System.out.println("numero intentos2 " + intentos);
-                System.out.print("¿Cuantos intentos quieres tener3?: ");       
-                teclado.nextLine();
-            }         
-        }
-        
-        
-        
-        
-        
-        
-        
-        
         
         System.out.print("Piensa en una palabra y escribela: ");
-              
+        String palabra = teclado.nextLine();
+        
+        System.out.println(palabra.equals(palabraSecreta));
+        
     }
     
 }
