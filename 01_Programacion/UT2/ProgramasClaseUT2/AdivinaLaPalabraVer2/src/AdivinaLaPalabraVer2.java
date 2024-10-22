@@ -9,8 +9,9 @@ public class AdivinaLaPalabraVer2 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         
-        String palabraSecreta = "conejo";
-        int intentos;
+        String palabraSecreta = "murcielago";
+        boolean semaforo = true;
+        int intentos=1, intentosElegidos =0;
         
         System.out.println("**************************");
         System.out.println("** ADIVINA **   /)_/)   **");
@@ -26,12 +27,24 @@ public class AdivinaLaPalabraVer2 {
         System.out.println("** 4.- Para salir del juego pulsa 0 en el número de intentos.                        **");
         System.out.println("***************************************************************************************");
         
-        
-        System.out.print("Piensa en una palabra y escribela: ");
-        String palabra = teclado.nextLine();
-        
-        System.out.println(palabra.equals(palabraSecreta));
-        
-    }
-    
+        System.out.print("Introduce un numero de intentos: ");              
+        while(semaforo == true){          
+            
+            if(teclado.hasNextInt() && (intentos = teclado.nextInt()) >0 && intentos <=10 || intentos == 0){
+                intentosElegidos = intentos;
+                teclado.nextLine();
+                semaforo = false;
+            }else{           
+                System.out.println("Error");
+                System.out.print("Introduce un numero de intentos2: ");
+                teclado.nextLine();                
+            }
+        }            
+        System.out.println("BIEN!!, Continua el programa");
+        System.out.println("Numero intentos: " + intentosElegidos);
+    }    
 }
+
+
+
+// "hola".charAt()
