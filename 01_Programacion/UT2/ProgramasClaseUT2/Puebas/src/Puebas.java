@@ -9,7 +9,8 @@ public class Puebas {
         Scanner teclado = new Scanner(System.in);
         
         String palabraSecreta = "murcielago";
-        int intentos =1;
+        boolean semaforo = true;
+        int intentos =1, intentosElegidos=0;
         
         
         System.out.println("**************************");
@@ -26,26 +27,19 @@ public class Puebas {
         System.out.println("** 4.- Para salir del juego pulsa 0 en el número de intentos.                        **");
         System.out.println("***************************************************************************************");
         
-        while (intentos > 0){
+        System.out.print("¿Cuantos intentos quieres tener?: ");
+        while(intentos > 0 || semaforo == true){
+        while (teclado.hasNextInt() && (intentos = teclado.nextInt()) > 0 && intentos <= 10){
             System.out.print("¿Cuantos intentos quieres tener?: ");
-            while(teclado.hasNextInt() && (intentos = teclado.nextInt()) > 0 && intentos <=10){
-                teclado.nextLine();                
-                System.out.println("numero intentos2 " + intentos);
-                System.out.print("¿Cuantos intentos quieres tener3?: ");       
-                teclado.nextLine();
-            }         
+            teclado.nextLine();
+            
+                
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        System.out.print("Piensa en una palabra y escribela: ");
-              
-    }
-    
+        }
+        System.out.println("intentos: " + intentosElegidos + " fin");
+    }    
 }
+
+
+
+// "hola".charAt()
