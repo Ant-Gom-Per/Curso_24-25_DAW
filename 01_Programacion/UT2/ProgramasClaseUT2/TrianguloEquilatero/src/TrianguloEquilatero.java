@@ -16,20 +16,20 @@ public class TrianguloEquilatero {
             System.out.print("Introduce la altura del triángulo: ");
             teclado.nextLine();
         }
-        for(int i=0 ; i<altura ; i++){
-            for(int j=altura-1 ; j>i ; j--){
+        teclado.close();
+        for(int i=0 ; i<altura ; i++){          //Este for hace las filas
+            for(int j=altura-1 ; j>i ; j--){    //Este crea los espacios de la izquierda
                 System.out.print(ESPACIO);
             }
-            for(int k=0 ; k<=i ; k++){
+            for(int k=0 ; k<=i ; k++){          //Este imprime los asteriscos a la izquierda
                 System.out.print(ASTERISCO);
             }
-            for(int l=0 ; l<i ; l++){
+            for(int l=0 ; l<i ; l++){           //Este añade un asterisco menos de los añadidos a la derecha
                 System.out.print(ASTERISCO);
             }
-            System.out.println("");
-        }
-        
-        System.out.println("KAKAPÚ");
+            System.out.println("");           //Aqui producimos un salto de línea para que aparezca la figura
+        }        
+        System.out.println("");
     }
     
 }
