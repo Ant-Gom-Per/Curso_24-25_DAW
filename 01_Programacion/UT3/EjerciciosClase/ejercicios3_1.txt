@@ -1,0 +1,17 @@
+1- Llegir 5 números i mostrar-los en el mateix ordre introduït.
+
+2- Llegir per teclat dos taules de 10 nombres enters i mesclar-les en una tercera de la forma: el 1r de A, el 1r
+de B, el 2n de A, el 2n de B, etc.
+
+3- Fer un programa que donats dos arrays determine si són iguals
+
+4- Escriu un programa que llija 10 números per teclat i que els emmagatzeme en un
+array. Rota els elements d'eixe array, és a dir, l'element de la posició 0
+ha de passar a la posició 1, el de la 1 a la 2, etc. El número que es troba en
+l'última posició ha de passar a la posició 0. Finalment, mostra el contingut
+de l'array.
+
+5- Volem desenvolupar una aplicació que ens ajude a gestionar les notes d'un centre educatiu. Cada grup
+(o classe) està compost per 5 alumnes. Es demana llegir les notes del primer, segon i tercer trimestre d'un
+grup. Hem de mostrar al final: la nota mitjana del grup en cada trimestre, i la mitjana de l'alumne que es troba
+en la posició N (N es llig per teclat).
