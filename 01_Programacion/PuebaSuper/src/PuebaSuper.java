@@ -17,7 +17,7 @@ public class PuebaSuper {
         System.out.println("----------------\n");
         
         System.out.print("Introduce las medidas de tension: ");
-        while(contMedidas <= 10){
+        while(semaforo == true){
             if(!teclado.hasNextDouble()){
                 error = true;
                 teclado.next();                
@@ -29,9 +29,9 @@ public class PuebaSuper {
                 error = true;
             }
             auxSistolica = datoTension;
-            System.out.println("**********auxSIS " + auxSistolica);
-            
+                        
             if(!teclado.hasNextDouble()){
+                error = true;
                 teclado.next();
             }
             if((datoTension = teclado.nextDouble()) == 0 && contMedidas >= 2){
@@ -41,14 +41,15 @@ public class PuebaSuper {
                 error = true;
             }
             auxDiastolica = datoTension;
+            System.out.println("*********auxSIS " + auxSistolica);
             System.out.println("*********auxDIA " + auxDiastolica);
             
-            if(!error == true){
+            if(error == false){
             arraySistolica[contMedidas] = auxSistolica;
             arrayDiastolica[contMedidas] = auxDiastolica;
-            contMedidas++;
+           
             System.out.println("*********contador" + contMedidas);
-            }
+            
             
             
                System.out.print("VAloresSIS: ");
@@ -58,13 +59,18 @@ public class PuebaSuper {
                 System.out.println("");
                 
                 System.out.print("VAloresDIA: ");
-                for(int j=0 ; j <  contMedidas; j++){
+                for(int j=0 ; j <=  contMedidas; j++){
                     System.out.print( arrayDiastolica[j] + " ");        
                 }
                 System.out.println("");
+            }
+             contMedidas++;
+             if(contMedidas == 2){
+                 semaforo = false;
+             }
             
         }
-        ;
+        
         
         
             
