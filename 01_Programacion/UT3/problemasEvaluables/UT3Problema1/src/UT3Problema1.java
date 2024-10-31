@@ -1,8 +1,10 @@
 /*
-Version de pruebas de tension arterial
+Por: Antonio Gómez Pérez
  */
+
 import java.util.Scanner;
-public class PuebaSuper {
+public class UT3Problema1 {
+
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         

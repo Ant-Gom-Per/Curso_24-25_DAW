@@ -17,7 +17,7 @@ public class ArrayNotasClase {
         }
         teclado.nextLine();
         
-        System.out.println("Introduce totas las deseadas: ");
+        System.out.println("Introduce las " + numeroNotas + " deseadas: ");
         while(i < numeroNotas){
             if(!teclado.hasNextInt()){
                 teclado.next();
@@ -29,6 +29,7 @@ public class ArrayNotasClase {
         
         }
         teclado.nextLine();
+
         System.out.println("fin del programa");
     }
     
