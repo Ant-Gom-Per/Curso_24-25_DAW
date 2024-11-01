@@ -8,7 +8,7 @@ public class PuebaSuper {
         
         double [] arraySistolica = new double[10];
         double [] arrayDiastolica = new double[10];
-        double datoTension=0, auxSistolica=0,auxDiastolica=0;
+        double datoTension=0, auxSistolica=0,auxDiastolica=0, sisMaxima=0;
         int i=0,contMedidas=0, opcion;
         boolean semaforo = true, error = false;
         
@@ -22,38 +22,39 @@ public class PuebaSuper {
                 error = true;
                 teclado.next();                
             }
-            if((datoTension = teclado.nextDouble()) == 0 && contMedidas >= 2){
-                semaforo = false;                
+            if((auxSistolica = teclado.nextDouble()) == 0 && contMedidas >= 1){
+                semaforo = false;
+                error = true;
             }
             if(datoTension <3 || datoTension >22){
                 error = true;
-            }
-            auxSistolica = datoTension;
-                        
+            }                        
             if(!teclado.hasNextDouble()){
                 error = true;
                 teclado.next();
             }
-            if((datoTension = teclado.nextDouble()) == 0 && contMedidas >= 2){
+            if((auxDiastolica = teclado.nextDouble()) == 0 && contMedidas >= 1){
                 semaforo = false;
-            }
-            if(datoTension <3 || datoTension >22 || auxSistolica < datoTension){
                 error = true;
             }
-            auxDiastolica = datoTension;
+            if(datoTension <3 || datoTension >22 || auxSistolica < auxDiastolica){
+                error = true;
+            }
+         
             System.out.println("*********auxSIS " + auxSistolica);
             System.out.println("*********auxDIA " + auxDiastolica);
             
-            if(error == false){
-            arraySistolica[contMedidas] = auxSistolica;
-            arrayDiastolica[contMedidas] = auxDiastolica;
+            if(error == true){
+                
+                arraySistolica[contMedidas] = auxSistolica;
+                arrayDiastolica[contMedidas] = auxDiastolica;
            
-            System.out.println("*********contador" + contMedidas);
+                System.out.println("*********contador" + contMedidas);
             
             
             
                System.out.print("VAloresSIS: ");
-                for(int j=0 ; j <  contMedidas; j++){
+                for(int j=0 ; j <=  contMedidas; j++){
                     System.out.print( arraySistolica[j] + " ");        
                 }
                 System.out.println("");
@@ -64,12 +65,12 @@ public class PuebaSuper {
                 }
                 System.out.println("");
             }
-             contMedidas++;
-             if(contMedidas == 2){
-                 semaforo = false;
-             }
-            
+            contMedidas++;
+            if(contMedidas == 4){
+                semaforo = false;
+            }            
         }
+        
         
         
         
@@ -78,7 +79,7 @@ public class PuebaSuper {
             
             //HASTA AQUÍ LA TOMA DE DATOS   
             
-            System.out.println("1.- Sistólica máxima");
+            System.out.println("\n1.- Sistólica máxima");
             System.out.println("2.- Diastólica mínima");
             System.out.println("3.- Más compensada");
             System.out.println("4.- Tensión Media");
@@ -86,7 +87,7 @@ public class PuebaSuper {
             
             semaforo = true;
             while(semaforo == true){
-                System.out.print("Introduce la opcion deseada: ");
+                System.out.print("\nIntroduce la opcion deseada: ");
                 while(!teclado.hasNextInt() || (opcion = teclado.nextInt()) <1 || opcion > 5){
                     teclado.nextLine();
                     System.out.println("Error, dato no válido.");
@@ -96,7 +97,10 @@ public class PuebaSuper {
             
                 switch(opcion){
                     case 1:
-                        System.out.println("opcion1");
+                        if(sisMaxima < arraySistolica[i]){ //probar con for
+                            sisMaxima = arraySistolica[i];
+                            i++;
+                        }
                         break;
                     case 2:
                         System.out.println("opcion2");
