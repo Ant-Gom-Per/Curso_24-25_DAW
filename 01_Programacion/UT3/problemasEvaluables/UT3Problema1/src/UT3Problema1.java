@@ -8,48 +8,49 @@ public class UT3Problema1 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         
-        double [] arraySistolica = new double[10];
-        double [] arrayDiastolica = new double[10];
-        double datoTension=0, auxSistolica=0,auxDiastolica=0, sisMaxima=0, sisMinima = 23;
+        double [] arraySist = new double[10];
+        double [] arrayDiast = new double[10];
+        double datoSist=0,datoDiast=0, sisMaxima=0, sisMinima = 23;
         int contMedidas=0, opcion;
-        boolean semaforo = true, error = false;
+        boolean error = false;
         
         
         System.out.println("TENSIÓN ARTERIAL");
         System.out.println("----------------\n");
         
         System.out.print("Introduce las medidas de tension: ");
-        while(semaforo == true){
+        while(contMedidas < 10){
             if(!teclado.hasNextDouble()){
                 error = true;
                 teclado.next();                
-            }
-            if((auxSistolica = teclado.nextDouble()) == 0 && contMedidas >= 1){
-                semaforo = false;
-                error = true;
-            }
-            if(datoTension <3 || datoTension >22){
+            }           
+            if((datoSist = teclado.nextDouble()) <3 || datoSist >22){
+                if(datoSist == 0 && contMedidas >2){
+                    break;
+                }
                 error = true;
             }                        
             if(!teclado.hasNextDouble()){
                 error = true;
                 teclado.next();
             }
-            if((auxDiastolica = teclado.nextDouble()) == 0 && contMedidas >= 1){
+            // Hasta aqui la criba de datos de la Sistolica
+            
+            if((datoDiast = teclado.nextDouble()) == 0 && contMedidas >= 1){
                 semaforo = false;
                 error = true;
             }
-            if(datoTension <3 || datoTension >22 || auxSistolica < auxDiastolica){
+            if(datoTension <3 || datoTension >22 || datoSist < datoDiast){
                 error = true;
             }
          
-            System.out.println("*********auxSIS " + auxSistolica);
-            System.out.println("*********auxDIA " + auxDiastolica);
+            System.out.println("*********auxSIS " + datoSist);
+            System.out.println("*********auxDIA " + datoDiast);
             
             if(error == true){
                 
-                arraySistolica[contMedidas] = auxSistolica;
-                arrayDiastolica[contMedidas] = auxDiastolica;
+                arraySist[contMedidas] = datoSist;
+                arrayDiast[contMedidas] = datoDiast;
            
                 System.out.println("*********contador" + contMedidas);
             
@@ -57,13 +58,13 @@ public class UT3Problema1 {
             
                System.out.print("VAloresSIS: ");
                 for(int j=0 ; j <=  contMedidas; j++){
-                    System.out.print( arraySistolica[j] + " ");        
+                    System.out.print( arraySist[j] + " ");        
                 }
                 System.out.println("");
                 
                 System.out.print("VAloresDIA: ");
                 for(int j=0 ; j <=  contMedidas; j++){
-                    System.out.print( arrayDiastolica[j] + " ");        
+                    System.out.print( arrayDiast[j] + " ");        
                 }
                 System.out.println("");
             }
@@ -100,8 +101,8 @@ public class UT3Problema1 {
             switch(opcion){
                 case 1:
                     for(int i=0 ; i < contMedidas ; i++){
-                        if(sisMaxima < arraySistolica[i]){ 
-                        sisMaxima = arraySistolica[i];            
+                        if(sisMaxima < arraySist[i]){ 
+                        sisMaxima = arraySist[i];            
                         }
                     }
                     if(sisMaxima < 12){
@@ -120,8 +121,8 @@ public class UT3Problema1 {
                     break;
                 case 2:
                     for(int i=0 ; i < contMedidas ; i++){
-                        if(sisMinima > arrayDiastolica[i]){ 
-                        sisMinima = arrayDiastolica[i];            
+                        if(sisMinima > arrayDiast[i]){ 
+                        sisMinima = arrayDiast[i];            
                         }
                     }
                     if(sisMinima < 8){
