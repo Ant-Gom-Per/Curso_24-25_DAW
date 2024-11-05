@@ -13,7 +13,7 @@ public class UT3Problema1 {
         double datoSist=0,datoDiast=0, sisMaxima=0, diasMinima = 23, auxCompens=23, totSist=0, totDiast=0, promedioSist=0, promedioDiast=0;
         int contMed=0, opcion=0, indArray=0;
         boolean error = false;
-        String claseTension = null;
+        String claseTension = " ";
         
         
         System.out.println("TENSIÓN ARTERIAL");
@@ -34,9 +34,7 @@ public class UT3Problema1 {
             if(!teclado.hasNextDouble()){
                 error = true;
                 teclado.next();
-            }
-            // Hasta aqui la criba de datos de la Sistolica
-            
+            }                        
             if(!teclado.hasNextDouble()){
                 error = true;
                 teclado.next();                
@@ -49,17 +47,14 @@ public class UT3Problema1 {
               }
             if(datoSist < datoDiast){
                 error = true;
-            }          
-              // Hasta aquí la criba de datos Diastolica
-
+            }             
             if(error == false){                
                 arraySist[contMed] = datoSist;
                 arrayDiast[contMed] = datoDiast;
                 contMed++;
             }         
         }            
-        //HASTA AQUÍ LA TOMA DE DATOS   
-            
+                    
         System.out.println("\n1.- Sistólica máxima");
         System.out.println("2.- Diastólica mínima");
         System.out.println("3.- Más compensada");
@@ -74,10 +69,7 @@ public class UT3Problema1 {
                 System.out.println("Error, dato no válido.");
                 System.out.print("Introduce la opcion deseada: ");
             }
-            teclado.nextLine();
-            
-            
-           
+            teclado.nextLine(); 
             
             switch(opcion){
                 case 1:
@@ -109,6 +101,7 @@ public class UT3Problema1 {
                     }
                     System.out.print(arraySist[indArray] + " " + arrayDiast[indArray]);
                     break;
+                    
                 case 4:
                     for(int i=0 ; i<contMed ; i++){
                         totSist += arraySist[i];
@@ -118,16 +111,15 @@ public class UT3Problema1 {
                     }
                     promedioSist = totSist/contMed;
                     promedioDiast = totDiast/contMed;
-                    System.out.printf("Dato de tension promedio: %.1f %.1f\n",promedioSist, promedioDiast);
-                    
+                    System.out.printf("Dato de tension promedio: %.1f %.1f\n",promedioSist, promedioDiast);                    
                     break;
+                    
                 default:
-                    System.out.println("Saliendo del programa...");
-                   
+                    System.out.println("Saliendo del programa...");                   
                     break;
             }
             
-            if(opcion ==4 || opcion ==5)
+            if(opcion == 1 || opcion == 2 || opcion == 3){
                 if (arraySist[indArray] < 12 && arrayDiast[indArray] < 8) {
                         claseTension = " Óptima";
                     } else if (arraySist[indArray] >= 12 && arraySist[indArray] < 13 && arrayDiast[indArray] >= 8 && arrayDiast[indArray] < 8.5) {
@@ -141,12 +133,12 @@ public class UT3Problema1 {
                     } else if (arraySist[indArray] >= 18 && arrayDiast[indArray] >= 11) {
                         claseTension = " Grado 3";
                     } else if (arraySist[indArray] >= 14 && arrayDiast[indArray] < 9) {
-                        claseTension = " Sistolica Aislada";
+                        claseTension = " Sistólica Aislada";
                     } else {
                         claseTension = " No contemplada";
                     }
-            System.out.println(" " + claseTension);
-                //  HASTA AQUÍ LAS POSIBLES OPCIONES              
+                System.out.println(" " + claseTension);
+            }              
         }        
         System.out.println("Fin del programa");
         teclado.close();

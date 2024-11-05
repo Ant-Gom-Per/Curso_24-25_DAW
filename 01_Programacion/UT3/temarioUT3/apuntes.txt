@@ -1,0 +1,11 @@
+DECLARACION DE ARRAYS
+
+Al decalrar un array unidimensional vacio se usa la expresion.
+    int[] nombre = new int[x]
+Para detrminar la longitud de la array unidimensional se usa la expresion:
+    mombre.length
+
+Al decalrar un array bidimensional vacio se usa la expresion.
+    int[][] nombre = new int[x][y]
+Para determinar la longitud de la array bidimensional se usa la expresion:
+    mombre[x].length
