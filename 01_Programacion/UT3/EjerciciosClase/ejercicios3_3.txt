@@ -1,0 +1,47 @@
+***1- Crea i inicialitza una taula de grandària 10x10. Mostra la suma de cada fila i de cada columna.
+
+1   2   4   6 | 13
+5   1   7   9 | 22
+0   7   5   7 | 19
+---------------
+6   10  16  22
+
+
+***2- Crea una matriu “marc” de grandària 8x6: tots els seus elements han de ser 0 excepte els de les vores que han de ser 1. Mostra-la.
+
+3- Implementa un programa que cree dos matrius de 4x5 elements (enters aleatoris entre 0 i 9) i una tercera matriu que continga la suma de les dos primeres. Imprimeix les tres matrius.
+
+4- Donada una matriu quadrada donada per l'usuari, el programa imprimeix true si la matriu és simètrica, false en cas contrari.
+
+input:
+
+Introdueix la longitud de la matriu: 3
+
+1 2 3
+2 1 2
+3 2 1
+
+output:
+
+true
+
+5- A un alumne li han manat de deures fer 30 divisions. Quan les ha acabades li demana a son pare si li pot ajudar a corregir-les. El pare, que té molt de treball i no té temps per a corregir divisions, decideix programar una intel·ligència artificial per a que les corregisca en el seu lloc. Usant una tècnica de Reconeixement Òptic de Caracters, aconsegueix digitalitzar les divisions. Es digitalitza el Dividend, el Divisor, el Quocient i el Residu, i s'obté:
+
+7 3 2 1
+
+No obstant, el pare no és capac d'implementar un programa que, una volta digitalitzades les divisions, diga si són o no correctes. ¿Podries ajudar-lo?
+
+El programa haurà de dir quines divisions són incorrectes i quines correctes (si introdueix un -1 deixa de guardar dades).
+
+input:
+
+2 2 1 0
+4 2 5 7
+6 3 2 0
+-1
+
+output:
+
+correcte
+error
+correcte
