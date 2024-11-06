@@ -36,54 +36,77 @@
                 <td>
                     <label for="rango">Rango:</label>
                     <p><input type="range" name="rango" /></p>
-                    <label for="color">Color:</label>
-                    <p><input type="color" name="color" /></p>
-                    <label for="buscador">Buscador</label>
-                    <p><input type="search" name="buscador"> </p>
+                    <label for="datetime-local">Fecha:</label>
+                    <p><input type="date" name="data" /></p>
+                    <label for="buscador">Mes</label>
+                    <p><input type="month" name="mes"> </p>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="direccion">Dirección:</label>
-                    <p><input type="url" name="Direccion" /></p>
-                    <label for="telefono">Telefono:</label>
-                    <p><input type="tel" name="Telefono" /></p>
-                    <label for="email">email</label>
-                    <p><input type="email" name="email"> </p>
+                    <fieldset>
+                        <legend>Datos Personales</legend>
+                        <p>
+                        <label for="txtNom">Nombre:</label>
+                        <input type="text" id="txtNom" name="nombre" placeholder="Inserta el nombre" required />
+                        </p>
+                        <p>
+                        <label for="txtCognoms">Apellidos:</label>
+                        <input type="text" id="txtCognoms" name="apellidos" placeholder="Inserta el apellido"/>
+                        </p>
+                        <p>
+                        <label for="selProv">Provincia</label>
+                        <select id="selProv" name="provincia">
+                        <optgroup label="Aragon">
+                        <option value="Z">Zaragoza</option>
+                        <option value="Z">Huesca</option> 
+                        <option value="T" selected>Teruel</option>
+                        </optgroup>
+                        </select>
+                        </p>
+                        <p> <input type="submit" value="Enviar" /></p>
+                        </fieldset>
                 </td>
                 <td>
                     <coloricos3>Aquí hay algo</coloricos3>
                 </td>
-                <td></td>
+                <td>
+                    <form id="search" method="get">
+                        <input type="search" id="busca" name="busca" />
+                        <input type="submit" value="search" />
+                        </form>
+                </td>
             </tr>
             <tr>
                 <td>
-                    <label for="direccion">Dirección:</label>
-                    <p><input type="url" name="Direccion" /></p>
-                    <label for="telefono">Telefono:</label>
-                    <p><input type="tel" name="Telefono" /></p>
-                    <label for="email">email</label>
-                    <p><input type="email" name="email"> </p>
+                    <textarea rows="3" cols="30">Aqui ponemos un texto</textarea>
                 </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="direccion">Dirección:</label>
-                    <p><input type="url" name="Direccion" /></p>
-                    <label for="telefono">Telefono:</label>
-                    <p><input type="tel" name="Telefono" /></p>
-                    <label for="email">email</label>
-                    <p><input type="email" name="email"> </p>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
                 <td>
                     <a href="img/perretepiloto.jpg"><img src="img/perretepiloto_mini.jpg" alt="snoopy" title="click para ampliar"/></a>
                 </td>
+                <td>
+                    <label for="telefon">El meu telèfon és:</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="965.639.695"
+                    pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Dispositivos electrónicos</label><br />
+                    <input type="checkbox" name="dispositivos" value="pc" />PC<br />
+                    <input type="checkbox" name="dispositivos" value="table" />Tableta<br/>
+                    <input type="checkbox" name="dispositivos" value="movil" />Mòbil
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
                 <td></td>
                 <td></td>
             </tr>
