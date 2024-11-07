@@ -9,3 +9,15 @@ Al decalrar un array bidimensional vacio se usa la expresion.
     int[][] nombre = new int[x][y]
 Para determinar la longitud de la array bidimensional se usa la expresion:
     mombre[x].length
+
+
+STRING
+objeto es el valor que toma una variable
+los metodos llevan parerntesis()
+para comparar si son iguales strings usamos equeals, da true o false
+
+para comparar compareto nos da si es mayor da un numero mayor de 0 si la primera palabra es mayor que la segunda palabra, menor si la primera palabra es menor que la segunda da un numero menor de 0. si las palabras son iguales da igual da 0
+    if("hola".compareto("adios) < 0) ---> true
+
+== --> identidad, son el mismo objeto
+equals --> igualdad, tiene el mismo contenido(compara)

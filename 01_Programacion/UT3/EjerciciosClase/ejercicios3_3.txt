@@ -11,7 +11,7 @@
 
 3- Implementa un programa que cree dos matrius de 4x5 elements (enters aleatoris entre 0 i 9) i una tercera matriu que continga la suma de les dos primeres. Imprimeix les tres matrius.
 
-4- Donada una matriu quadrada donada per l'usuari, el programa imprimeix true si la matriu és simètrica, false en cas contrari.
+****4- Donada una matriu quadrada donada per l'usuari, el programa imprimeix true si la matriu és simètrica, false en cas contrari.
 
 input:
 
@@ -25,7 +25,7 @@ output:
 
 true
 
-5- A un alumne li han manat de deures fer 30 divisions. Quan les ha acabades li demana a son pare si li pot ajudar a corregir-les. El pare, que té molt de treball i no té temps per a corregir divisions, decideix programar una intel·ligència artificial per a que les corregisca en el seu lloc. Usant una tècnica de Reconeixement Òptic de Caracters, aconsegueix digitalitzar les divisions. Es digitalitza el Dividend, el Divisor, el Quocient i el Residu, i s'obté:
+****5- A un alumne li han manat de deures fer 30 divisions. Quan les ha acabades li demana a son pare si li pot ajudar a corregir-les. El pare, que té molt de treball i no té temps per a corregir divisions, decideix programar una intel·ligència artificial per a que les corregisca en el seu lloc. Usant una tècnica de Reconeixement Òptic de Caracters, aconsegueix digitalitzar les divisions. Es digitalitza el Dividend, el Divisor, el Quocient i el Residu, i s'obté:
 
 7 3 2 1
 
