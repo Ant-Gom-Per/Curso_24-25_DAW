@@ -1,12 +1,14 @@
 /*
-Version de pruebas de tension arterial
+Por: Antonio Gómez Pérez
  */
-import java.util.Scanner;
-public class PuebaSuper {
+
+import java.util.Scanner; 
+public class UT3Problema3 {
+
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         
-        int tamanyo =0;
+        int tamanyo =0, sumaFilas=0;
         
         
         System.out.print("Introduce el tamaño de la matriz: ");
@@ -18,8 +20,7 @@ public class PuebaSuper {
         teclado.nextLine();
         
         int [][] matrizBinaria = new int [tamanyo][tamanyo];
-        int [] matrizFilas = new int [tamanyo];
-        int [] matrizColum = new int [tamanyo];
+        int [] sumaColumnas = new int [tamanyo];
         
         for (int i = 0; i < matrizBinaria.length; i++) {
             for (int j = 0; j < matrizBinaria[i].length; j++) {
@@ -28,31 +29,28 @@ public class PuebaSuper {
             }
             System.out.println();
             
-        }//Hasta aqui creo la matriz con 1 y 0 aleatorios
-        
+        }
+        //Has aqui creo la matriz con 1 y 0 aleatorios
         for (int i = 0; i < tamanyo; i++) {           
             for (int j = 0; j <  tamanyo; j++) {
-               matrizFilas[i] += matrizBinaria[i][j];
-               matrizColum[j] += matrizBinaria[j][i];
-            }            
-        }//Hasta quí almaceno en dos array la cantidad de 1's por fila y columna
-        
-        
-        
-        
+                sumaFilas += matrizBinaria[i][j];
+                sumaColumnas[j] += matrizBinaria[i][j];
+                
+                System.out.print(matrizBinaria[i][j] + "\t");
+            }
+            System.out.println("| " + sumaFilas);
+            sumaFilas =0;
+        }
         System.out.println("--------------------------------------");
+        for (int i = 0; i < sumaColumnas.length; i++) {
+            System.out.print(sumaColumnas[i] + "\t");            
+        }
+        System.out.println(" \n");
         
-     
-        for (int i = 0; i < matrizFilas.length; i++) {
-            System.out.print("Fila " + i +": "+ matrizFilas[i] + "\t");            
-        }
-        System.out.println(" \n");
-        for (int i = 0; i < matrizColum.length; i++) {
-            System.out.println("Colum " + i + ": " + matrizColum[i] + "\t");            
-        }
-        System.out.println(" \n");
+        
        
         System.out.println("\nFin del programa"); 
         teclado.close();
     }
+    
 }
