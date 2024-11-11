@@ -8,7 +8,7 @@ public class UT3Problema3 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         
-        int tamanyo =0, maxFilas=0, maxColum=0, contador=0, contDiagonal=0;
+        int tamanyo =0, maxFilas=0, maxColum=0, contador=0, contDiagonal=0, contSubDiagonal=0;
         boolean semaforoCeros = true;
         
         System.out.print("Introduce el tamaño de la matriz: ");
@@ -74,8 +74,7 @@ public class UT3Problema3 {
         }
         //Hasta aqui muestro la opcion 2
         
-        if(semaforoCeros == true) System.out.println("3. La matriz solo tiene Ceros");
-        for (int i = 0; i < arrayFilas.length && !semaforoCeros; i++) {
+        for (int i = 0; i < arrayFilas.length; i++) {
             if(arrayFilas[i] == tamanyo || arrayFilas[i] == 0){
                 if(arrayFilas[i] == tamanyo){
                     System.out.println("3. La fila " + i + " con todo 1's");
@@ -92,8 +91,7 @@ public class UT3Problema3 {
         //Hasta aqui muestro la opcion 3
                 
         
-        if(semaforoCeros == true) System.out.println("4. La matriz solo tiene Ceros");
-        for (int i = 0; i < arrayColum.length && !semaforoCeros; i++) {
+        for (int i = 0; i < arrayColum.length ; i++) {
             if(arrayColum[i] == tamanyo || arrayColum[i] == 0){
                 if(arrayColum[i] == tamanyo){
                     System.out.println("4. La columna " + i + " con todo 1's");
@@ -118,24 +116,22 @@ public class UT3Problema3 {
         }else{
             System.out.println("5. La diagonal mayor sin números iguales");
         }
+        contador=0;
         //Hasta aqui muestro la opcion 5
         
-        
-        
-        
-        
-        System.out.println("\n----------------------------------");
-        System.out.print("arrayFilas: ");
-         for (int i = 0; i < arrayFilas.length; i++) {
-            System.out.print(arrayFilas[i] + " ");            
+        for (int i = tamanyo-1; i >= 0; i--) {
+            contSubDiagonal += matrizBinaria[i][contador];            
+            contador++;
         }
-        System.out.print(" \narrayColumnas ");
-        for (int i = 0; i < arrayColum.length; i++) {
-            System.out.print(arrayColum[i] + " ");            
+        if(contSubDiagonal == tamanyo){
+            System.out.println("6. La subdiagonal con todo 1's");
+        }else if(contSubDiagonal == 0){
+            System.out.println("6. La subdiagonal con todo 0's");
+        }else{
+            System.out.println("6. La subdiagonal sin números iguales");
         }
-        System.out.println(" \n");
-        System.out.println("maxFilas: " + maxFilas);
-        System.out.println("maxColum: " + maxColum);
+        //Hasta aqui muestro la opcion 6
+        
         teclado.close();
     }
     
