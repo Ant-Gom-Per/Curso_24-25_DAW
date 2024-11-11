@@ -97,19 +97,88 @@
                     <input type="checkbox" name="dispositivos" value="table" />Tableta<br/>
                     <input type="checkbox" name="dispositivos" value="movil" />Mòbil
                 </td>
-                <td></td>
-                <td></td>
+                <td>
+                    <label for="escala">En una escala del 1 al 10, el mi conocimiento de HTML5
+                        és:</label>
+                        <input type="range" min="1" max="10" step="1" name="escala" />
+                </td>
+                <td>
+                    <label for="quantitat">Quisiera recibir
+                        <input type="number" name="quantitat" id="quantitat" min="0" max="10"
+                        step="1" /> copias del <cite>Periodico HTML5</cite></label>
+                </td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>
+                    <label for="datainici">Por favor, inicia mi subscripción:</label>
+<input type="date" min="2020-03-17" max="2022-05-17" id="datainici"
+name="datainici" required="required" placeholder="2020-09-25" />
+                </td>
+                <td><label for="Algo">Output:</label>
+                    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                        0<input type="range" id="a" value="50">100
+                        +<input type="number" id="b" value="50">
+                        =<output name="x" for="a b"></output>
+                        </form>
+                </td>
+                <td><label for="Algo">Progreso:</label>
+                    <h1>Tu tarea se está ejecutando</h1>
+                    <p>
+                    Estat: <progress min="0" max="100" value="0" ><span>0</span>%</progress>
+                    </p>
+                </td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><label for="Algo">meter:</label>
+                    <p>
+                        El uso del disco actual: <meter value="63" min="0" max="320" low="10"
+                        high="300" title="gigabytes">63 GB </meter>
+                        </p>
+                </td>
+                <td><label for="Algo">meter2:</label>
+                    <p>
+                        Calificacion<meter min="0" max="10" low="5" high="7" optimum="8" value="6.7"></meter>
+                    </p>
+                </td>
+                <td><label for="Algo">Tabla:</label>
+                    <table align="center" border="5">
+                        <tr>
+                            <td colspan="2">hola</td>
+                            <td>adios</td>                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td align="center">3</td>
+                        </tr>
+                    </table>        
+                </td>
             </tr>
+            <tr>
+                <td><label for="Algo">xxxx:</label>
+
+                </td>
+                <td><label for="Algo">xxxx:</label>
+
+                </td>
+                <td><label for="Algo">xxxx:</label>
+
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label for="Algo">xxxx:</label>
+
+                </td>
+                <td><label for="Algo">xxxx:</label>
+
+                </td>
+                <td><label for="Algo">xxxx:</label>
+
+                </td>
+            </tr>
+
+
 
 
         </table>
