@@ -1,0 +1,41 @@
+1.- Donat un array de nombres reals, crea un programa que mostre la mediana estadística de l'array. (Ha de funcionar per a un nombre d'elements parell o imparell)
+
+2.- Sense fer ús d'arrays, crea un programa que a partir d'un número N introduït per l'usuari imprimisca en la pantalla una figura d'NxN caràcters de la següent forma
+(exemple amb N=8)
++-+-+-+-
+-+-+-+-+
++-+-+-+-
+-+-+-+-+
++-+-+-+-
+-+-+-+-+
++-+-+-+-
+-+-+-+-+
+
+3.- Crea un programa que a partir d'un número N introduït per l'usuari es genere una matriu quadrada d'NxN elements i s'emplene amb valors consecutius
+(exemple N=5)
+1      2      3      4      5      
+6      7      8      9      10      
+11    12     13     14      15    
+16    17     18     19      20    
+21    22     23     24      25
+
+4.- Crea un programa que prenga dos matrius (de la mateixa grandària) de nombres reals  i siga capaç de sumar-les i emmagatzemar el resultat en la segona de les matrius.
+
+*****5.- Crea un programa que prenga dos matrius (de la mateixa grandària) de nombres reals  i siga capaç de sumar-les en ordre contrari 
+(primer element de la primera matriu amb l'últim element de la segona, segon de la primera matriu amb el penúltim de la segona...) 
+i emmagatzemar el resultat en la primera de les matrius.
+(exemple)
+1 2 3      10 20 30             91 82 73
+4 5 6      40 50 60      -->    64 55 46
+7 8 9      70 80 90             37 28 19
+
+****6.- Modifica el programa anterior perquè l'ordre siga: primer element de la fila de la primera matriu amb l'últim element de la mateixa fila de la segona matriu, segon element de la fila de la primera matriu amb el penúltim element de la mateixa fila de la segona matriu.
+(exemple)
+1 2 3      10 20 30             31 22 13
+4 5 6      40 50 60      -->    64 55 46
+7 8 9      70 80 90             97 88 79
+
+7.- Crea un array multidimensional com el que apareix en l'última pàgina del PDF "UT3.3 Arrays multidimensionals" (inicialitza'l amb els mateixos valors o els que preferisques).
+a) Crea un programa que calcule la nota total obtinguda pel segon alumne en el tercer examen, sobre 10 punts. (val igual la part teòrica i la pràctica, es pot fer una mitjana aritmètica simple).
+b) Obtinga la puntuació mitjana de les pràctiques de l'últim alumne.
+c) Obtinga el nombre d'alumnes que han aprovat la part teòrica de cada examen (per a aprovar han de tindre una puntuació igual o superior a 10)
