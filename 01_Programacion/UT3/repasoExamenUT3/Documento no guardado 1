@@ -1,0 +1,2 @@
+String cadena = new String("Cadena de Texto");
+System.out.println(cadena.charAt(2));  // Devuelve la letra 'd'

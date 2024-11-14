@@ -19,16 +19,20 @@ public class Ejercicios3_3_ej5 {
                 for (int i = 0; i < aux.length; i++) {
                     for (int j = 0; j < aux[i].length; j++) {
                         divisiones[i] = aux[i];
-                        
-                        
-                    }
-                    
+                    }                    
                 }
-            }
-         
-            
-        } while (true);
+                divisiones[aux.length][0] = dividendo;
+                divisiones[aux.length][1] = teclado.nextInt();
+                divisiones[aux.length][2] = teclado.nextInt();
+                divisiones[aux.length][3] = teclado.nextInt();
+            } 
+        } while (dividendo != -1);
         
+        
+        for (int i = 0; i < divisiones.length; i++) {
+            System.out.println();
+            
+        }
         
         
         teclado.close();
