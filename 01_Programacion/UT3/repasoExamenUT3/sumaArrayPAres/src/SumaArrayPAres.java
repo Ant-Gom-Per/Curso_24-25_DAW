@@ -1,17 +1,9 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ejercicio repaso clase
  */
 
-/**
- *
- * @author ciclost
- */
 public class SumaArrayPAres {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         int suma=0;
         int[][] matriz = {
@@ -50,7 +42,7 @@ public class SumaArrayPAres {
                 suma += matriz[i][j];
                 }
             }            
-          }//Suma columnas pares
+          }//Suma columnas impares
         System.out.println("SUma " + suma);
         
     }    

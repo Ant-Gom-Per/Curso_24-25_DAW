@@ -1,5 +1,5 @@
 /*
-Ejercicios3_3 ejercicio nº 4
+Ejercicios3_3 ejercicio nº 4 comprueba si una matriz es simetrica
  */
 import java.util.Scanner;
 public class Ejercicios3_3_4 {
