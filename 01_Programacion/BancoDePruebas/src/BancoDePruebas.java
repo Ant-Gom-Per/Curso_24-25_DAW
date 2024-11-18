@@ -84,7 +84,11 @@ public class BancoDePruebas {
             System.out.print(letrasPalIntrod[i] + " ");                       
         }
         System.out.println("\nresultado: " + resultado);
-       
+       boolean pase = true;
+        while(pase){
+            
+        }
+        
         
         teclado.close();
     }
