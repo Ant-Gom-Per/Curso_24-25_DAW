@@ -9,8 +9,11 @@ public class AdivinaLaPalabraVer3 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         
-        String palaIntrod, ayuda="";
+        String palaIntrod, ayuda=" ";
         String[] palabrSecr = {"perro", "gaviota", "rana", "abeja", "serpiente", "atun", "cangrejo", "escolopendra", "almeja", "tarantula"};
+        String[] resp3 = {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};
+        String[] resp4 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};
+        
         
         boolean semaforo = true, resultado= false, victoria = false;
         int intentos=1, numeroIntentos =0, numeroPistas=0, puntuacion=0, continuar=0;
@@ -34,7 +37,7 @@ public class AdivinaLaPalabraVer3 {
        
             System.out.print("\nIntroduce un numero de intentos: ");              
             while(semaforo == true){               
-                if(teclado.hasNextInt() && (intentos = teclado.nextInt()) >=0 && intentos <=6){
+                if(teclado.hasNextInt() && (intentos = teclado.nextInt()) >=0 && intentos <6){
                     teclado.nextLine();
                     numeroIntentos = intentos;                    
                     semaforo = false;
@@ -88,7 +91,7 @@ public class AdivinaLaPalabraVer3 {
                             }                                                                      //
                         }
                     }else{
-                        System.out.println("Error, no tiene la misma cantidad letras");
+                        System.out.println("Lo siento, no tiene la misma cantidad letras");
                     }
                 }else{            
                     resultado = true;
@@ -109,21 +112,28 @@ public class AdivinaLaPalabraVer3 {
                     numeroPistas++;
                     switch(numeroPistas){
                         case 1:
-                            ayuda = "Es un animal.";//  Terreste, marino, volador
+                            if(numAleat == 0 || numAleat == 2 || numAleat == 7 || numAleat == 9 || numAleat == 4){
+                                ayuda = "de tipo terreste";
+                            }else if(numAleat == 5 || numAleat == 6 || numAleat == 8){
+                                ayuda = "de tipo marino";                                
+                            }else{
+                                ayuda = "de tipo volador";
+                            }                            
                             break;
                         case 2:
-                            ayuda = "Las letras de su nombre son todas diferentes.";//Vertebrado o invertebrado
+                            if(numAleat == 8 || numAleat == 7 || numAleat == 6 || numAleat == 9 || numAleat == 3){
+                                ayuda = "invertebrado";
+                            }else{
+                                ayuda = "vertebrado";                                
+                            }                            
                             break;
                         case 3:
-                            ayuda = "Es mamífero.";// cambiar por print con tipo animal
-                            break;
-                        case 4:
-                            ayuda = "Su nombre tiene 5 letras.";//Tiene x patas
-                            break;
+                            ayuda = "del tipo " + resp3[numAleat];
+                            break;                        
                         default:
-                            ayuda = "Puede volar.";                 
+                            ayuda = "con "+  resp4[numAleat] + " patas";                 
                     }                
-                    System.out.println("Pista numero " + numeroPistas + ": " + ayuda);
+                    System.out.println("Pista numero " + numeroPistas + ": Es un animal " + ayuda);
                     }                
                 }          
             }
@@ -147,11 +157,11 @@ public class AdivinaLaPalabraVer3 {
             }
             //insertar puntuacion de intentos
             
-            System.out.print("¿\nQuieres volver a jugar? (0 = No, 1 = Si) :");        
+            System.out.print("\n¿Quieres volver a jugar? (0 = No, 1 = Si) :");        
             while(!teclado.hasNextInt() || (continuar = teclado.nextInt()) < 0 || continuar > 1){
                 teclado.nextLine();
                 System.out.println("Error dato no válido.");
-                System.out.println("¿\nQuieres volver a jugar? (No = 0, Si = 1 :");
+                System.out.println("\n¿Quieres volver a jugar? (No = 0, Si = 1 :");
             }
             if(continuar == 0){
                 semaforo = false;
