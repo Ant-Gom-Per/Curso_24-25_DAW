@@ -18,6 +18,7 @@ public class AdivinaLaPalabraVer3 {
         boolean semaforo = true, resultado= false, victoria = false;
         int intentos=1, numeroIntentos =0, numeroPistas=0, puntuacion=0, continuar=0;
         int numAleat = (int)(Math.random()*10);
+        int[] arrayPuntos = {100, 200, 300, 400, 500};
         
          while(semaforo == true){
             System.out.println("\n**************************");
@@ -140,7 +141,7 @@ public class AdivinaLaPalabraVer3 {
             // comparacion de palabra introducida y palabra secreta
             
             if(victoria == true){                 
-                puntuacion = (12 - (intentos+numeroPistas))*100;        //añadir multiplicador por palabra
+                puntuacion = (12 - (intentos+numeroPistas))*(numAleat+1 * 100);        //añadir multiplicador por palabra
                 if(puntuacion > 1000){
                     System.out.println("\n******************");
                     System.out.println("**   PERFECTO   **");
@@ -155,7 +156,14 @@ public class AdivinaLaPalabraVer3 {
                 System.out.println("**  Puntuacion 0  **");
                 System.out.println("********************");
             }
-            //insertar puntuacion de intentos
+            System.out.println("Puntuacion " + puntuacion);
+            for (int i = 0; i < 5; i++) {
+                if(arrayPuntos[i] < puntuacion){
+                    arrayPuntos[i] = puntuacion;
+                }
+                System.out.println("Puntuacion " + (i+1) + ": " + arrayPuntos[i]);
+
+            }
             
             System.out.print("\n¿Quieres volver a jugar? (0 = No, 1 = Si) :");        
             while(!teclado.hasNextInt() || (continuar = teclado.nextInt()) < 0 || continuar > 1){
@@ -164,10 +172,9 @@ public class AdivinaLaPalabraVer3 {
                 System.out.println("\n¿Quieres volver a jugar? (No = 0, Si = 1 :");
             }
             if(continuar == 0){
-                semaforo = false;
-             
+                semaforo = false;            
 
-            }
+            }            
             numeroPistas = 0;
             victoria = false;
             
@@ -176,7 +183,9 @@ public class AdivinaLaPalabraVer3 {
         System.out.println("\n*********************");
         System.out.println("**  Fin del juego  **");
         System.out.println("*********************");
-       
+        
+        
+        
         teclado.close();
     }    
 }
