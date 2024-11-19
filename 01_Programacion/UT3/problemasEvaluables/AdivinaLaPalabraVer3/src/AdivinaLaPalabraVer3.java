@@ -16,9 +16,8 @@ public class AdivinaLaPalabraVer3 {
         
         
         boolean semaforo = true, resultado= false, victoria = false;
-        int intentos=1, numeroIntentos =0, numeroPistas=0, puntuacion=0, continuar=0;
-        int numAleat = (int)(Math.random()*10);
-        int[] arrayPuntos = {100, 200, 300, 400, 500};
+        int intentos=1, numeroIntentos =0, numeroPistas=0, puntuacion=0, continuar=0,partidas =1;;        
+        int[] arrayPuntos = new int[5];
         
          while(semaforo == true){
             System.out.println("\n**************************");
@@ -52,44 +51,44 @@ public class AdivinaLaPalabraVer3 {
             if(numeroIntentos == 0){
                 semaforo = true;
             }
-            // Generar numero aleatorio
+            int numAleat = (int)(Math.random()*10);
             while(semaforo == false){            
                 
-                int cantLetras = palabrSecr[numAleat].length();                 // cuento numero de letras d la palabra elegida
-                char[] letrasPalSecr = new char[cantLetras];                    // array para almacenar letras del tamano d la palabra eleguida
-                for (int i = 0; i < palabrSecr[numAleat].length(); i++) {       //
-                     letrasPalSecr[i] += palabrSecr[numAleat].charAt(i);   //Cuento el numero de letras de la palabra secreta y las guardo 1 a 1 en una array                  
-                }                                                               //
-                System.out.println(" ");                                      //
+                int cantLetras = palabrSecr[numAleat].length();                 
+                char[] letrasPalSecr = new char[cantLetras];                    
+                for (int i = 0; i < palabrSecr[numAleat].length(); i++) {      
+                     letrasPalSecr[i] += palabrSecr[numAleat].charAt(i);                  
+                }                                                               
+                System.out.println(" ");                                      
 
 
                 System.out.println("animal: " + palabrSecr[numAleat]);          // comprobacion
                 
-
-                System.out.print("El animal secreto es: ");                 //inicio
+                resultado=false;
+                System.out.print("El animal secreto es: ");                
                 for (int i = 0; i < cantLetras; i++) {
                     System.out.print("_ ");
                 }
                 
-                System.out.print("\nIntroduce palabra: ");                      //
-                palaIntrod = teclado.next();                                    //
-                int cantLetras2 = palaIntrod.length();                          // cuento numero de lteras d la palabra introducida
-                char[] letrasPalIntrod = new char[cantLetras2];                 //        
-                for (int i = 0; i < palaIntrod.length(); i++) {                 //
-                     letrasPalIntrod[i] += palaIntrod.charAt(i);           //Cuento el numero de letras de la palabra introducida y las guardo 1 a 1 en una array                  
-                }                                                               //
-                System.out.println("");                                      //
+                System.out.print("\nIntroduce palabra: ");                     
+                palaIntrod = teclado.next();                                    
+                int cantLetras2 = palaIntrod.length();                         
+                char[] letrasPalIntrod = new char[cantLetras2];                
+                for (int i = 0; i < palaIntrod.length(); i++) {               
+                     letrasPalIntrod[i] += palaIntrod.charAt(i);                       
+                }                                                             
+                System.out.println("");                                 
 
 
                 if(!palabrSecr[numAleat].equals(palaIntrod)){
-                    if(cantLetras == cantLetras2){                                                 //// if palabra secreat != palabra elegida
+                    if(cantLetras == cantLetras2){                                                
                         System.out.print("Has acertado las letras: ");
-                        for (int i = 0; i < palabrSecr[numAleat].length(); i++) {                  //
-                            if(letrasPalSecr[i] == (letrasPalIntrod[i])){                          // Comparo letras e impromo la letra si coincide y un guion si no
-                                System.out.print(palabrSecr[numAleat].charAt(i) + " ");       //          
-                            }else{                                                                 //
-                                System.out.print("_ ");                                          //
-                            }                                                                      //
+                        for (int i = 0; i < palabrSecr[numAleat].length(); i++) {                 
+                            if(letrasPalSecr[i] == (letrasPalIntrod[i])){                         
+                                System.out.print(palabrSecr[numAleat].charAt(i) + " ");           
+                            }else{                                                                 
+                                System.out.print("_ ");                                         
+                            }                                                                   
                         }
                     }else{
                         System.out.println("Lo siento, no tiene la misma cantidad letras");
@@ -138,10 +137,9 @@ public class AdivinaLaPalabraVer3 {
                     }                
                 }          
             }
-            // comparacion de palabra introducida y palabra secreta
             
             if(victoria == true){                 
-                puntuacion = (12 - (intentos+numeroPistas))*(numAleat+1 * 100);        //añadir multiplicador por palabra
+                puntuacion = (12 - (intentos+numeroPistas))*(numAleat+1 * 100);       
                 if(puntuacion > 1000){
                     System.out.println("\n******************");
                     System.out.println("**   PERFECTO   **");
@@ -155,22 +153,14 @@ public class AdivinaLaPalabraVer3 {
                 System.out.println("\n********************");
                 System.out.println("**  Puntuacion 0  **");
                 System.out.println("********************");
-            }
-            System.out.println("Puntuacion " + puntuacion);
-            for (int i = 0; i < 5; i++) {
-                if(arrayPuntos[i] < puntuacion){
-                    arrayPuntos[i] = puntuacion;
-                }
-                System.out.println("Puntuacion " + (i+1) + ": " + arrayPuntos[i]);
-
-            }
-            
+            }  
             System.out.print("\n¿Quieres volver a jugar? (0 = No, 1 = Si) :");        
             while(!teclado.hasNextInt() || (continuar = teclado.nextInt()) < 0 || continuar > 1){
                 teclado.nextLine();
                 System.out.println("Error dato no válido.");
                 System.out.println("\n¿Quieres volver a jugar? (No = 0, Si = 1 :");
             }
+            
             if(continuar == 0){
                 semaforo = false;            
 
@@ -183,6 +173,7 @@ public class AdivinaLaPalabraVer3 {
         System.out.println("\n*********************");
         System.out.println("**  Fin del juego  **");
         System.out.println("*********************");
+        
         
         
         
