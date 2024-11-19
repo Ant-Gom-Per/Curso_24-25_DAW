@@ -16,8 +16,8 @@ public class AdivinaLaPalabraVer3 {
         
         
         boolean semaforo = true, resultado= false, victoria = false;
-        int intentos=1, numeroIntentos =0, numeroPistas=0, puntuacion=0, continuar=0,partidas =1;;        
-        int[] arrayPuntos = new int[5];
+        int intentos=1, numeroIntentos =0, numeroPistas=0, puntuacion=0, continuar=0,partidas =0;;        
+        int[] arrayPuntos = new int[10];
         
          while(semaforo == true){
             System.out.println("\n**************************");
@@ -60,10 +60,7 @@ public class AdivinaLaPalabraVer3 {
                      letrasPalSecr[i] += palabrSecr[numAleat].charAt(i);                  
                 }                                                               
                 System.out.println(" ");                                      
-
-
-                System.out.println("animal: " + palabrSecr[numAleat]);          // comprobacion
-                
+                                
                 resultado=false;
                 System.out.print("El animal secreto es: ");                
                 for (int i = 0; i < cantLetras; i++) {
@@ -154,11 +151,22 @@ public class AdivinaLaPalabraVer3 {
                 System.out.println("**  Puntuacion 0  **");
                 System.out.println("********************");
             }  
-            System.out.print("\n¿Quieres volver a jugar? (0 = No, 1 = Si) :");        
-            while(!teclado.hasNextInt() || (continuar = teclado.nextInt()) < 0 || continuar > 1){
-                teclado.nextLine();
-                System.out.println("Error dato no válido.");
-                System.out.println("\n¿Quieres volver a jugar? (No = 0, Si = 1 :");
+            arrayPuntos[partidas] = puntuacion;
+            
+             for (int i = 0; i <= partidas; i++) {
+                 System.out.println("Puntuacion " + (i+1) + " :" + arrayPuntos[i]);
+             }
+            partidas++;
+            if(partidas == 10){
+                semaforo = false;
+            }else{
+             
+                System.out.print("\n¿Quieres volver a jugar? te queda " + (10-partidas) + " partidas. (0 = No, 1 = Si) :");        
+                while(!teclado.hasNextInt() || (continuar = teclado.nextInt()) < 0 || continuar > 1){
+                    teclado.nextLine();
+                    System.out.println("Error dato no válido.");
+                    System.out.println("\n¿Quieres volver a jugar? (No = 0, Si = 1 :");
+                }
             }
             
             if(continuar == 0){
