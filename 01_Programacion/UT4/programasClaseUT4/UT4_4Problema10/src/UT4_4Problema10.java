@@ -16,6 +16,7 @@ public class UT4_4Problema10 {
         for(int elemento : elementos){
             System.out.print(elemento +  " ");
         }
+        System.out.println("");
     }
     
     public void modificar(int[] enteros){
