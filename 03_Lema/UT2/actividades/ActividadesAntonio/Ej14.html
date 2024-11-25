@@ -1,0 +1,74 @@
+<html>
+    <header>
+        <title>Formlario inscripción</title>
+    </header>
+    <body>
+        <h2>HOJA DE INSCRIPCIÓN DE CICLOS FORMATIVOS</h2>
+        <fieldset>    
+            <legend>Datos personales</legend>                         
+            <table>
+                <tr>
+                    <td><label for="txtNom">Nombre:</label><br>
+                        <input type="text" id="txtNom" name="nombre" placeholder="Insertar nombre" required /></td>
+                    <td><label for="txtApell">Apellidos:</label><br>
+                        <input type="text" id="txtApell" name="apellido" placeholder="Insertar apellidos" required /></td>
+                    <td><label for="txtDni">DNI:</label><br>
+                        <input type="text" id="txtDni" name="DNI" placeholder="Inserta el dni" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="txtLocNac">Localidad Nacimiento:</label><br>
+                        <input type="text" id="txtLocNac" name="txtLocNac" placeholder="Insertar localidad" required /></td>
+                    <td><label for="selProv">Provincia</label><br>
+                        <select id="selProv" name="provincia">
+                        <optgroup label="Andalucia">
+                        <option value="Z">Sevilla</option>
+                        <option value="Z">Huelva</option>
+                        <option value="Z">Cadiz</option>
+                        <option value="Z">Granada</option>
+                        <option value="Z">Cordoba</option>
+                        <option value="Z">Jaén</option>
+                        <option value="Z">Málaga</option>
+                        <option value="Z">Almeria</option>
+                        </optgroup>
+                        </select></td>
+                    <td><label for="datetime-local">Fecha nacimiento:</label><br>
+                        <input type="date" name="data" /> </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label for="txtDir">Direccion:</label><br>
+                        <input type="text" id="txtdir" name="Direccion"  /></td>
+                    
+                    <td><label for="txtPost">Codigo postal:</label><br>
+                        <input type="text" id="txtPost" name="Codigo_postal"/></td>
+                </tr>            
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Forma de aceso</legend>
+            <ul>
+                <li><input type="radio" name="acceso" value="directo" />Directo<br/></li>
+                <ul>
+                    <tr><input type="radio" name="acceso" value="directo" />Cachillerato LOG Modalidad <input type="text"><br/></tr>
+                    <tr><input type="radio" name="acceso" value="directo" />Experimental<br/></tr>
+                    <tr><input type="radio" name="acceso" value="directo" />COU opción <input type="text"><br/></tr>
+                    <tr><input type="radio" name="acceso" value="directo" />FP2<br/></tr>
+                    <tr><input type="radio" name="acceso" value="directo" />Otros (especifique) <input type="text"><br/></tr>
+                </ul>
+                <li><input type="radio" name="acceso" value="directo" />Prueba libre<br/></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Documentos adjuntados</legend>
+            <table>
+                <td><input type="checkbox" name="dispositivos" value="pc" />Fotocopia DNI<br /></td>
+                <td><input type="checkbox" name="dispositivos" value="pc" />Certificado Académico<br /></td>
+            </table>
+            <table>
+                <td colspan="2"><input type="checkbox" name="dispositivos" value="pc" />Otros documetos (Especifique) <input type="text"><br /></td>
+                
+            </table>
+        </fieldset>
+        <br>
+        <input type="submit" value="Enviar solicitud">
+    </body>
+</html>
