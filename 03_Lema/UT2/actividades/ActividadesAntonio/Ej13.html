@@ -1,0 +1,74 @@
+<html>
+    <header>
+        <title>Formularios</title>
+    </header>
+    <body>
+        <p>Fecha <input type="date"></p>
+        <br>
+        <p>Fecha y hora <input type="datetime-local"> </p>
+        <br>
+        <p>Correo <input type="email"> </p>
+        <br>
+        <p>Mes <input type="month"> </p>
+        <br>
+        <p>Valor numérico <input type="number"> </p>
+        <br>
+        <p>De dos en dos <input type="number" value="+1" > </p>
+        <br>
+        <p>Contraseña <input type="password"> </p>
+        <br>
+        <p>Texto <input type="text"> </p>
+        <br>
+        <p>Telefono <input type="tel" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"></p>
+        <br>
+        <p>Hora <input type="time"></p>
+        <br>
+        <p>Web <input type="url" placeholder="cosa@noseque.algo"></p>
+        <br>   
+        <p>Semana <input type="week"></p>
+        <br>
+            <label>Género</label>
+            <input type="radio" name="genero" value="masculino" />Hombre
+            <input type="radio" name="genero" value="femenino" checked />Mujer
+            <input type="radio" name="genero" value="rarit@" />Otr@s
+        <br><br>
+        <td>
+            <label>Dispositivos electrónicos</label><br />
+            <input type="checkbox" name="dispositivos" value="pc" />PC<br />
+            <input type="checkbox" name="dispositivos" value="table" />Tableta<br/>
+            <input type="checkbox" name="dispositivos" value="movil" />Mòbil
+        </td>
+        <br><br>      
+        <p>
+            <label for="selProv"><input type="text"> Selecciona el nivel de estudios actual </p></label>
+            <select id="selProv" name="Estudios">
+            <optgroup label="Nivel">
+            <option value="T" selected>Sin estudios</option>            
+            <option value="Z">Primaria</option> 
+            <option value="Z">Secundaria</option>
+            <option value="Z">Bachillerato</option>            
+            </optgroup>
+            </select>
+        </p>
+        <br>            
+        <p>
+            <label for="selEditor"><input type="text"> Selecciona el editor que mas te gusta </p></label>
+            <select id="selEditor" name="Editor">
+            <optgroup label="Editores">
+            <option value="T" selected>Net beans</option>            
+            <option value="Z">VSC</option> 
+            <option value="Z">Notepad++</option>
+            <option value="Z">Xed</option>            
+            </optgroup>
+            </select>
+            </p>        
+        <br>
+        <label for="rango">Rango: <input type="range" name="rango" /></label>
+        <br><br>
+        <label for="color">Color: <input type="color" name="color" /></label>
+        <br>
+        <p> <input type="submit" value="Examinar..." /> No se ha selecionado ningún archivo.</p>
+        <br>
+        <p> <input type="submit" value="Enviar" /> <label> </label> <input type="submit" value="Borrar" /></p>
+    </body>
+</html>
