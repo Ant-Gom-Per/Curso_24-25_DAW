@@ -1,0 +1,4 @@
+1º docker start oracledb
+2º docker ps -a
+3º docker stop oracledb
+

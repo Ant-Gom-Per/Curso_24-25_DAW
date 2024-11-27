@@ -1,0 +1,1 @@
+transformar una fecha en formato string empleamos localdate actual =  localDate.parse"12/08/202", datetimeformatter.ofpattern ("dd/MM/yyyy"));
