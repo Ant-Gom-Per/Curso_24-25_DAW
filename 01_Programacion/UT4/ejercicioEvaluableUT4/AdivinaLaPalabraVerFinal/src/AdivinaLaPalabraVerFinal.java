@@ -24,25 +24,10 @@ public class AdivinaLaPalabraVerFinal {
      * en el orden que tengamos establecido.
      */
     public void inicio(){
-        menuPrinc();
+        
     }
     /**
      * Menú principal. Este es el menú de presentación del juego, ofrece las opciones disponibles.
      */
-    public void menuPrinc(){      
-            System.out.println("\n**************************");
-            System.out.println("** ADIVINA **   /)_/)   **");
-            System.out.println("**   EL    **  (^.^ )   **");
-            System.out.println("** ANIMAL  **  (U U )o  **");
-            System.out.println("** SECRETO **  (\")(\")   **");         
-            System.out.println("**************************");
-            System.out.println("**     COMO JUGAR       **");
-            System.out.println("****************************************************************************************");
-            System.out.println("** 1.- Para empezar a jugar debes decidir el número de intentos. (máximo 5)           **");
-            System.out.println("** 2.- Una vez gastados los intentos pierdes si no has adivinado el ANIMAL SECRETO.   **");
-            System.out.println("** 3.- Contra menos intentos elijas, mayor será tu puntuación.                        **");
-            System.out.println("** 4.- Para salir del juego pulsa 0 en el número de intentos.                         **");
-            System.out.println("****************************************************************************************"); 
-    }
     
 }
