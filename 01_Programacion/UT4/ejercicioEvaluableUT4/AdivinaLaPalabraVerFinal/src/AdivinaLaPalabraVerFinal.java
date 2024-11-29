@@ -25,9 +25,58 @@ public class AdivinaLaPalabraVerFinal {
      */
     public void inicio(){
         
+        String palaIntrod, ayuda=" ";
+        String[] palabrSecr = {"perro", "gaviota", "rana", "abeja", "serpiente", "atun", "cangrejo", "escolopendra", "almeja", "tarantula"};
+        String[] resp3 = {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};
+        String[] resp4 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};
+        boolean semaforo = true;
+        while(semaforo == true){
+            menInicio();
+            int intentos = numIntentos();
+            System.out.println("intentos: " + intentos);
+            if(intentos == 0) semaforo = false;
+            
+        }        
     }
     /**
      * Menú principal. Este es el menú de presentación del juego, ofrece las opciones disponibles.
      */
+    public void menInicio(){
+        System.out.println("\n**************************");
+            System.out.println("** ADIVINA **   /)_/)   **");
+            System.out.println("**   EL    **  (^.^ )   **");
+            System.out.println("** ANIMAL  **  (U U )o  **");
+            System.out.println("** SECRETO **  (\")(\")   **");         
+            System.out.println("**************************");
+            System.out.println("**     COMO JUGAR       **");
+            System.out.println("****************************************************************************************");
+            System.out.println("** 1.- Para empezar a jugar debes decidir el número de intentos. (máximo 5)           **");
+            System.out.println("** 2.- Una vez gastados los intentos pierdes si no has adivinado el ANIMAL SECRETO.   **");
+            System.out.println("** 3.- Contra menos intentos elijas, mayor será tu puntuación.                        **");
+            System.out.println("** 4.- Para salir del juego pulsa 0 en el número de intentos.                         **");
+            System.out.println("****************************************************************************************");
+    }
     
+    /**
+     * Pide número de intentos. Con un máximo y un minimo. El 0 finaliza de la partida
+     * @return 
+     */
+    public int numIntentos(){
+        int intentos=1, numeroIntentos =0;
+        boolean semaforo = true;
+        System.out.print("\nIntroduce un numero de intentos1: ");              
+            while(semaforo == true){               
+                if(teclado.hasNextInt() && (intentos = teclado.nextInt()) >=0 && intentos <6){
+                    teclado.nextLine();
+                    numeroIntentos = intentos;                    
+                    semaforo = false;
+                    
+                }else{
+                    teclado.nextLine();
+                    System.out.println("Error, dato no válido.");
+                    System.out.print("\nIntroduce un numero de intentos2: ");                                    
+                }
+            }
+        return numeroIntentos;
+    }
 }

@@ -34,7 +34,7 @@ public class AdivinaLaPalabraVer3 {
             System.out.println("** 4.- Para salir del juego pulsa 0 en el número de intentos.                         **");
             System.out.println("****************************************************************************************");
         
-       
+       //----------------------------------------------------------------------------------------------------------------------------
             System.out.print("\nIntroduce un numero de intentos: ");              
             while(semaforo == true){               
                 if(teclado.hasNextInt() && (intentos = teclado.nextInt()) >=0 && intentos <6){
@@ -47,10 +47,13 @@ public class AdivinaLaPalabraVer3 {
                     System.out.print("\nIntroduce un numero de intentos: ");                                    
                 }
             }
-            
+         //--------------------------------------------------------------------------------------------------------------------   
             if(numeroIntentos == 0){
                 semaforo = true;
             }
+            
+        //-----------------------------------------------------------------------------------------
+            
             int numAleat = (int)(Math.random()*10);
             while(semaforo == false){            
                 
@@ -75,7 +78,7 @@ public class AdivinaLaPalabraVer3 {
                      letrasPalIntrod[i] += palaIntrod.charAt(i);                       
                 }                                                             
                 System.out.println("");                                 
-
+        //------------------------------------------------------------------------------------------------------
 
                 if(!palabrSecr[numAleat].equals(palaIntrod)){
                     if(cantLetras == cantLetras2){                                                
@@ -107,6 +110,7 @@ public class AdivinaLaPalabraVer3 {
                         semaforo = true;
                     }else{
                     numeroPistas++;
+            //------------------------------------------------------------------------------------------------------------------------
                     switch(numeroPistas){
                         case 1:
                             if(numAleat == 0 || numAleat == 2 || numAleat == 7 || numAleat == 9 || numAleat == 4){
@@ -134,7 +138,7 @@ public class AdivinaLaPalabraVer3 {
                     }                
                 }          
             }
-            
+         //----------------------------------------------------------------------------------------------------------------   
             if(victoria == true){                 
                 puntuacion = (12 - (intentos+numeroPistas))*(numAleat+1 * 100);       
                 if(puntuacion > 1000){
@@ -157,6 +161,8 @@ public class AdivinaLaPalabraVer3 {
                  System.out.println("Puntuacion " + (i+1) + " :" + arrayPuntos[i]);
              }
             partidas++;
+            
+        //-----------------------------------------------------------------------------------------------------------------
             if(partidas == 10){
                 semaforo = false;
             }else{
@@ -180,11 +186,7 @@ public class AdivinaLaPalabraVer3 {
         
         System.out.println("\n*********************");
         System.out.println("**  Fin del juego  **");
-        System.out.println("*********************");
-        
-        
-        
-        
+        System.out.println("*********************");        
         teclado.close();
     }    
 }
