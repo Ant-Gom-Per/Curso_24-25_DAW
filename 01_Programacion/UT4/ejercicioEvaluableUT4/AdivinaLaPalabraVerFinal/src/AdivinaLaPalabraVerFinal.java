@@ -35,6 +35,10 @@ public class AdivinaLaPalabraVerFinal {
             int intentos = numIntentos();
             System.out.println("intentos: " + intentos);
             if(intentos == 0) semaforo = false;
+            System.out.println("semaforo: " +semaforo);
+            while(semaforo == false){
+                
+            }
             
         }        
     }
@@ -78,5 +82,17 @@ public class AdivinaLaPalabraVerFinal {
                 }
             }
         return numeroIntentos;
+    }
+    
+    public char[] creaPalabra(){
+        String[] palabrSecr = {"perro", "gaviota", "rana", "abeja", "serpiente", "atun", "cangrejo", "escolopendra", "almeja", "tarantula"};      
+        int numAleat = (int)(Math.random()*10);                        
+        int cantLetras = palabrSecr[numAleat].length();                          //
+        char[] letrasPalSecr = new char[cantLetras];                             //Crea una array con las letras de la palabra
+        for (int i = 0; i < palabrSecr[numAleat].length(); i++) {                //
+            letrasPalSecr[i] += palabrSecr[numAleat].charAt(i);                          
+        }                                                               
+        System.out.println(" ");
+        return letrasPalSecr[];
     }
 }
