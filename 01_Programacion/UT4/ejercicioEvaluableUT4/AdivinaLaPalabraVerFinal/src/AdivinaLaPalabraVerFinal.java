@@ -36,9 +36,9 @@ public class AdivinaLaPalabraVerFinal {
             System.out.println("intentos: " + intentos);
             if(intentos == 0) semaforo = false;
             System.out.println("semaforo: " +semaforo);
-            while(semaforo == false){
-                
-            }
+            System.out.println(creaPalabra());
+            System.out.println(introPalabra());
+            
             
         }        
     }
@@ -92,7 +92,22 @@ public class AdivinaLaPalabraVerFinal {
         for (int i = 0; i < palabrSecr[numAleat].length(); i++) {                //
             letrasPalSecr[i] += palabrSecr[numAleat].charAt(i);                          
         }                                                               
-        System.out.println(" ");
-        return letrasPalSecr[];
+        System.out.println(" ");                               
+        return letrasPalSecr;        
     }
+    
+    public char[] introPalabra(){
+        String palaIntrod=" ";
+        System.out.print("\nIntroduce palabra: ");                     
+                palaIntrod = teclado.next();                                    
+                int cantLetras2 = palaIntrod.length();                         
+                char[] letrasPalIntrod = new char[cantLetras2];                
+                for (int i = 0; i < palaIntrod.length(); i++) {               
+                     letrasPalIntrod[i] += palaIntrod.charAt(i);                       
+                }                                                             
+        System.out.println("");
+        return letrasPalIntrod;  
+        
+    }
+    
 }
