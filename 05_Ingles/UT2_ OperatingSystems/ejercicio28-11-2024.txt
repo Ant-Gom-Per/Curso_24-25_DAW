@@ -1,0 +1,25 @@
+1 have x
+2 plants x
+3 wakes up V
+4 is learning V
+5 have arrived x
+6 have planned V
+7 haven't started V
+8 didin't walk x
+9 is cleaning V
+10 save x
+11 moves x
+12 have never been V
+
+1 ate V
+2 was watching V
+3 has taken V
+4 x
+5 went V
+6 left V
+7 was ariving X
+8 was playing V
+9 finised X
+10 didnt hear V
+11 was sleeping V
+12 won V

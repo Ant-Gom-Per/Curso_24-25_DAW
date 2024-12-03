@@ -25,23 +25,27 @@ public class AdivinaLaPalabraVerFinal {
      */
     public void inicio(){
         
-        String palaIntrod, ayuda=" ";
-        String[] palabrSecr = {"perro", "gaviota", "rana", "abeja", "serpiente", "atun", "cangrejo", "escolopendra", "almeja", "tarantula"};
+        String ayuda=" ";        
         String[] resp3 = {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};
         String[] resp4 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};
         boolean semaforo = true;
         while(semaforo == true){
             menInicio();
-            int intentos = numIntentos();
-            System.out.println("intentos: " + intentos);
-            if(intentos == 0) semaforo = false;
-            System.out.println("semaforo: " +semaforo);
-            System.out.println(creaPalabra());
-            System.out.println(introPalabra());
+            int intentos = numIntentos();            
+            if(numIntentos() == 0) semaforo = false;
+            eligePalabra();
             
             
-        }        
+        }
+       
     }
+    
+    
+    
+    
+    
+    
+    
     /**
      * Menú principal. Este es el menú de presentación del juego, ofrece las opciones disponibles.
      */
@@ -84,7 +88,11 @@ public class AdivinaLaPalabraVerFinal {
         return numeroIntentos;
     }
     
-    public char[] creaPalabra(){
+    /**
+     * Elige una palabra. Este metodo selecciona aleatoriamente una palabra de la array y la transforma en una array de chars.
+     * @return Palabra aleatoria en formato array de chars.
+     */
+    public char[] eligePalabra(){
         String[] palabrSecr = {"perro", "gaviota", "rana", "abeja", "serpiente", "atun", "cangrejo", "escolopendra", "almeja", "tarantula"};      
         int numAleat = (int)(Math.random()*10);                        
         int cantLetras = palabrSecr[numAleat].length();                          //
@@ -96,6 +104,10 @@ public class AdivinaLaPalabraVerFinal {
         return letrasPalSecr;        
     }
     
+    /**
+     * Pide una palabra por teclado. Este método transforma una palabra introducida por teclado en una array de chars.
+     * @return Palabra introducida por teclado en formato array de chars.
+     */
     public char[] introPalabra(){
         String palaIntrod=" ";
         System.out.print("\nIntroduce palabra: ");                     
@@ -106,8 +118,12 @@ public class AdivinaLaPalabraVerFinal {
                      letrasPalIntrod[i] += palaIntrod.charAt(i);                       
                 }                                                             
         System.out.println("");
-        return letrasPalIntrod;  
-        
+        return letrasPalIntrod;        
+    }
+    
+    public void compPalabra(){
+       
+       
     }
     
 }
