@@ -29,15 +29,15 @@ public class AdivinaLaPalabraVerFinal {
         String[] resp3 = {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};
         String[] resp4 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};
         boolean semaforo = true;
-        while(semaforo == true){
-            menInicio();
-            int intentos = numIntentos();            
-            if(numIntentos() == 0) semaforo = false;
-            eligePalabra();
-            
-            
-        }
-       
+        menInicio();                                                 
+        numIntentos();
+        String palSecr = eligePalabra();
+        System.out.print(palSecr);
+        String palIntro = introPalabra();
+        boolean victoria = palSecr.equals(palIntro); //compara palabras
+        boolean palaIgual = tamPalabra(palSecr,palIntro); // compara cantidad de letras
+        System.out.println("victoria: " + victoria);
+        System.out.println("palaIgual: " + palaIgual);
     }
     
     
@@ -67,14 +67,14 @@ public class AdivinaLaPalabraVerFinal {
     
     /**
      * Pide número de intentos. Con un máximo y un minimo. El 0 finaliza de la partida
-     * @return 
+     * @return Cantidad de intentos.
      */
     public int numIntentos(){
         int intentos=1, numeroIntentos =0;
         boolean semaforo = true;
         System.out.print("\nIntroduce un numero de intentos1: ");              
             while(semaforo == true){               
-                if(teclado.hasNextInt() && (intentos = teclado.nextInt()) >=0 && intentos <6){
+                if(teclado.hasNextInt() && (intentos = teclado.nextInt()) >0 && intentos <6){
                     teclado.nextLine();
                     numeroIntentos = intentos;                    
                     semaforo = false;
@@ -83,47 +83,49 @@ public class AdivinaLaPalabraVerFinal {
                     teclado.nextLine();
                     System.out.println("Error, dato no válido.");
                     System.out.print("\nIntroduce un numero de intentos2: ");                                    
-                }
-            }
+                }                
+            }            
         return numeroIntentos;
     }
     
-    /**
-     * Elige una palabra. Este metodo selecciona aleatoriamente una palabra de la array y la transforma en una array de chars.
-     * @return Palabra aleatoria en formato array de chars.
-     */
-    public char[] eligePalabra(){
-        String[] palabrSecr = {"perro", "gaviota", "rana", "abeja", "serpiente", "atun", "cangrejo", "escolopendra", "almeja", "tarantula"};      
-        int numAleat = (int)(Math.random()*10);                        
-        int cantLetras = palabrSecr[numAleat].length();                          //
-        char[] letrasPalSecr = new char[cantLetras];                             //Crea una array con las letras de la palabra
-        for (int i = 0; i < palabrSecr[numAleat].length(); i++) {                //
-            letrasPalSecr[i] += palabrSecr[numAleat].charAt(i);                          
-        }                                                               
-        System.out.println(" ");                               
-        return letrasPalSecr;        
-    }
     
     /**
-     * Pide una palabra por teclado. Este método transforma una palabra introducida por teclado en una array de chars.
-     * @return Palabra introducida por teclado en formato array de chars.
+     * Elige una palabra. Este metodo selecciona aleatoriamente una palabra de la array.
+     * @return Devuelve una palabra aleatoria.
      */
-    public char[] introPalabra(){
+    public String eligePalabra(){
+        String[] palabrSecr = {"perro", "gaviota", "rana", "abeja", "serpiente", "atun", "cangrejo", "escolopendra", "almeja", "tarantula"};      
+        int numAleat = (int)(Math.random()*10);
+        String palSecr = palabrSecr[numAleat];                                               
+        return palSecr;        
+    }
+    
+    
+    /**
+     * Pide una palabra por teclado. Este método almacena una palabra introducida por teclado en una variable.
+     * @return Palabra introducida por teclado en formato String.
+     */
+    public String introPalabra(){
         String palaIntrod=" ";
         System.out.print("\nIntroduce palabra: ");                     
-                palaIntrod = teclado.next();                                    
-                int cantLetras2 = palaIntrod.length();                         
-                char[] letrasPalIntrod = new char[cantLetras2];                
-                for (int i = 0; i < palaIntrod.length(); i++) {               
-                     letrasPalIntrod[i] += palaIntrod.charAt(i);                       
-                }                                                             
-        System.out.println("");
-        return letrasPalIntrod;        
+        palaIntrod = teclado.next();                                             
+        return palaIntrod;        
     }
     
-    public void compPalabra(){
-       
-       
+    /**
+     * Compara el tamaño de dos palabras. Indica si las dos palabras introducidas tienen la misma cantidad de letras.
+     * @param cadena1
+     * @param cadena2
+     * @return True o false
+     */
+    public boolean tamPalabra(String cadena1, String cadena2){
+        int tamanyo1 = cadena1.length();
+        int tamanyo2 = cadena2.length();
+        return tamanyo1 == tamanyo2;
     }
+    
+    
+    
+    
     
 }
