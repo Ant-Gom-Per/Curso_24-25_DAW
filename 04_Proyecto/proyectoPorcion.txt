@@ -1,0 +1,10 @@
+NOmbre del proyecto: PIZZAMANAGER
+
+Finalidad del proyecto: Sistema de gestion de una pizzeria.
+
+Integrantes del proyecto: Antonio Gómez Pérez
+
+Roles: Todos
+
+
+
