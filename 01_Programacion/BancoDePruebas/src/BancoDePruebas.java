@@ -33,7 +33,7 @@ public class BancoDePruebas {
         menInicio();                                                 
         int intentos = numIntentos();
         int numAleat = (int)(Math.random()*10);
-        String palSecr = eligePalabra();
+        String palSecr = eligePalabra(numAleat);
         System.out.print(palSecr); // Muestra la palabra
         String palIntro = introPalabra();
         boolean victoria = palSecr.equals(palIntro); //compara palabras
@@ -95,9 +95,9 @@ public class BancoDePruebas {
      * Elige una palabra. Este metodo selecciona aleatoriamente una palabra de la array.
      * @return Devuelve una palabra aleatoria.
      */
-    public String eligePalabra(int numAleat){
+    public String eligePalabra(int aleatorio){
         String[] palabrSecr = {"perro", "gaviota", "rana", "abeja", "serpiente", "atun", "cangrejo", "escolopendra", "almeja", "tarantula"};              
-        String palSecr = palabrSecr[numAleat];                                               
+        String palSecr = palabrSecr[aleatorio];                                               
         return palSecr;  
     }
     
