@@ -29,14 +29,22 @@ public class AdivinaLaPalabraVerFinal {
         String[] resp3 = {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};
         String[] resp4 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};
         boolean semaforo = true;
+        
         menInicio();                                                 
         numIntentos();
         String palSecr = eligePalabra();
-        System.out.print(palSecr);
+        System.out.print(palSecr); // Muestra la palabra
+        System.out.println("\nEl animal secreto tiene " + palSecr.length() + " letras.");
         String palIntro = introPalabra();
         boolean victoria = palSecr.equals(palIntro); //compara palabras
         boolean palaIgual = tamPalabra(palSecr,palIntro); // compara cantidad de letras
-        System.out.println("victoria: " + victoria);
+        if(victoria == true){
+            System.out.println("Has acertado!!");
+        }
+        else{
+            comPalabra(palSecr, palIntro);
+        }
+        System.out.println("\nvictoria: " + victoria);
         System.out.println("palaIgual: " + palaIgual);
     }
     
@@ -65,27 +73,20 @@ public class AdivinaLaPalabraVerFinal {
             System.out.println("****************************************************************************************");
     }
     
-    /**
+     /**
      * Pide número de intentos. Con un máximo y un minimo. El 0 finaliza de la partida
      * @return Cantidad de intentos.
      */
     public int numIntentos(){
-        int intentos=1, numeroIntentos =0;
-        boolean semaforo = true;
+        int intentos=1;        
         System.out.print("\nIntroduce un numero de intentos1: ");              
-            while(semaforo == true){               
-                if(teclado.hasNextInt() && (intentos = teclado.nextInt()) >0 && intentos <6){
-                    teclado.nextLine();
-                    numeroIntentos = intentos;                    
-                    semaforo = false;
-                    
-                }else{
-                    teclado.nextLine();
+            while(!teclado.hasNextInt() || (intentos = teclado.nextInt()) < 0 || intentos > 5){                              
+                    teclado.nextLine();                                                       
                     System.out.println("Error, dato no válido.");
-                    System.out.print("\nIntroduce un numero de intentos2: ");                                    
-                }                
-            }            
-        return numeroIntentos;
+                    System.out.print("\nIntroduce un numero de intentos2: ");                                                                   
+            }
+            teclado.nextLine();            
+        return intentos;
     }
     
     
@@ -124,8 +125,42 @@ public class AdivinaLaPalabraVerFinal {
         return tamanyo1 == tamanyo2;
     }
     
-    
-    
+    /**
+     * Compara letra a letra. Muestra las letras que coinciden y las que no escribe una barra baja
+     * @param palSecr Palabra elegida aleatoriamente de String[] palabrSecr.
+     * @param palIntro Palabra introducida por el usuario.
+     */
+    public void comPalabra(String palSecr, String palIntro){
+        if(palSecr.length() == palIntro.length()){
+            for (int i = 0; i < palSecr.length(); i++) {
+                if(palSecr.charAt(i) == (palIntro.charAt(i))){
+                    System.out.print(palSecr.charAt(i) + " ");
+                }
+                else{
+                    System.out.print("_ ");
+                }            
+            }  
+        }
+        else if(palSecr.length() > palIntro.length()){
+            int difer = palSecr.length() - palIntro.length();
+            if(difer == 1){
+                System.out.println("Error!!, La palabra secreta ha de tener " + difer + " caracter más.");
+            }
+            else{
+                System.out.println("Error!!, La palabra secreta ha de tener " + difer + " caracteres más.");
+            }            
+        }
+        else{
+            int difer = palIntro.length() - palSecr.length();
+            if(difer == 1){
+                System.out.println("Error!!, La palabra secreta ha de tener " + difer + " caracter menos.");
+            }
+            else{
+                System.out.println("Error!!, La palabra secreta ha de tener " + difer + " caracteres menos.");
+            }                        
+        }
+    }            
+
     
     
 }
