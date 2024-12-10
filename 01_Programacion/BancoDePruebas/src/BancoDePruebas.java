@@ -25,9 +25,7 @@ public class BancoDePruebas {
      */
     public void inicio(){
         
-        String ayuda=" ";        
-        String[] resp3 = {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};
-        String[] resp4 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};
+        String ayuda=" ";                        
         boolean semaforo = true;
         
         menInicio();                                                 
@@ -44,9 +42,21 @@ public class BancoDePruebas {
         else{
             comPalabra(palSecr, palIntro);
         }
+        String resp1 = eligePista1(numAleat);
+        String resp2 = eligePista2(numAleat);
+        String resp3 = eligePista3(numAleat);
+        String resp4 = eligePista4(numAleat);
+        
+        
+        
+        //--------------------------------------
         System.out.println("\nIntentos: " + intentos);
         System.out.println("victoria: " + victoria);
         System.out.println("palaIgual: " + palaIgual);
+        System.out.println("Pista1: " + resp1);
+        System.out.println("Pista2: " + resp2);
+        System.out.println("Pista3: " + resp3);
+        System.out.println("Pista4: " + resp4);
     }
     
     
@@ -93,6 +103,7 @@ public class BancoDePruebas {
     
     /**
      * Elige una palabra. Este metodo selecciona aleatoriamente una palabra de la array.
+     * @param aleatorio Numero aleatrio 
      * @return Devuelve una palabra aleatoria.
      */
     public String eligePalabra(int aleatorio){
@@ -161,6 +172,28 @@ public class BancoDePruebas {
         }
     }
     
+    public String eligePista1(int aleatorio){
+        String[] resp1= {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};              
+        String palSecr = resp1[aleatorio];                                               
+        return palSecr;  
+    }
     
+    public String eligePista2(int aleatorio){
+        String[] resp2 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};              
+        String palSecr = resp2[aleatorio];                                               
+        return palSecr;  
+    }
+    
+    public String eligePista3(int aleatorio){
+        String[] resp3 = {"terrestre", "volador", "marino y terrestre", "volador", "terrester", "marino", "marino", "terrestre", "marino", "terrestre"};              
+        String palSecr = resp3[aleatorio];                                               
+        return palSecr;  
+    }
+    
+    public String eligePista4(int aleatorio){
+        String[] resp4 = {"vertebrado", "vertebrado", "vertebrado", "invertebrado", "vertebrado", "vertebrado", "invertebrado", "invertebrado", "invertebrado", "invertebrado"};              
+        String palSecr = resp4[aleatorio];                                               
+        return palSecr;  
+    }
     
 }
