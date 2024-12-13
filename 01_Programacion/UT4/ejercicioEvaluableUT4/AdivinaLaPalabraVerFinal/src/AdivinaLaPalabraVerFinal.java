@@ -19,22 +19,18 @@ public class AdivinaLaPalabraVerFinal {
         programa.inicio();
     }
     
-    /**
+     /**
      * Metodo principal de ejecicion del juego. En este clase se colocan los métodos que vamos creando para que se ejecuten
      * en el orden que tengamos establecido.
      */
     public void inicio(){
-        
-        String ayuda=" ";        
-        String[] resp3 = {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};
-        String[] resp4 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};
-        boolean semaforo = true;
+    
         
         menInicio();                                                 
-        numIntentos();
+        int intentos = numIntentos();
         int numAleat = (int)(Math.random()*10);
-        String palSecr = eligePalabra(numAleat);        
-        System.out.println("\nEl animal secreto tiene " + palSecr.length() + " letras.");
+        String palSecr = eligePalabra(numAleat);
+        System.out.print(palSecr); // Muestra la palabra
         String palIntro = introPalabra();
         boolean victoria = palSecr.equals(palIntro); //compara palabras
         boolean palaIgual = tamPalabra(palSecr,palIntro); // compara cantidad de letras
@@ -44,20 +40,46 @@ public class AdivinaLaPalabraVerFinal {
         else{
             comPalabra(palSecr, palIntro);
         }
+        int numAleat2 = (int)(Math.random()*4);
+        String respuesta = " ";
+        switch(numAleat2){
+            case 0:
+                System.out.println("El animal secreto es un " + numPista1(numAleat));
+                break;
+            case 1:
+                System.out.println("El animal secreto tiene " + numPista2(numAleat) + " patas");
+                break;
+            case 2:
+                System.out.println("El animal secreto es de tipo " + numPista3(numAleat));
+                break;
+            case 3:
+                System.out.println("El animal secreto es " + numPista4(numAleat));
+                break;
+                
+        }
+        
+      
         
         
-        //---------------------------------------------------
-        System.out.print(palSecr); // Muestra la palabra
-        System.out.println("\nvictoria: " + victoria);
+        
+        //--------------------------------------
+        String resp0 = numPista1(numAleat);
+        String resp1 = numPista2(numAleat);
+        String resp2 = numPista3(numAleat);
+        String resp3 = numPista4(numAleat);        
+        System.out.println("\nIntentos: " + intentos);
+        System.out.println("victoria: " + victoria);
         System.out.println("palaIgual: " + palaIgual);
+        System.out.println("Aleatorio2 " + numAleat2);
+        System.out.println("Pista0: " + resp0);
+        System.out.println("Pista1: " + resp1);
+        System.out.println("Pista2: " + resp2);
+        System.out.println("Pista3: " + resp3);
     }
     
     
     
-    
-    
-    
-    
+                
     /**
      * Menú principal. Este es el menú de presentación del juego, ofrece las opciones disponibles.
      */
@@ -77,7 +99,7 @@ public class AdivinaLaPalabraVerFinal {
             System.out.println("****************************************************************************************");
     }
     
-     /**
+    /**
      * Pide número de intentos. Con un máximo y un minimo. El 0 finaliza de la partida
      * @return Cantidad de intentos.
      */
@@ -96,13 +118,15 @@ public class AdivinaLaPalabraVerFinal {
     
     /**
      * Elige una palabra. Este metodo selecciona aleatoriamente una palabra de la array.
+     * @param aleatorio Numero aleatrio 
      * @return Devuelve una palabra aleatoria.
      */
     public String eligePalabra(int aleatorio){
         String[] palabrSecr = {"perro", "gaviota", "rana", "abeja", "serpiente", "atun", "cangrejo", "escolopendra", "almeja", "tarantula"};              
         String palSecr = palabrSecr[aleatorio];                                               
-        return palSecr;        
-    }    
+        return palSecr;  
+    }
+    
     
     /**
      * Pide una palabra por teclado. Este método almacena una palabra introducida por teclado en una variable.
@@ -136,10 +160,10 @@ public class AdivinaLaPalabraVerFinal {
         if(palSecr.length() == palIntro.length()){
             for (int i = 0; i < palSecr.length(); i++) {
                 if(palSecr.charAt(i) == (palIntro.charAt(i))){
-                    System.out.print(palSecr.charAt(i) + " ");
+                    System.out.print(palSecr.charAt(i));
                 }
                 else{
-                    System.out.print("_ ");
+                    System.out.print("_");
                 }            
             }  
         }
@@ -161,8 +185,31 @@ public class AdivinaLaPalabraVerFinal {
                 System.out.println("Error!!, La palabra secreta ha de tener " + difer + " caracteres menos.");
             }                        
         }
-    }            
-
+    }
     
+    public String numPista1(int aleatorio){
+        String[] resp0= {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};              
+        String palSecr = resp0[aleatorio];                                               
+        return palSecr;  
+    }
+    
+    public String numPista2(int aleatorio){
+        String[] resp1 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};              
+        String palSecr = resp1[aleatorio];                                               
+        return palSecr;  
+    }
+    
+    public String numPista3(int aleatorio){
+        String[] resp2 = {"terrestre", "volador", "marino y terrestre", "volador", "terrester", "marino", "marino", "terrestre", "marino", "terrestre"};              
+        String palSecr = resp2[aleatorio];                                               
+        return palSecr;  
+    }
+    
+    public String numPista4(int aleatorio){
+        String[] resp3 = {"vertebrado", "vertebrado", "vertebrado", "invertebrado", "vertebrado", "vertebrado", "invertebrado", "invertebrado", "invertebrado", "invertebrado"};              
+        String palSecr = resp3[aleatorio];                                               
+        return palSecr;  
+    }
+  
     
 }

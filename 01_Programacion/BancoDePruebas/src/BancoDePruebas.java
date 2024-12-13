@@ -24,9 +24,7 @@ public class BancoDePruebas {
      * en el orden que tengamos establecido.
      */
     public void inicio(){
-        
-        String ayuda=" ";                        
-        boolean semaforo = true;
+    
         
         menInicio();                                                 
         int intentos = numIntentos();
@@ -42,21 +40,41 @@ public class BancoDePruebas {
         else{
             comPalabra(palSecr, palIntro);
         }
-        String resp1 = eligePista1(numAleat);
-        String resp2 = eligePista2(numAleat);
-        String resp3 = eligePista3(numAleat);
-        String resp4 = eligePista4(numAleat);
+        int numAleat2 = (int)(Math.random()*4);
+        String respuesta = " ";
+        switch(numAleat2){
+            case 0:
+                System.out.println("El animal secreto es un " + numPista1(numAleat));
+                break;
+            case 1:
+                System.out.println("El animal secreto tiene " + numPista2(numAleat) + " patas");
+                break;
+            case 2:
+                System.out.println("El animal secreto es de tipo " + numPista3(numAleat));
+                break;
+            case 3:
+                System.out.println("El animal secreto es " + numPista4(numAleat));
+                break;
+                
+        }
+        
+      
         
         
         
         //--------------------------------------
+        String resp0 = numPista1(numAleat);
+        String resp1 = numPista2(numAleat);
+        String resp2 = numPista3(numAleat);
+        String resp3 = numPista4(numAleat);        
         System.out.println("\nIntentos: " + intentos);
         System.out.println("victoria: " + victoria);
         System.out.println("palaIgual: " + palaIgual);
+        System.out.println("Aleatorio2 " + numAleat2);
+        System.out.println("Pista0: " + resp0);
         System.out.println("Pista1: " + resp1);
         System.out.println("Pista2: " + resp2);
         System.out.println("Pista3: " + resp3);
-        System.out.println("Pista4: " + resp4);
     }
     
     
@@ -172,28 +190,29 @@ public class BancoDePruebas {
         }
     }
     
-    public String eligePista1(int aleatorio){
-        String[] resp1= {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};              
+    public String numPista1(int aleatorio){
+        String[] resp0= {"mamífero", "ave", "anfibio", "insecto", "reptil", "pez", "crustaceo", "miriápodo", "molusco", "aracnido"};              
+        String palSecr = resp0[aleatorio];                                               
+        return palSecr;  
+    }
+    
+    public String numPista2(int aleatorio){
+        String[] resp1 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};              
         String palSecr = resp1[aleatorio];                                               
         return palSecr;  
     }
     
-    public String eligePista2(int aleatorio){
-        String[] resp2 = {"cuatro", "dos", "cuatro", "seis", "cero", "cero", "ocho", "cuarenta y seis", "cero", "ocho"};              
+    public String numPista3(int aleatorio){
+        String[] resp2 = {"terrestre", "volador", "marino y terrestre", "volador", "terrester", "marino", "marino", "terrestre", "marino", "terrestre"};              
         String palSecr = resp2[aleatorio];                                               
         return palSecr;  
     }
     
-    public String eligePista3(int aleatorio){
-        String[] resp3 = {"terrestre", "volador", "marino y terrestre", "volador", "terrester", "marino", "marino", "terrestre", "marino", "terrestre"};              
+    public String numPista4(int aleatorio){
+        String[] resp3 = {"vertebrado", "vertebrado", "vertebrado", "invertebrado", "vertebrado", "vertebrado", "invertebrado", "invertebrado", "invertebrado", "invertebrado"};              
         String palSecr = resp3[aleatorio];                                               
         return palSecr;  
     }
-    
-    public String eligePista4(int aleatorio){
-        String[] resp4 = {"vertebrado", "vertebrado", "vertebrado", "invertebrado", "vertebrado", "vertebrado", "invertebrado", "invertebrado", "invertebrado", "invertebrado"};              
-        String palSecr = resp4[aleatorio];                                               
-        return palSecr;  
-    }
+  
     
 }
