@@ -24,3 +24,24 @@ de crear una clase tenemo que crear un nuevo paquete para poder probar los metod
 
 
 contructor completo = tiene tantos parametros de  entrada como atributos
+
+THIS hace referencia al objeto (evita ambigüedades)
+    al añadir un punto aparecen los metoda posibles
+    al añadir parentesis podemos llamar a constructores
+
+
+
+
+--------------------------------
+
+asociacion "metodos con metodos como parametros" (composicion{metodo neceario} agregacion{metodo prescindible})
+
+Poimorfismo premite reutilizar código.
+
+
+HERENCIA
+objeto mutable: permite cambiar estado del objeto(valores del objeto) el objeto
+objeto inmutable: no permite cambiar el objeto
+    se puede hacer private
+    no usaqr getteres
+    hacer los atributos finales

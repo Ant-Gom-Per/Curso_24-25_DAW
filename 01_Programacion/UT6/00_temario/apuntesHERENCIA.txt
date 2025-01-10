@@ -1,0 +1,51 @@
+HERENCIA
+objeto mutable: permite cambiar estado del objeto(valores del objeto) el objeto
+objeto inmutable: no permite cambiar el objeto
+    se puede hacer private
+    no usaqr getteres
+    hacer los atributos finales
+
+Los constructores no se heredan, solo atributos y métodos.
+
+En la herencia la clase hereda algunas cosas del padre y añade las suyas propias.
+
+Una clase hijo siempre ha de tener algo del padre.
+
+La esancia de la abstraccion es el saber agrupar clases o atributos.
+
+Depende de el contexto del programa una diferentes clases pueden heredar unas de otros o no.
+
+Los atributos privados no pueden ser vistos por los hijos a menos que...
+    puedes poner atributos del padre en public ( no recomdado)
+    Usar la clase protected en los atributos y se hace publico para sus clases derivadas (El más comun)
+    Tener las clases privadas y hacer los setters y los getters protected según la necesidad (el más seguro)
+    
+
+Una clase solo puede tener un padre, por lo que solo puede heredar de una clase
+
+extends se emplea para heredar.
+
+No hay que implementar metodos ni atributos heredados.
+
+
+SOBRECARGA (overloading) --> misma clase / distinta firma
+
+SOBREESCRITURA (overrriding) --> clase / misma firma
+
+    puedes modificar un metodo heredado. detro de la calse hija escribes el método en cuestion con el mismo nombre y 
+    le cambias el código de lo que hace. 
+
+REMPLAZO rescribe el código heredado.
+
+REFINAMIENTO añade cambios sutiles al código heredado sin quitarle nada.
+    hay que emplear "super" en vez de this a la hora de llamar un método
+    se hereda la ultima sobreescritura hecha.
+
+Al inicializar un constructor los atributos iniciales se inicializan con los del padre.
+
+
+
+
+
+
+
