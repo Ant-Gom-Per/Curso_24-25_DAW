@@ -1,0 +1,46 @@
+-CLASE= Definicion de los artributos y los metodos
+
+-OBJETO= A patir de esa clase creo un objeto tangible. La instancia de una clase. 
+
+-ATRIBUTO= cada uno de los dato guardados en la clase, informacion, datos, variables.
+
+-ESTADO= es la combinacion de los valores del objeto en un instante concreto. muta=cambia el estado.
+
+-METODO= define la clase que definen esos metodos.
+
+-MENSAJE= cuando llamas a un metodo desde un objeto concreto
+
+al ver un NEW se esta instancionado(creando) una clase 
+
+
+clase java tiene(miembros de la clase)
+Atributos
+constructores (metodeo especial, se ejecuta cuando llamas al new)
+MEtodos
+
+de crear una clase tenemo que crear un nuevo paquete para poder probar los metodos (como indica en la foto)
+
+
+
+
+contructor completo = tiene tantos parametros de  entrada como atributos
+
+THIS hace referencia al objeto (evita ambigüedades)
+    al añadir un punto aparecen los metoda posibles
+    al añadir parentesis podemos llamar a constructores
+
+
+
+CLASE= la case es la esencia del objeto el molde. Contiene los datos y los metodos.
+OBJETO(instancia)= (Instanciar= crear un objeto) Responde a un comportamiento definido por la clase. Tiene sus caracteristicas (Atributos). Puede cambiar de estado.
+ATRIBUTO= caracteristicas de una clase.
+ESTADO= Conjunto de valores que tiene un objeto.
+METODO= Definicion de la operacion o componente de una clase
+
+
+--------------------------------
+
+asociacion "metodos con metodos como parametros" (composicion{metodo neceario} agregacion{metodo prescindible})
+
+Poimorfismo premite reutilizar código.
+

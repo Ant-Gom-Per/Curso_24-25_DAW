@@ -1,5 +1,0 @@
-CLASE= la case es la esencia del objeto el molde. Contiene los datos y los metodos.
-OBJETO(instancia)= (Instanciar= crear un objeto) Responde a un comportamiento definido por la clase. Tiene sus caracteristicas (Atributos). Puede cambiar de estado.
-ATRIBUTO= caracteristicas de una clase.
-ESTADO= Conjunto de valores que tiene un objeto.
-METODO= Definicion de la operacion o componente de una clase
