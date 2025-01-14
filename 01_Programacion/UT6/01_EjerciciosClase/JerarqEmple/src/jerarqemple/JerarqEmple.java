@@ -4,8 +4,7 @@
 package jerarqemple;
 
 /**
- *
- * @author ciclost
+ * @author ANtonio
  */
 public class JerarqEmple {
 
@@ -28,7 +27,7 @@ public class JerarqEmple {
 
     @Override
     public String toString() {
-        return "Empleado " + nombre ;
+        return "Empleado: " + nombre ;
     }
     
     

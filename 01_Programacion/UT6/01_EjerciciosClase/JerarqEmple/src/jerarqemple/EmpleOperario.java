@@ -1,11 +1,10 @@
 /*
- * Ejercicio clase UT6e
+ * Ejercicio clase UT6
  */
 package jerarqemple;
 
 /**
- *
- * @author ciclost
+ * @author Antonio
  */
 public class EmpleOperario extends JerarqEmple {
 
