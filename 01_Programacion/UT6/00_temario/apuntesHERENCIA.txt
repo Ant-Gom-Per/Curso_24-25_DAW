@@ -5,6 +5,8 @@ objeto inmutable: no permite cambiar el objeto
     no usaqr getteres
     hacer los atributos finales
 
+Copia superficial vs copia profunda
+
 Los constructores no se heredan, solo atributos y métodos.
 
 En la herencia la clase hereda algunas cosas del padre y añade las suyas propias.
@@ -23,14 +25,14 @@ Los atributos privados no pueden ser vistos por los hijos a menos que...
 
 Una clase solo puede tener un padre, por lo que solo puede heredar de una clase
 
-extends se emplea para heredar.
+Extends se emplea para heredar.
 
 No hay que implementar metodos ni atributos heredados.
 
 
 SOBRECARGA (overloading) --> misma clase / distinta firma
 
-SOBREESCRITURA (overrriding) --> clase / misma firma
+SOBREESCRITURA (overriding) --> clase / misma firma
 
     puedes modificar un metodo heredado. detro de la calse hija escribes el método en cuestion con el mismo nombre y 
     le cambias el código de lo que hace. 
@@ -42,6 +44,65 @@ REFINAMIENTO añade cambios sutiles al código heredado sin quitarle nada.
     se hereda la ultima sobreescritura hecha.
 
 Al inicializar un constructor los atributos iniciales se inicializan con los del padre.
+
+Metodo como FINAL:  NO es posible ser modificado por las clases hijas
+Clase como FINAL: No puede ser heredada por nadie, se emplea en las clases finales de un programa.
+
+
+HERENCIA DE OBJECT
+
+Todas las clases heredan de OBJECT
+
+Una clase hija que hereda de la clase padre no puede sobreescribir los métodos privados que ha heredado. Los metodos protegidos y publicos si, pero no los puede hacer más restrictivos.
+
+@override: Es una ayuda al programador, te indica si lo que hay debajo de override es una sobreescritura correcta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
