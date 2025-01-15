@@ -1,0 +1,7 @@
+PRODUCTOS frescos, refrigerados, congelados.
+
+CONGELADOS POR AIRE % nitrogeno, oxigeno, dioxido de carbono y vapor de agua.
+
+CONGELADOS POR AGUA salininidad del agua g/L
+
+CONGELADOS POR NITROGENO metodo de congelación y tiempo de exposición al N en segundos.

@@ -57,6 +57,19 @@ Una clase hija que hereda de la clase padre no puede sobreescribir los métodos 
 
 @override: Es una ayuda al programador, te indica si lo que hay debajo de override es una sobreescritura correcta.
 
+------------------------------------------------------------------------------------------------------------------
+
+CLASES ABSTRACTAS
+
+Clase para agrupar comportamientos, no permite crear (instanciar) objetos.
+
+Empleariamos el operador new con clases que puedan crear objetos.
+
+Una clase abstracta puede heredea de una clase abstracta o una concreta
+Una clase concreta no puede heredar de una clase abstracta.
+
+
+
 
 
 
