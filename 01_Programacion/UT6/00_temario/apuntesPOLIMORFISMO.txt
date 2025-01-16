@@ -1,0 +1,33 @@
+POLIMORFISMO
+    AD-HOC:
+    - De coerción (conversión implicita)
+    - De sobrecarga
+
+    UNIVERSAL
+    - De inclusión (de subtipado)
+    - Paramétrico
+    ? De orden superior (HKT)
+
+-------------------------------------------------------------------------------------------------------------------
+
+Para que exista el polimorfismo ha de haber una relacion de herencia.
+
+Las clases abstactas no pueden instanciar objetos pero si pueden crear variables.
+
+Errores estaticos son errores de compilación.
+Errores dinámicos son errores de tiempo de ejecucion
+
+UPCASTING
+    cambiar un tipo de objeto a otro tipo de objeto de una clase superior.
+
+DOWNCASTING
+    Cambiar un tipo de objeto a otro tipo de clase inferior.
+    No se puede ejecutar ya que dan errores de compilación.
+    Se puede forzar pero no es recomendable ya que puedn dar errores de ejecución.
+
+PROBLEMAS
+    Perdida de identidad
+    - Solo puedes utilizar los métodos del método Static
+
+COMPORTAMIENTO
+    El comportamiento varía dinámicamente
