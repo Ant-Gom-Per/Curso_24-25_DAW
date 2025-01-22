@@ -1,0 +1,13 @@
+thead, tfoot{
+    background-color: brown;
+    color: white;
+}
+
+.A{
+    background-color: blue;
+    color: white;
+}
+
+.B{
+    color: blue;
+}

@@ -1,0 +1,22 @@
+Selector de tots els elements <h2>.
+h2
+
+Selector del primer element <h2>.
+id
+
+Selector de l'últim element <h2>.
+class="articulo"
+
+Selector de l' element amb identificador #principal.
+<di id="principal"
+
+Selector dels elements <h2> que són descendents de l' element amb identificador #principal.
+
+
+Selector dels elements de la classe . Article.
+Selector dels elements <h2> que són descendents dels elements de
+la classe . Article.
+Selector del darrer fill dels elements <article> que són descendents
+de l' element amb identificador #secundario.
+
+

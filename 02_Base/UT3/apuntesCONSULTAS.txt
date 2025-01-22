@@ -17,3 +17,11 @@ JOIN une tablas por campos
 SELECT * FROM (tablaInicial) JOIN (tablaFinal) ON v.numvendedor = pr.numvend
 SELECT * FROM vendedor v JOIN preciosum pr ON v.numvendedor = pr.numvend (unes dos tablas)
 SELECT * FROM vendedor v JOIN preciosum pr ON v.numvendedor = pr.numvend JOIN pieza p ON pr.numpieza = p.numpieza (juntas una tabla adicional)
+
+---------------------------------------------------------------------
+
+ORDEN EJECUCION CONSULTAS SQL
+
+FROM --> WHERE --> GROUP BY --> HAVING --> SELECT --> ORDER BY
+
+
