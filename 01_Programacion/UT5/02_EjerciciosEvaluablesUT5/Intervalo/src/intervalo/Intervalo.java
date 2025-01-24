@@ -22,12 +22,48 @@ public class Intervalo {
         this.inferior=inferior;
     }
     
-    public Intervalo(Intervalo valores){
-        this(valores.inferior, valores.superior);
+    public Intervalo(Intervalo valor){//Constructor copia
+        this(valor.inferior, valor.superior);
     }
     
     public Intervalo(){
         this.inferior=0.0;
         this.superior=10.0;
     }
+    
+    //Métodos de instancia
+    public double getInferior(){
+        return inferior;
+    }
+    
+    public double getSuperior(){
+        return superior;
+    }
+    
+    public Intervalo clonar(){
+        return new Intervalo(this);
+    }
+    
+    public double longitud(){
+        return superior - inferior;
+    }
+    
+    public void mover(double cantidad){//Esto mueve el intervalo tanto superior como inferior
+        this.superior = cantidad + this.superior;
+        this.inferior = cantidad + this.inferior;
+    }
+    
+    public Intervalo movido(double cantidad){
+        Intervalo Aux = this.clonar();//CLonamos el originall
+        Aux.mover(cantidad);//MOvemos el intervalo
+        return Aux;
+    }
+    
+    public String incluido(double valor){
+        String mensaje = (valor >= this.inferior && valor <= this.superior) ? "Está incluido" : "No está incluido";            
+        return mensaje;
+    }
+    
+    
 }
+//valor < longitud() ? "Está incluido" : "No está incluido";

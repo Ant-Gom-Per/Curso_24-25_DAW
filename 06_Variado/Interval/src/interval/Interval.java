@@ -70,14 +70,15 @@ class Interval {
         return null;
     }
 
-    /**
+    /**------------------------------------------------------------------
      * Determina si el valor está dintre de l'interval
      * @param valor
      * @return 
-     */
+    */
     public boolean inclou(double valor) {
         return false;
     }
+    
 
     /**
      * Determina si l'interval proporcionat está inclòs en l'interval
