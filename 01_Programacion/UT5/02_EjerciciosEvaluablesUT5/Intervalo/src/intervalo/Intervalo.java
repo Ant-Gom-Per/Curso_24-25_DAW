@@ -18,8 +18,8 @@ public class Intervalo {
         this.superior=superior;
     }
     
-    public Intervalo(double inferior){
-        this.inferior=inferior;
+    public Intervalo(double superior){
+        this.superior=superior;
     }
     
     public Intervalo(Intervalo valor){//Constructor copia
@@ -54,8 +54,8 @@ public class Intervalo {
     }
     
     public Intervalo movido(double cantidad){
-        Intervalo Aux = this.clonar();//CLonamos el originall
-        Aux.mover(cantidad);//MOvemos el intervalo
+        Intervalo Aux = this.clonar();//Clonamos el original
+        Aux.mover(cantidad);//Movemos el intervalo
         return Aux;
     }
     
@@ -64,6 +64,47 @@ public class Intervalo {
         return mensaje;
     }
     
+    /**
+    public String incluido(Intervalo,){
+      Intervalo Aux = this.clonar();
+      String mensaje =         
+      return
+    }
     
+    public boolean compara(){
+        
+    }
+    
+    public Intervalo interseccion(){
+        
+    }
+    
+    public Intervalo intersectacion(){
+        
+    }
+    
+    public intervalo invertir(){
+        
+    }*/
+        
+    public void doblar(){
+        Intervalo aux = this.clonar();
+        double incremento = aux.longitud()/2;
+        inferior = incremento - this.inferior;
+        superior = incremento + this.superior;        
+    }
+    
+    /**
+    public void recoger(){
+        
+    }
+    
+    public void mostrar(){
+        
+    }
+    
+    public Intervalo[] trocear(int trozos){
+        
+    }
+    */
 }
-//valor < longitud() ? "Está incluido" : "No está incluido";

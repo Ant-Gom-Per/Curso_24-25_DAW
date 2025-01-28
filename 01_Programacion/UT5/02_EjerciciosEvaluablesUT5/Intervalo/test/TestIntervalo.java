@@ -12,6 +12,7 @@ public class TestIntervalo {
         Intervalo val01 = new Intervalo();
         Intervalo val02 = new Intervalo(3.5, 7.8);
         Intervalo val03 = null;
+        Intervalo val04 = new Intervalo(12);
         
        
        System.out.println("valor01: " + val01.longitud());
@@ -29,6 +30,12 @@ public class TestIntervalo {
        System.out.println("Superior: " + val01.getSuperior());
        
        System.out.println("incluido: " + val01.incluido(15));
+       
+       System.out.println("valor04: " + val04.longitud());
+       
+       val04.doblar();
+       
+       System.out.println("valor04: " + val04.longitud());
     }
     
 }
