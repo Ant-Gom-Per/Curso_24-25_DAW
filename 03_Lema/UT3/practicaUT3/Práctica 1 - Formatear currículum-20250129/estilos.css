@@ -12,7 +12,106 @@ body{
 }
 
 h1{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace, 1.1em;
+    color: white; 
+    border-bottom: 6px;
+    background-color: #313B44;
+    background-image: url(imgs/fotomia.png);
+    background-repeat: no-repeat;
+    background-position: 25px center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    
+}
+
+nav{
+    font-family: 'Courier New', Courier, monospace, 1.4em;
+    color: silver;
+    text-align: center;
+    background-image: url(imgs/red015.jpg);
+}
+
+li{
+    padding-top: 80px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    margin-right: 100px;
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    cursor: default;    
+}
+
+a{
+    color: orange;
+    text-decoration: none;
+}
+
+a:hover{
     color: white;
-    width: 1.1em;
+    text-decoration: none;
+}
+
+#estudios{
+    background-image: url(imgs/estudios.png);
+    background-repeat: no-repeat;
+    background-position: center, 10px, 0px,0px,0px;    
+}
+
+#conocimientos{
+    background-image: url(imgs/conocimientos.png);
+    background-repeat: no-repeat;
+    background-position: center, 10px, 0px,0px,0px;
+    color: orange;
+}
+
+#contacto{
+    background-image: url(imgs/contacto.png);
+    background-repeat: no-repeat;
+    background-position: center, 10px, 0px,0px,0px;
+    color: orange;
+}
+
+section{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(imgs/lgrey008.jpg);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+article{
+    width: 240px;
+    background-color: white;
+    border-width: 1px;
+    border-color: lightgray;
+    border-style: solid;
+    text-align: center;
+    line-height: 1.8em;
+    padding: 5px, 5px, 22px, 5px;
+    margin: 30px;
+    float: left;   
+}
+
+/**
+article_header{
+    xxxxxxx
+}
+*/
+
+h2{
+    padding: 10px;
+    font-size: 1.2em;
+    color: red;
+    border-bottom: 1px, solid, black;     
+}
+
+footer{
+    color: white;
+    font-size: 0.7em;
+    text-align: center;
+    background-color: #313B44;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
