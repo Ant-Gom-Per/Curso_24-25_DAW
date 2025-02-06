@@ -1,0 +1,124 @@
+MODIFICAR TABLA
+
+ALTER TABLE nombreEntidad ADD CONSTRAINT pk_ nombreEntidad PRIMARY KEY (nombre_Entidad);
+
+DDL y DML
+
+INSERCIÓN
+
+INSERT INTO nombre de la tabla [(id, monbre, apellidos, fecha)]
+VALUES (1, ‘Carlos’, ‘Martinez’, TO_DATE(‘21/04/2022’, ‘DD|MM|YYYY’)
+
+MODIFICACIÓN
+
+UPDATE nombreTabla
+SET nombre=’Maria’
+WHERE apellidos=’Martinez’
+
+BORRADO
+
+DELETE FROM nombreTabla
+WHERE apellidos=’Martinez’
+
+set autocommit siempre en off
+
+Al introducir datos...
+Ojo con los caracteres!!
+Han de ser iguales!!
+Modificar un dato mal puede borrar todas las tablas!!
+
+
+
+-------------------------------------------------------------
+
+DDL
+CREATE TABLE nombre(
+	VARCHAR2(100)
+	NUMBER(p (numero total de digitos), s (cantidad de numeros decimales)) NOT NULL
+	DATE / TIMESTAMP
+	CHAR(X(definido por el usuario)) DEFAULT ‘…..’
+)
+
+ALTER TABLE nombre ADD CONSTRAINT
+	pk_usuarios
+	fk_nombre_nombretabla.origen
+	uk_usuario_email
+	ck_campo
+
+- - Borrado de tablas
+DROP TABLE nombre CASCADE CONSTRAINS
+
+CONECTAR BASE DE DATOS
+En una terminal.
+    1. docker start oracledb
+    2. docker ps -a
+    3. docker stop oracledb (para cerrar el programa del todo)
+
+
+CONECTAR LA BASE DE DATOS DEL ADMINISTRADOR
+
+    • doble click en el icono de la base de dato del admin
+    • poner LeugimOracle de contraseña
+
+---------------------------------------------------------------------
+
+CREAR UNA TABLA
+
+ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+CREATE USER ejer11 IDENTIFIED BY oinotna;
+GRANT ALL PRIVILEGES TO ejer11;
+
+Ejecutar script (Icono lista con play óF5)
+
+Seleccionar una conexión (administrador) LeugimOracle
+
+Pulsar en la tecla +
+
+Escribir:
+    • name (el mismo que al crear una tabla ejer11)
+    • usuario (el mismo que al crear una tabla ejer11)
+    • contraseña: oinotna;
+
+Pulsar probar
+
+Marcar guardar contraseña
+
+Pulsar conectar
+
+--------------------------------------------------------
+
+TABLAS
+Crear
+	CREATE TABLE nombre(
+		// datos de la tabla
+
+MODIFICAR
+ALTER TABLE ADD
+                           DROP COLUMN
+                           ADD CONSTRIAINT
+Borrar TABLA
+DROP TABLE nombreTabla [cascade costrains]
+RESTRICCIONES
+CREAR RESTRICCION
+ALTER TABLE nombre ADD CONSTRAINT (PK, UK, FK, CK) nombre de la restriccion
+    • PRIMARY KEY (…..[,    ]);
+    • UNIQUE (…..[,    ]);
+    • FOREING KEY (….[,    ]) REFERENCES tablas o (campos)
+    • CHECK campo1 IN (‘ALGO1’, ‘ALGO2’)
+    •                clasificacion BETWEEN 1AND 100
+
+BORRAR RESTRICCION
+ALTER TABLE nombre DROP CONSTRAINT (PK, UK, FK, CK) nombre de la restriccion
+
+DESHABILITAR RESTRICCION
+ALTER TABLE nombre DISABLE CONSTRAINT (PK, UK, FK, CK) 
+
+HABILITAR RESTRICCION
+ALTER TABLE nombre ENABLE CONSTRAINT (PK, UK, FK, CK) 
+
+
+----------------------------------------------------------------------
+
+
+
+
