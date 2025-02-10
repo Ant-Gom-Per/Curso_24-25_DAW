@@ -1,0 +1,23 @@
+.pestañas{
+    border-bottom: 1px solid #778;
+    padding-bottom: 4px;
+}
+
+li{
+    display: inline-block;
+    text-decoration: none;
+    color: #3c3c3c;
+    border: 1px solid #778;
+    background-color: #dedede;
+    font-style: verdana;
+    padding: 5px;
+}
+
+li:hover{
+    text-decoration: none;
+    border: 1px solid #778;
+    background-color: #666;
+    color: blue;
+    font-style: verdana;
+    padding: 5px;
+}
