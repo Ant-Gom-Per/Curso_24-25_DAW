@@ -45,5 +45,28 @@ public class Enumerados_01_CHGPT {
         Dia dia04 = Dia.valueOf(diaStr);
         System.out.println("El dia es: " + dia04);
         System.out.println("-----------------------------");        
-    }    
+        
+        /**
+         * 7.2 Imprime un mensaje que diga si un día es fin de semana (SABADO y DOMINGO).
+         */
+        Dia dia05 = Dia.SABADO;
+        if(dia05 == Dia.SABADO || dia05 == Dia.DOMINGO){
+            System.out.println(dia05 + " es fin de semana.");
+        }
+        else{
+            System.out.println(dia05 + " es dia laborable.");
+        }
+        System.out.println("-----------------------------");
+        
+        /**
+         * 8.2 Ordena los días de la semana de acuerdo a su índice (usando ordinal()) e imprime la lista.
+         */
+        Dia[] dias = Dia.values();
+        System.out.println("Los dias de la semana ordenados por indice:");
+        for(Dia dia : dias){
+            System.out.println(dia+ " - indice: " + dia.ordinal());
+        }
+        System.out.println("-----------------------------");
+                
+    }   
 }
