@@ -1,0 +1,6 @@
+hay que crear una clase cola de vehiculos.
+esta clase tendrá susu propiios métodos para meter vehiculos en la cola(crear una array de objetos)
+para sacar vehiculos de la array y correrlos una posicion
+para ver si hay vehiculos en la cola...
+
+Esta clase se usará más adelante para crear la opción 1 de la clase tallerItv.

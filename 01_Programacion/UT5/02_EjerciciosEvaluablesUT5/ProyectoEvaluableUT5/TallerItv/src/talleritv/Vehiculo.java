@@ -41,8 +41,7 @@ public class Vehiculo {
              System.out.println("Su número es: " + tipoVehiculo.ordinal());
          }
         
-    }
-    
+    }    
 
     @Override
     public String toString() {
