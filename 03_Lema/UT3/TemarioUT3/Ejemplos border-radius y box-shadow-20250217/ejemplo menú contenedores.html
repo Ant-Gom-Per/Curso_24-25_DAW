@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .btn-container{
+            margin-top: 5rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            text-align: center;
+        }
+        .btn { 
+            padding: 2rem;
+            font-size: 3rem;
+            width: 7.5rem;
+            text-align: center;
+            color: white;
+            border-radius: 50%;
+            background-color: red;
+        }
+        .btn-container a{
+            text-decoration: none;
+        }
+        .btn-container a:hover{
+            opacity: .5;
+        }
+        .btn-container a h4{
+            color: red;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <article class="btn-container">
+        <a href="">
+            <div class="btn"><i class="fas fa-gamepad"></i></div>
+            <h4>Videojuegos</h4>
+        </a>
+        <a href="">
+            <div class="btn"><i class="fas fa-id-card"></i></div>
+            <h4>Contacto</h4>
+        </a>
+        <a href="">
+            <div class="btn"><i class="fas fa-archive"></i></div>
+            <h4>Pedidos</h4>
+        </a>
+    </article>
+</body>
+
+</html>
