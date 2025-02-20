@@ -39,13 +39,12 @@ public class Vehiculo {
     public void tipoPorIndice(TipoVehiculo tipo){
          if(tipo.equals(tipoVehiculo)){
              System.out.println("Su número es: " + tipoVehiculo.ordinal());
-         }
-        
+         }        
     }    
 
     @Override
     public String toString() {
-        return "El vehiculo tiene:\nMatricula: " + matricula + "\nModelo: " + modelo + "\nTipo: " + tipoVehiculo;
+        return "\nMatricula: " + matricula + "\nModelo: " + modelo + "\nTipo: " + tipoVehiculo;
     }
     
     

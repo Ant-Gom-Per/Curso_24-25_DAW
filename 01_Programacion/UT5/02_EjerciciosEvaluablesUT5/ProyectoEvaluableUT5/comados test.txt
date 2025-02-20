@@ -1,0 +1,21 @@
+        System.out.println("Coche 1: " + vehi01.getMatricula()); 
+        System.out.println("\n-------------------------------\n");
+        System.out.println(vehi01.toString()); 
+        System.out.println("\n-------------------------------\n");
+        vehi02.validaMatricula();
+        System.out.println("\n-------------------------------\n");
+        vehi01.validaMatricula();
+        System.out.println("\n-------------------------------\n");
+        vehi02.tipoPorIndice(TipoVehiculo.COCHE);
+        
+         System.out.println("\n-------------------------------\n");
+        System.out.println(vehi03.toString());
+        
+        System.out.println("\n-------------------------------\n");
+        vehi03.tipoPorIndice(TipoVehiculo.FURGONETA);
+        
+        System.out.println("\n-------------------------------\n");
+        System.out.println(vehi04.toString());
+        
+        System.out.println("\n-------------------------------\n");
+        vehi04.tipoPorIndice(TipoVehiculo.CAMION);
