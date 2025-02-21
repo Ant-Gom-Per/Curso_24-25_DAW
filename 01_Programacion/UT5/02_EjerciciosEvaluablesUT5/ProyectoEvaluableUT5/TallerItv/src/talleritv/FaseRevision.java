@@ -7,8 +7,8 @@ package talleritv;
 public class FaseRevision {
     
     //Atributos
-    String nombreFase;
-    Vehiculo vehiculo;
+    private String nombreFase;
+    private Vehiculo vehiculo;
     
     
     //Constructor
@@ -20,14 +20,14 @@ public class FaseRevision {
     
     //Metodos
     public boolean tieneVehiculo(){
-        return this.vehiculo != null;
+        return this.vehiculo != null;//Devuelve true o false si el vehiculo es o no null
     }
     
-    public void ponerVehiculo(Vehiculo vehiculo){
+    public void ponerVehiculo(Vehiculo vehiculo){//Asignas un objeto de tipo vehiculo
         this.vehiculo = vehiculo;
     }
     
-    public void quitarVehiculo(){
+    public void quitarVehiculo(){//Pones el atributo vehiculo a null
         this.vehiculo = null;
     }
 
@@ -40,8 +40,9 @@ public class FaseRevision {
         return "FaseRevision{" + "nombreFase=" + nombreFase + ", vehiculo=" + vehiculo + '}';
     }
     
-    public void cambioFase(String nuevaFase){
-        this.nombreFase = nuevaFase;
+    public void cambioFase(FaseRevision nuevaFase){// Tienes que asignar un fase existente a la cual vas a pasar el vehiculo
+        nuevaFase.ponerVehiculo(vehiculo); // Le pasas el vehiculo que tiene la fase a una nueva fase.
+        this.quitarVehiculo();//Le quitas el vehiculo a esta fase
     }
     
     

@@ -19,3 +19,8 @@
         
         System.out.println("\n-------------------------------\n");
         vehi04.tipoPorIndice(TipoVehiculo.CAMION);
+
+
+  public ColaInicial() {//Creo una nueva array de vehiculos con una posición
+        colaVehiculos = new Vehiculo[0];
+    }  
