@@ -24,3 +24,108 @@
   public ColaInicial() {//Creo una nueva array de vehiculos con una posición
         colaVehiculos = new Vehiculo[0];
     }  
+
+
+-----------------------------------------------------------------
+Ejemplo CHGPT
+
+import java.util.Arrays;
+
+public class ColaInicial {
+    // Atributo: un array de objetos tipo Vehiculo
+    private Vehiculo[] vehiculos;
+    private int size;
+
+    // Constructor: inicializa el array con un tamaño determinado
+    public ColaInicial(int capacidad) {
+        vehiculos = new Vehiculo[capacidad];
+        size = 0;
+    }
+
+    // Método para agregar un vehículo a la cola usando Arrays.copyOf
+    public void agregarVehiculo(Vehiculo v) {
+        if (size == vehiculos.length) {
+            // Si el array está lleno, se amplía el tamaño usando Arrays.copyOf
+            vehiculos = Arrays.copyOf(vehiculos, vehiculos.length * 2); // Duplicamos el tamaño
+            System.out.println("La cola estaba llena. El tamaño del array ha sido aumentado.");
+        }
+        // Añadimos el vehículo en la siguiente posición disponible
+        vehiculos[size] = v;
+        size++;
+    }
+
+    // Método para obtener un vehículo de la cola
+    public Vehiculo obtenerVehiculo() {
+        if (size > 0) {
+            Vehiculo v = vehiculos[0];
+            // Mover los vehículos en el array una posición hacia la izquierda
+            for (int i = 1; i < size; i++) {
+                vehiculos[i - 1] = vehiculos[i];
+            }
+            vehiculos[size - 1] = null; // Eliminar el último elemento
+            size--;
+            return v;
+        } else {
+            System.out.println("No hay vehículos en la cola.");
+            return null;
+        }
+    }
+
+    // Método para obtener el tamaño de la cola
+    public int obtenerTamaño() {
+        return size;
+    }
+
+    // Método para verificar si la cola está vacía
+    public boolean estaVacia() {
+        return size == 0;
+    }
+
+    // Clase interna Vehiculo para ilustrar el uso
+    public static class Vehiculo {
+        private String modelo;
+        private String marca;
+
+        // Constructor
+        public Vehiculo(String modelo, String marca) {
+            this.modelo = modelo;
+            this.marca = marca;
+        }
+
+        // Métodos getter
+        public String getModelo() {
+            return modelo;
+        }
+
+        public String getMarca() {
+            return marca;
+        }
+
+        // Sobreescribir toString para mostrar información del vehículo
+        @Override
+        public String toString() {
+            return "Vehiculo [modelo=" + modelo + ", marca=" + marca + "]";
+        }
+    }
+
+    // Método principal para probar la clase
+    public static void main(String[] args) {
+        ColaInicial cola = new ColaInicial(2); // Capacidad inicial de la cola es 2
+        Vehiculo v1 = new Vehiculo("Model X", "Tesla");
+        Vehiculo v2 = new Vehiculo("Mustang", "Ford");
+        Vehiculo v3 = new Vehiculo("Civic", "Honda");
+
+        cola.agregarVehiculo(v1);
+        cola.agregarVehiculo(v2);
+        cola.agregarVehiculo(v3); // Esto hará que el array se amplíe automáticamente
+
+        System.out.println("Vehículos en la cola: ");
+        for (int i = 0; i < cola.obtenerTamaño(); i++) {
+            System.out.println(cola.vehiculos[i]);
+        }
+
+        Vehiculo v = cola.obtenerVehiculo();
+        System.out.println("Vehículo obtenido: " + v);
+    }
+}
+
