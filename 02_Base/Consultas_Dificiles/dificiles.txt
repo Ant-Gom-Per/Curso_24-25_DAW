@@ -1,0 +1,13 @@
+-- 1. Número y nombre de los vendedores que oferten alguna de las piezas que pueden ser suministradas por el vendedor número 1, pero que no oferten ninguna de las que puedan ser suministradas por el vendedor número 2.
+
+
+-- 2. Obtener el número y el nombre de los vendedores y la cantidad de piezas que pueden suministrar a un precio entre 15 y 20 euros, ordenado por el nombre de vendedor.
+
+
+-- 3. Obtener, para el vendedor que cumple que la diferencia de precio al que le compramos una pieza y el precio que nos había ofrecido por ella sea máxima, el número de vendedor, su nombre y la diferencia media entre el precio al que nos vende las piezas y el que nos había ofrecido por las mismas.
+
+
+-- 4. Obtener el número de pieza de los teclados que nos han sido servidos en el mayo de cualquier año.
+
+
+-- 5. Obtener un listado en el que figure el número y nombre de la pieza , junto con el número y nombre de vendedor que nos ha ofertado la pieza, pero al que nunca se la hemos solicitado.
