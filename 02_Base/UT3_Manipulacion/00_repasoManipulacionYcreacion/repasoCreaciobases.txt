@@ -1,0 +1,112 @@
+drop table crucero cascade constraints;
+drop table empleado cascade constraints;
+drop table crucero_empleado cascade constraints;
+
+
+
+create table crucero(
+    identificador number(10),
+    matricula varchar2(10),
+    nombre VARCHAR2(100) DEFAULT 'MSD crucero',
+    camarotes number(5),
+    id_capitan VARCHAR2(9),
+    metros number(7,2),
+    fecha_fabricacion DATE
+);
+
+create table empleado(
+    dni VARCHAR2(9),
+    nombre VARCHAR2(200),
+    id_empleado number(5),
+    cargo VARCHAR2(50),
+    sueldo number (8,2),
+    telefono VARCHAR2(9),
+    fecha_nac DATE
+);
+
+create table crucero_empleado(
+    id_empleado NUMBER(5),
+    id_crucero NUMBER(10),
+    fecha_inicio DATE,
+    fecha_fin DATE
+);
+
+--Establecer claves primarias
+
+alter table crucero add constraint pk_crucero primary key(identificador);
+alter table empleado add constraint pk_empleado primary key (id_empleado);
+alter table crucero_empleado add constraint pk_crucero_empleado primary key (id_empleado,id_crucero,fecha_inicio,fecha_fin);
+
+--Establecer las claves alternativas
+
+alter table crucero add constraint uk_crucero unique (matricula);
+alter table empleado add constraint uk_empleado unique (dni);
+
+--Establecer las claves ajenas
+
+--alter table crucero add constraint fk_crucero_empleado foreign key (id_capitan) references empleado(id_empleado);
+alter table crucero add constraint fk_crucero_empleado foreign key (id_capitan) references empleado(dni);
+alter table crucero_empleado add constraint fk_crucero_empleado_empleado foreign key (id_empleado) references empleado(id_empleado);
+alter table crucero_empleado add constraint fk_crucero_empleado_crucero foreign key (id_crucero) references crucero(identificador);
+
+--Establecer las restricciones por tabla
+
+alter table crucero add constraint ck_crucero check (camarotes > 50 and fecha_fabricacion is not null and  id_capitan is not null);
+alter table empleado add constraint ck_empleado check (cargo in ('limpiador','camarero','capitan','socorrista','dependiente'));
+
+--Desactivación de restricciones
+
+alter table crucero disable constraint ck_crucero;
+
+--Activación de restricciones
+
+alter table crucero enable constraint ck_crucero;
+
+--Borrado de restricciones
+
+alter table crucero drop constraint ck_crucero;
+
+--Añadir campos a una tabla
+
+alter table empleado add (fecha_alta DATE);
+
+--Modificacion de campos
+
+alter table empleado modify (telefono VARCHAR2(15));
+
+
+--Borrado de campos
+
+alter table empleado drop column fecha_alta;
+
+--inserción de datos
+insert into empleado values('44111111B','Isabel',2,'capitan',200000,'965371122',TO_DATE('21/04/98','DD/MM/RR'));
+insert into crucero (matricula,identificador,camarotes,nombre,metros,fecha_fabricacion,id_capitan) values('156ABC',1,150,'MSC1',200,SYSDATE,'44111111A');
+insert into crucero (matricula,identificador,camarotes,id_capitan,fecha_fabricacion) values('156BBB',2,500,'44111111A',SYSDATE);
+
+select * from empleado;
+
+select * from crucero;
+
+--modificación de datos
+
+update empleado set nombre='Jose',sueldo=2 where nombre='PEpe' and cargo='capitan';
+
+--borrado de datos
+
+delete from empleado where id_empleado=2;
+update empleado set sueldo=null where nombre='Jose';
+
+
+set autocommit on;
+set autocommit off;
+
+commit;
+
+rollback;
+
+
+
+
+
+
