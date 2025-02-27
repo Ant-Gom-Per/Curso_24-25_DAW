@@ -20,11 +20,34 @@
         System.out.println("\n-------------------------------\n");
         vehi04.tipoPorIndice(TipoVehiculo.CAMION);
 
+        fase01.mostrar();
+        System.out.println("\n-------------------------------\n");
+        fase01.ponerVehiculo(vehi01);        
+        fase01.mostrar();
+        System.out.println("\n-------------------------------\n");
+        fase02.mostrar();
+        System.out.println("\n-------------------------------\n");
+        fase01.cambioFase(fase02);
+        fase02.mostrar();
+        System.out.println("\n-------------------------------\n");
+        fase01.mostrar();
+        System.out.println("\n-------------------------------\n");
+
 
   public ColaInicial() {//Creo una nueva array de vehiculos con una posición
         colaVehiculos = new Vehiculo[0];
     }  
-
+----------------------------------------------------------------------
+      
+    public void validaMatricula(){ //Ponerlo en taller para validad las matriculas antes de insertarla
+        if (matricula.matches("\\d{4}[A-Z]{3}")){
+            this.matricula = matricula;
+            System.out.println("La matricula " + matricula + " es correcta.");
+        }
+        else{
+            System.out.println("La matricula " + matricula + " no es válida.");
+        }
+    }
 
 -----------------------------------------------------------------
 Ejemplo CHGPT

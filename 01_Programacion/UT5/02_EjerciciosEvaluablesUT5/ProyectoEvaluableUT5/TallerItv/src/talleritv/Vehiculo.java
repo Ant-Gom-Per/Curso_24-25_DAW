@@ -19,19 +19,9 @@ public class Vehiculo {
         this.modelo = modelo;
         this.tipoVehiculo = tipoVehiculo;
     }
-    
+  
     
     //Metodos
-    public void validaMatricula(){
-        if (matricula.matches("\\d{4}[A-Z]{3}")){
-            this.matricula = matricula;
-            System.out.println("La matricula " + matricula + " es correcta.");
-        }
-        else{
-            System.out.println("La matricula " + matricula + " no es válida.");
-        }
-    }
-
     public String getMatricula() {
         return matricula;
     }   
