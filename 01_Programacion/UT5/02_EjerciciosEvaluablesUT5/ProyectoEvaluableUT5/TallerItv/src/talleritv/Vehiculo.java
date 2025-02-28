@@ -35,12 +35,5 @@ public class Vehiculo {
     @Override
     public String toString() {
         return "\nMatricula: " + matricula + "\nModelo: " + modelo + "\nTipo: " + tipoVehiculo;
-    }
-    
-    
-    
-    
-    
-    
-    
+    }    
 }

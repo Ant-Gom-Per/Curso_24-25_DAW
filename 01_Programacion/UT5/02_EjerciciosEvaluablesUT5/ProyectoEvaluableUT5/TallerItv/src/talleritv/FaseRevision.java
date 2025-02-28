@@ -34,11 +34,6 @@ public class FaseRevision {
     public void mostrar() {
         System.out.println("La fase de revision es: " + nombreFase + "\nEl vehiculo es: " + vehiculo);        
     }
-
-    @Override
-    public String toString() {
-        return "FaseRevision{" + "nombreFase=" + nombreFase + ", vehiculo=" + vehiculo + '}';
-    }
     
     public void cambioFase(FaseRevision nuevaFase){// Tienes que asignar un fase existente a la cual vas a pasar el vehiculo
         nuevaFase.ponerVehiculo(vehiculo); // Le pasas el vehiculo que tiene la fase a una nueva fase.

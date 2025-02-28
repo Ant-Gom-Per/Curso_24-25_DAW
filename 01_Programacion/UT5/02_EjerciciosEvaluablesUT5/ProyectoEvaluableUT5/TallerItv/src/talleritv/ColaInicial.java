@@ -30,12 +30,24 @@ public class ColaInicial {
         System.out.println("\nSacado: " + colaVehiculosAux);
     }
     
-    public void mostrarVehiculo(){
+    public boolean colaVacia(){
+        boolean vacia=false;
+        if(colaVehiculos.length == 0) vacia = true;        
+        return vacia;//Este true or flase se emplea en futuros procesos
+    }
+    
+    public void mostrarVehiculos(){
         System.out.print("Vehiculos en la cola:\n----------------------");
         for(int i=0 ; i < colaVehiculos.length ; i++){
             System.out.println(colaVehiculos[i]);
         }       
     }
     
-    
+    public boolean contieneMatricula(String matricula){
+        boolean contiene = false;
+        for(int i=0 ; i < colaVehiculos.length ; i++){            
+           if(matricula.equals(colaVehiculos[i].getMatricula())) contiene =true;//Los String se comparan con .equals
+        }
+        return contiene;//Este true or flase se emplea en futuros procesos        
+    }        
 }

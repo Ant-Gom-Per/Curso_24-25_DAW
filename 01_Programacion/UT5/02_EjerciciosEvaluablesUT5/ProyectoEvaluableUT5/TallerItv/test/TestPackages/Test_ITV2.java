@@ -12,7 +12,7 @@ public class Test_ITV2 {
         ColaInicial cola01 = new ColaInicial();
         
         Vehiculo vehi01 = new Vehiculo("4578BXR", "Seat Ibiza", TipoVehiculo.COCHE);
-        Vehiculo vehi02 = new Vehiculo("1234PDH", "Opel corsa", TipoVehiculo.COCHE);
+        Vehiculo vehi02 = new Vehiculo("1234PDH", "Opel Corsa", TipoVehiculo.COCHE);
         Vehiculo vehi03 = new Vehiculo("9835ASP", "Citroen Berlingo", TipoVehiculo.FURGONETA);
         Vehiculo vehi04 = new Vehiculo("2535GST", "Iveco Daily", TipoVehiculo.CAMION);
         Vehiculo vehi05 = new Vehiculo("0625FPH", "Peugeot 206", TipoVehiculo.COCHE);
@@ -30,23 +30,17 @@ public class Test_ITV2 {
         
         
       
-        cola01.agregarVehiculo(vehi01);        
-        cola01.mostrarVehiculo();
-        System.out.println("\n-------------------------------\n");
-        cola01.agregarVehiculo(vehi02);        
-        cola01.mostrarVehiculo();   
-        System.out.println("\n-------------------------------\n");
-        cola01.agregarVehiculo(vehi03); 
-        cola01.agregarVehiculo(vehi04);       
-        cola01.mostrarVehiculo();
-        System.out.println("\n-------------------------------\n");        
-        cola01.sacarVehiculo();               
-        System.out.println("\n-------------------------------\n");
-        cola01.mostrarVehiculo();
-        System.out.println("\n-------------------------------\n");
+        cola01.agregarVehiculo(vehi01);       
+        cola01.agregarVehiculo(vehi02);
+        cola01.agregarVehiculo(vehi03);
+        cola01.agregarVehiculo(vehi04);
         cola01.agregarVehiculo(vehi05);
-        cola01.mostrarVehiculo();
+        cola01.mostrarVehiculos();
+        System.out.println("\n-------------------------------\n");
+        System.out.println("Contiene matricula: " + cola01.contieneMatricula("0625FPH"));
+        System.out.println("Cola vacia: " + cola01.colaVacia());
         
+
         
       
     }

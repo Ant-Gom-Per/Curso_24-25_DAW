@@ -34,6 +34,41 @@
         System.out.println("\n-------------------------------\n");
 
 
+
+        cola01.agregarVehiculo(vehi01);        
+        cola01.mostrarVehiculos();
+        System.out.println("\n-------------------------------\n");
+        cola01.agregarVehiculo(vehi02);        
+        cola01.mostrarVehiculos();   
+        System.out.println("\n-------------------------------\n");
+        cola01.agregarVehiculo(vehi03); 
+        cola01.agregarVehiculo(vehi04);       
+        cola01.mostrarVehiculos();
+        System.out.println("\n-------------------------------\n");  
+        cola01.sacarVehiculo();               
+        System.out.println("\n-------------------------------\n");
+        System.out.println(cola01.colaVacia());
+        System.out.println("\n-------------------------------\n");
+        cola01.mostrarVehiculos();
+        System.out.println("\n-------------------------------\n");
+        cola01.agregarVehiculo(vehi05);      
+        cola01.mostrarVehiculos();
+        System.out.println("\n-------------------------------\n");
+        System.out.println(cola01.colaVacia());
+        System.out.println("\n-------------------------------\n");
+        cola01.sacarVehiculo();
+        System.out.println(cola01.colaVacia());
+        System.out.println("\n-------------------------------\n");
+        cola01.sacarVehiculo();
+        System.out.println(cola01.colaVacia());
+        System.out.println("\n-------------------------------\n");
+        cola01.sacarVehiculo();
+        System.out.println(cola01.colaVacia());
+        System.out.println("\n-------------------------------\n");
+        cola01.sacarVehiculo();
+        System.out.println(cola01.colaVacia());
+
+
   public ColaInicial() {//Creo una nueva array de vehiculos con una posición
         colaVehiculos = new Vehiculo[0];
     }  
@@ -50,7 +85,15 @@
     }
 
 -----------------------------------------------------------------
-Ejemplo CHGPT
+
+
+
+    @Override
+    public String toString() {
+        return "FaseRevision{" + "nombreFase=" + nombreFase + ", vehiculo=" + vehiculo + '}';
+    }
+
+-----------------------------------------------------------------------------------------------------
 
 import java.util.Arrays;
 
