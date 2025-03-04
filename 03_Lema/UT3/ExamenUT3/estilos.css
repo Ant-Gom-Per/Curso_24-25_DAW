@@ -3,11 +3,12 @@ body{
 }
 
 h1{
+    color:white;
     font-weight: normal;
     font-size: 2.4em;
     font-family: Verdana, 'Geneva', Tahoma, sans-serif;    
-    background:-moz-linear-gradient(circle, darkblue, lightblue);
-    background:-webkit-linear-gradient(circle, darkblue, lightblue);
+    background:-moz-linear-gradient(top, darkblue, lightblue);
+    background:-webkit-linear-gradient(circle, darkblue, lightblue);/* Poner top, bottom, left, right */
     box-shadow: grey 5px 5px 10px;
     text-shadow: 5px 5px 10px;
     border: 1px solid;
