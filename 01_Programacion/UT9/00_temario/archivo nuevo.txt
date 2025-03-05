@@ -1,0 +1,6 @@
+IMPERATIVO ¿como?
+DECLARATIVO ¿que?
+MUC modelo universal de computacion
+
+A.turing modelo computacional a nivel mas bajo
+A.church modelo computacional a nivel muy alto
