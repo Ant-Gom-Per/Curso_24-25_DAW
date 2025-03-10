@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio_03</title>
+    <script>
+        function confirmacion() {
+        var pregunta = confirm("¿Quieres visitar la página  principal?")
+        if (pregunta){
+        alert("Te envío rápidamente")
+        window.location = "01_Ejercicio.html"
+        }
+        else{
+        alert("Tal vez en otro momento...\n Gracias de todos modos")
+        }
+        }
+        </script>
+</head>
+<body>
+    <h3>Redireccion a otra página</h3>
+    <button type="button" onclick="confirmacion()" >Confirmar!</button>
+</body>
+</html>
