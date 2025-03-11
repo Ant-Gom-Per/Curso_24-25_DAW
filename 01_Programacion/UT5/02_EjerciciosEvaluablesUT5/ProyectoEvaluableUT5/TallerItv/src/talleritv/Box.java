@@ -18,7 +18,7 @@ public class Box {
     };       
     
     //Constructores
-    public Box(int idBox){ //composicion y agregacion
+    public Box(int idBox){ //Esto es composicion y agregacion
         this.idBox = idBox;
         fasesRevision = new FaseRevision[NUMERO_FASES];
         for (int i=0 ; i < NUMERO_FASES ; i++){
@@ -28,7 +28,7 @@ public class Box {
     
     //Atributos
     public boolean boxLibre(){
-        return fasesRevision[0].tieneVehiculo();
+        return !fasesRevision[0].tieneVehiculo();
     }
     
     

@@ -31,17 +31,10 @@ public class Test_ITV2 {
         
         
       
-        cola01.agregarVehiculo(vehi01);       
-        cola01.agregarVehiculo(vehi02);
-        cola01.agregarVehiculo(vehi03);
-        cola01.agregarVehiculo(vehi04);
-        cola01.agregarVehiculo(vehi05);
-        cola01.mostrarVehiculos();
-        System.out.println("\n-------------------------------\n");
-        System.out.println("Contiene matricula: " + cola01.contieneMatricula("0625FPH"));
-        System.out.println("Cola vacia: " + cola01.colaVacia());
-        
-        box01.mostrar();
+       
+        fase01.ponerVehiculo(vehi01);
+        fase01.mostrar();
+        fase01.tieneVehiculo();
         box01.boxLibre();
         
       
