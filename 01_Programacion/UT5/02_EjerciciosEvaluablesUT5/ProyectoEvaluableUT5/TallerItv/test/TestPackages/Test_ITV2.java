@@ -4,6 +4,7 @@ import talleritv.ColaInicial;
 import talleritv.FaseRevision;
 import talleritv.TipoVehiculo;
 import talleritv.Vehiculo;
+import talleritv.Box;
 
 public class Test_ITV2 {
 
@@ -23,7 +24,7 @@ public class Test_ITV2 {
         FaseRevision fase03 = new FaseRevision("Emisiones de humos");
         FaseRevision fase04 = new FaseRevision("Frenos y dirección");
         
-        
+        Box box01 = new Box(1);        
      
         
        
@@ -40,7 +41,8 @@ public class Test_ITV2 {
         System.out.println("Contiene matricula: " + cola01.contieneMatricula("0625FPH"));
         System.out.println("Cola vacia: " + cola01.colaVacia());
         
-
+        box01.mostrar();
+        box01.boxLibre();
         
       
     }
