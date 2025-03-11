@@ -20,7 +20,7 @@ public class FaseRevision {
     
     //Metodos
     public boolean tieneVehiculo(){
-        return this.vehiculo != null;//Devuelve true o false si el vehiculo es o no null
+        return this.vehiculo != null;//Devuelve true o false si el vehiculo es o no null, en el test hay que montarlo en un print
     }
     
     public void ponerVehiculo(Vehiculo vehiculo){//Asignas un objeto de tipo vehiculo

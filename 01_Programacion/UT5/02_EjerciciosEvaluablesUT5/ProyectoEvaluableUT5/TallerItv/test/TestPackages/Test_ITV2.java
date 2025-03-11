@@ -1,3 +1,7 @@
+/**
+ * 
+ **/
+
 package TestPackages;
 
 import talleritv.ColaInicial;
@@ -34,8 +38,10 @@ public class Test_ITV2 {
        
         fase01.ponerVehiculo(vehi01);
         fase01.mostrar();
-        fase01.tieneVehiculo();
-        box01.boxLibre();
+        System.out.println(fase01.tieneVehiculo());
+        
+        
+        System.out.println("El box está libre? " + box01.boxLibre());
         
       
     }
