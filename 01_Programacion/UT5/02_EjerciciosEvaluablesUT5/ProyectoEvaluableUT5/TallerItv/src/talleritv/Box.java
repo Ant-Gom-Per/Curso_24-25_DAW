@@ -31,6 +31,20 @@ public class Box {
         return !fasesRevision[0].tieneVehiculo();
     }
     
+    public boolean esPrimeraFase(int numFase){
+        return numFase == 0;
+    }
+    
+    public void agregar(Vehiculo vehiculo){
+        fasesRevision[0].ponerVehiculo(vehiculo);
+    }
+    
+    public void pasoVehiculoFase(){
+        fasesRevision[3].quitarVehiculo();
+        fasesRevision[2].cambioFase(fasesRevision[3]);
+        fasesRevision[1].cambioFase(fasesRevision[2]);
+        fasesRevision[0].cambioFase(fasesRevision[1]);
+    }
     
     public void mostrar(){
         System.out.println("El box es: " + idBox);

@@ -28,22 +28,22 @@ public class Test_ITV2 {
         FaseRevision fase03 = new FaseRevision("Emisiones de humos");
         FaseRevision fase04 = new FaseRevision("Frenos y dirección");
         
-        Box box01 = new Box(1);        
-     
-        
+        Box box01 = new Box(1);                                                  
        
         
-        
-      
-       
-        fase01.ponerVehiculo(vehi01);
-        fase01.mostrar();
-        System.out.println(fase01.tieneVehiculo());
-        
-        
-        System.out.println("El box está libre? " + box01.boxLibre());
-        
-      
+        box01.agregar(vehi01);      
+        box01.pasoVehiculoFase();     
+        box01.agregar(vehi02);                
+        box01.pasoVehiculoFase();     
+        box01.agregar(vehi03);       
+        box01.pasoVehiculoFase();     
+        box01.agregar(vehi04);          
+        box01.mostrar();
+        System.out.println("\n-------------------------------\n");
+        box01.pasoVehiculoFase();       
+        box01.agregar(vehi05);
+        box01.mostrar();
+        System.out.println("\n-------------------------------\n");
     }
     
 }

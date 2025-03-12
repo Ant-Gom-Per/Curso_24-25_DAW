@@ -79,6 +79,18 @@
         System.out.println("Cola vacia: " + cola01.colaVacia());
 
 
+        fase01.ponerVehiculo(vehi01);
+        fase01.mostrar();
+        System.out.println("\n-------------------------------\n");
+        System.out.println("La cola tiene Vehiculos?: " + fase01.tieneVehiculo());
+        System.out.println("\n-------------------------------\n");
+        
+        System.out.println("El box está libre?: " + box01.boxLibre());
+        System.out.println("\n-------------------------------\n");
+        System.out.println("fase 1?: " + box01.esPrimeraFase(0));
+        System.out.println("\n-------------------------------\n");
+
+
   public ColaInicial() {//Creo una nueva array de vehiculos con una posición
         colaVehiculos = new Vehiculo[0];
     }  

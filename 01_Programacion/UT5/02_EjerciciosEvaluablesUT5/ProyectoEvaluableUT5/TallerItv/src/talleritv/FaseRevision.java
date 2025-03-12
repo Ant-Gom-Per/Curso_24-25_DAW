@@ -32,11 +32,15 @@ public class FaseRevision {
     }
 
     public void mostrar() {
-        System.out.println("La fase de revision es: " + nombreFase + "\nEl vehiculo es: " + vehiculo);        
+        System.out.println("\nLa fase de revision es: " + nombreFase + "\nEl vehiculo es: " + vehiculo);        
     }
     
-    public void cambioFase(FaseRevision nuevaFase){// Tienes que asignar un fase existente a la cual vas a pasar el vehiculo
-        nuevaFase.ponerVehiculo(vehiculo); // Le pasas el vehiculo que tiene la fase a una nueva fase.
+    /**
+     *
+     * @param nuevaFase Tienes que asignar un fase (posicion de la array "fases de revision") existente a la cual vas a pasar el vehiculo
+     */
+    public void cambioFase(FaseRevision nuevaFase){
+        nuevaFase.ponerVehiculo(vehiculo); // Le asignas el vehiculo que tiene la fase a una nueva fase.
         this.quitarVehiculo();//Le quitas el vehiculo a esta fase
     }
     
