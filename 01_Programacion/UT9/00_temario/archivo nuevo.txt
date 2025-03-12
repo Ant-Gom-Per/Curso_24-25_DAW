@@ -12,3 +12,6 @@ A.church modelo computacional a nivel muy alto
 
 - I.F. basicas de la api
 - Referencias a metodos
+
+
+predicados --> se usan para filtrar, tiene una api
