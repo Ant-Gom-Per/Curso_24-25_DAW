@@ -1,0 +1,270 @@
+Aquí tienes un ejercicio en Java que combina estructuras condicionales con control de excepciones:
+
+**Enunciado:**
+Crea un programa en Java que pida al usuario que ingrese su edad y su salario. Si la edad es menor de 18, el programa debe mostrar un mensaje indicando que es menor de edad. Si la edad es mayor o igual a 18, el programa debe mostrar el salario que ha ingresado. Asegúrate de controlar las excepciones en caso de que el usuario ingrese un valor no numérico para la edad o el salario.
+
+**Código:**
+
+
+import java.util.Scanner;
+
+public class EjercicioCondicionalesExcepciones {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            // Solicitar la edad al usuario
+            System.out.print("Ingrese su edad: ");
+            int edad = Integer.parseInt(scanner.nextLine());
+
+            // Verificar si la edad es menor de 18
+            if (edad < 18) {
+                System.out.println("Eres menor de edad.");
+            } else {
+                // Solicitar el salario si la edad es mayor o igual a 18
+                System.out.print("Ingrese su salario: ");
+                double salario = Double.parseDouble(scanner.nextLine());
+
+                System.out.println("Tu salario es: " + salario);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Por favor, ingrese un valor numérico válido.");
+        } finally {
+            // Cerrar el scanner
+            scanner.close();
+        }
+    }
+}
+```
+
+**Explicación del código:**
+
+1. **Entrada de datos:**
+   - Se usa `Scanner` para pedir al usuario la edad y el salario.
+   
+2. **Estructura condicional `if`:**
+   - Si la edad es menor de 18, se imprime "Eres menor de edad".
+   - Si la edad es mayor o igual a 18, se solicita el salario y se muestra.
+
+3. **Manejo de excepciones:**
+   - Si el usuario ingresa un valor no numérico para la edad o el salario, se captura la excepción `NumberFormatException`, y el programa informa al usuario que debe ingresar un número válido.
+
+4. **Bloque `finally`:**
+   - Se cierra el objeto `scanner` para liberar los recursos asociados al mismo.
+
+Este ejercicio permite practicar tanto las estructuras condicionales como el manejo de excepciones en Java.
+
+--------------------------------------------------------------------------------------------------------------
+
+
+¡Claro! Aquí tienes otro ejercicio en Java con estructuras condicionales y control de excepciones.
+
+**Enunciado:**
+Crea un programa en Java que pida al usuario ingresar dos números enteros. El programa debe verificar si el segundo número es distinto de cero antes de realizar una división. Si el segundo número es cero, debe lanzar una excepción personalizada que indique que no se puede dividir entre cero. Si el segundo número no es cero, se debe realizar la división y mostrar el resultado. Controla las excepciones en caso de que el usuario ingrese valores no numéricos.
+
+**Código:**
+
+a
+import java.util.Scanner;
+
+public class EjercicioDivisionExcepciones {
+    
+    // Excepción personalizada
+    static class DivisionPorCeroException extends Exception {
+        public DivisionPorCeroException(String message) {
+            super(message);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        try {
+            // Solicitar los números al usuario
+            System.out.print("Ingrese el primer número: ");
+            int num1 = Integer.parseInt(scanner.nextLine());
+
+            System.out.print("Ingrese el segundo número: ");
+            int num2 = Integer.parseInt(scanner.nextLine());
+
+            // Verificar si el segundo número es cero
+            if (num2 == 0) {
+                throw new DivisionPorCeroException("Error: No se puede dividir entre cero.");
+            }
+
+            // Realizar la división si el segundo número no es cero
+            double resultado = (double) num1 / num2;
+            System.out.println("El resultado de la división es: " + resultado);
+            
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Debe ingresar un valor numérico.");
+        } catch (DivisionPorCeroException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            // Cerrar el scanner
+            scanner.close();
+        }
+    }
+}
+```
+
+**Explicación del código:**
+
+1. **Excepción personalizada `DivisionPorCeroException`:**
+   - Creamos una clase de excepción personalizada para manejar el caso en que el segundo número sea cero. Esta excepción es lanzada manualmente en el código.
+
+2. **Entrada de datos:**
+   - Usamos `Scanner` para pedir al usuario dos números enteros.
+
+3. **Estructura condicional `if`:**
+   - Si el segundo número es igual a cero, se lanza una excepción personalizada `DivisionPorCeroException`.
+
+4. **Manejo de excepciones:**
+   - Se captura `NumberFormatException` si el usuario ingresa un valor no numérico.
+   - Se captura `DivisionPorCeroException` para manejar el caso en que el divisor sea cero.
+
+5. **Bloque `finally`:**
+   - Se cierra el `Scanner` en el bloque `finally` para liberar los recursos.
+
+Este ejercicio permite practicar tanto las estructuras condicionales como el manejo de excepciones personalizadas en Java, y también refuerza la importancia de validar entradas antes de realizar operaciones como la división.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Aquí tienes un ejercicio que combina estructuras repetitivas con el bucle `while` y control de excepciones en Java:
+
+**Enunciado:**
+Crea un programa en Java que pida al usuario ingresar números positivos (pueden ser decimales) y calcule la suma de esos números. El programa debe seguir pidiendo números hasta que el usuario ingrese un valor negativo. Si el usuario ingresa un valor que no es un número, debe mostrar un mensaje de error y seguir pidiendo el número hasta que se ingrese uno válido.
+
+**Código:**
+
+```java
+import java.util.Scanner;
+
+public class EjercicioBucleWhileExcepciones {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double suma = 0;
+        boolean seguir = true;
+
+        while (seguir) {
+            try {
+                // Solicitar un número al usuario
+                System.out.print("Ingrese un número positivo (o un número negativo para salir): ");
+                String input = scanner.nextLine();
+
+                // Intentar convertir la entrada a un número decimal
+                double numero = Double.parseDouble(input);
+
+                // Verificar si el número es negativo
+                if (numero < 0) {
+                    seguir = false; // Salir del bucle si el número es negativo
+                    System.out.println("Has ingresado un número negativo. El programa terminará.");
+                } else {
+                    suma += numero; // Sumar el número al total
+                }
+            } catch (NumberFormatException e) {
+                // Captura si el usuario no ingresa un número válido
+                System.out.println("Error: Por favor, ingrese un número válido.");
+            }
+        }
+
+        // Mostrar la suma de los números positivos ingresados
+        System.out.println("La suma de los números positivos ingresados es: " + suma);
+        
+        // Cerrar el scanner
+        scanner.close();
+    }
+}
+```
+
+**Explicación del código:**
+
+1. **Bucle `while`:**
+   - El bucle `while` continúa ejecutándose mientras la variable `seguir` sea `true`. La condición para salir del bucle es que el usuario ingrese un número negativo.
+
+2. **Entrada de datos:**
+   - Se solicita al usuario que ingrese un número positivo. Si el número ingresado es negativo, el programa terminará. Si es positivo, el número se suma a la variable `suma`.
+
+3. **Control de excepciones:**
+   - Se utiliza `try-catch` para capturar posibles errores cuando el usuario ingresa un valor no numérico (por ejemplo, texto). Si esto ocurre, se muestra un mensaje de error y el bucle continúa solicitando una entrada válida.
+
+4. **Finalización del bucle:**
+   - Si el usuario ingresa un número negativo, el bucle termina y se muestra la suma acumulada de los números positivos ingresados.
+
+5. **Cierre del scanner:**
+   - Al final, se cierra el `Scanner` en el bloque `finally` para liberar los recursos.
+
+Este ejercicio permite practicar el uso del bucle `while`, el control de excepciones y la validación de entradas del usuario en Java.
+
+-------------------------------------------------------------------------------------------------------------------
+
+¡Claro! Aquí tienes un ejercicio similar, pero usando el bucle `for` en lugar del `while`, y manteniendo el control de excepciones en Java:
+
+**Enunciado:**
+Crea un programa en Java que pida al usuario ingresar 5 números positivos (pueden ser decimales) y calcule la suma de esos números. El programa debe seguir pidiendo números hasta que se hayan ingresado 5 números válidos. Si el usuario ingresa un valor que no es un número o un número negativo, debe mostrar un mensaje de error y pedir nuevamente el número correspondiente.
+
+**Código:**
+
+```java
+import java.util.Scanner;
+
+public class EjercicioBucleForExcepciones {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double suma = 0;
+        int cantidadNumeros = 5;
+
+        // Bucle for para pedir 5 números
+        for (int i = 1; i <= cantidadNumeros; i++) {
+            while (true) { // Bucle para asegurar que se ingrese un número válido
+                try {
+                    System.out.print("Ingrese el número " + i + " (positivo): ");
+                    String input = scanner.nextLine();
+                    
+                    // Intentar convertir la entrada a un número decimal
+                    double numero = Double.parseDouble(input);
+
+                    // Verificar si el número es negativo
+                    if (numero < 0) {
+                        System.out.println("Error: El número no puede ser negativo. Inténtalo nuevamente.");
+                    } else {
+                        suma += numero; // Sumar el número al total
+                        break; // Salir del bucle si el número es válido
+                    }
+                } catch (NumberFormatException e) {
+                    // Captura si el usuario no ingresa un número válido
+                    System.out.println("Error: Por favor, ingrese un número válido.");
+                }
+            }
+        }
+
+        // Mostrar la suma de los números ingresados
+        System.out.println("La suma total de los números positivos ingresados es: " + suma);
+        
+        // Cerrar el scanner
+        scanner.close();
+    }
+}
+```
+
+**Explicación del código:**
+
+1. **Bucle `for`:**
+   - El bucle `for` se usa para iterar exactamente 5 veces, ya que se requiere ingresar 5 números. Se utiliza una variable `i` que va de 1 a 5 para contar las veces que el usuario debe ingresar un número.
+
+2. **Bucle interno `while`:**
+   - Dentro del bucle `for`, se utiliza un bucle `while (true)` para asegurar que el usuario ingrese un número válido en cada iteración. Este bucle se repetirá hasta que el usuario ingrese un número válido.
+   
+3. **Control de excepciones:**
+   - Se usa `try-catch` para capturar si el usuario ingresa un valor no numérico o un formato incorrecto. Si se captura una `NumberFormatException`, el programa muestra un mensaje de error y pide el número nuevamente.
+
+4. **Validación de números negativos:**
+   - Después de verificar si el valor ingresado es un número, el programa comprueba si es negativo. Si es negativo, se muestra un mensaje de error y se vuelve a solicitar el número, sin sumar ese valor al total.
+
+5. **Suma de los números:**
+   - Si el número es válido y positivo, se suma al total y se avanza al siguiente número. Cuando se han ingresado 5 números válidos, el bucle `for` termina.
+
+6. **Cierre del `Scanner`:**
+   - Al finalizar, se cierra el `Scanner` para liberar los recursos.
+
+Este ejercicio permite practicar el uso del bucle `for` junto con el control de excepciones y validación de entradas en Java.
