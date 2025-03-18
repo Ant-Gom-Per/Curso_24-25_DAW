@@ -18,14 +18,13 @@ public class Ra3_propuestaEjer {
         boolean seguir = true;
         String continuar = "n";
         
-        while(seguir){
-            //Menú del programa
+        while(seguir){            
             System.out.println("**********************************");        
-            System.out.println("**        Elige una opcion      **");
+            System.out.println("**        Elige una opción      **");
             System.out.println("**********************************");
-            System.out.println("** 1.- Triangulo a la izquierda **");
-            System.out.println("** 2.- Triangulo a la derecha   **");
-            System.out.println("** 3.- Triangulo Equilatero     **");
+            System.out.println("** 1.- Triángulo a la izquierda **");
+            System.out.println("** 2.- Triángulo a la derecha   **");
+            System.out.println("** 3.- Triángulo Equilatero     **");
             System.out.println("**********************************");
 
             //Seleccion de opciones con control de entrada de datos
@@ -96,5 +95,6 @@ public class Ra3_propuestaEjer {
             }
             System.out.println("");
         }
+        teclado.close();
     }    
 }

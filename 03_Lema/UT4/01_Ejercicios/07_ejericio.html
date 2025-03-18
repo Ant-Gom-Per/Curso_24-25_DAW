@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor</title>
+</head>
+<body>
+    <script>
+        const FACTOR = 1024;
+        const MIB = prompt("Convertidor de Mib a Kib, Bytes y Bits");
+        document.write(`<h2>Conventidor de unidades</h2>`);
+        document.write(`<p><em>${MIB} Mib</em> equivalen a <strong>${MIB * FACTOR} Kib</strong><p>`);
+        document.write(`<p><em>${MIB} Mib</em> equivalen a <strong>${MIB * FACTOR * FACTOR} Bytes</strong><p>`);
+        document.write(`<p><em>${MIB} Mib</em> equivalen a <strong>${MIB * FACTOR * FACTOR * FACTOR} Bits</strong><p>`);   
+    </script>
+    
+</body>
+</html>
