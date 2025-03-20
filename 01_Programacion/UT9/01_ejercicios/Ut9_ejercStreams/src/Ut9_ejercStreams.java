@@ -25,7 +25,8 @@ public class Ut9_ejercStreams {
                 .filter(e -> e.edad() > 30)
                 .sorted(Comparator.comparingDouble(Empleado::salario))
                 .limit(3)
-                .forEach(e -> System.out.println("Nombre: " + e.nombre() + ", salario" + e.salario())
+                .forEach(e -> System.out.println("Nombre: " + e.nombre() + ", salario " + e.salario()));
+        
     }
 }
 
