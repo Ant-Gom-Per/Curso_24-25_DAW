@@ -1,0 +1,121 @@
+Aquí tienes **tres ejercicios sencillos** de **programación modular en Java**, cada uno con su respectiva solución. 
+La **programación modular** se basa en dividir el código en métodos reutilizables para mejorar la organización y la legibilidad.
+
+### **Ejercicio 1: Calcular el área de un rectángulo**
+**Descripción:**  
+Crea un programa que solicite la base y la altura de un rectángulo, y luego calcule su área usando un método separado.
+
+#### **Solución:**
+
+import java.util.Scanner;
+
+public class AreaRectangulo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese la base del rectángulo: ");
+        double base = scanner.nextDouble();
+
+        System.out.print("Ingrese la altura del rectángulo: ");
+        double altura = scanner.nextDouble();
+
+        double area = calcularArea(base, altura); // Llamada al método modular
+        System.out.println("El área del rectángulo es: " + area);
+
+        scanner.close();
+    }
+
+    public static double calcularArea(double base, double altura) {
+        return base * altura;
+    }
+}
+```
+✅ **Explicación:**  
+- Se crea un método `calcularArea(double base, double altura)` que encapsula la lógica de cálculo.  
+- `main()` se encarga solo de recibir datos e imprimir resultados.
+
+------------------------------------------------------------------------------------------
+
+### **Ejercicio 2: Determinar si un número es par o impar**
+**Descripción:**  
+Escribe un programa que solicite un número entero y determine si es **par** o **impar** utilizando un método.
+
+#### **Solución:**
+
+import java.util.Scanner;
+
+public class NumeroParImpar {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese un número entero: ");
+        int numero = scanner.nextInt();
+
+        if (esPar(numero)) { // Llamada a la función modular
+            System.out.println("El número " + numero + " es par.");
+        } else {
+            System.out.println("El número " + numero + " es impar.");
+        }
+
+        scanner.close();
+    }
+
+    public static boolean esPar(int num) {
+        return num % 2 == 0;
+    }
+}
+```
+✅ **Explicación:**  
+- Se crea el método `esPar(int num)`, que devuelve `true` si el número es par y `false` si es impar.  
+- `main()` simplemente obtiene el número, llama al método y muestra el resultado.
+
+--------------------------------------------------------------------------------------------
+
+### **Ejercicio 3: Calcular el factorial de un número**
+**Descripción:**  
+Haz un programa que solicite un número entero positivo y calcule su **factorial** utilizando un método separado.
+
+#### **Solución:**
+
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese un número entero positivo: ");
+        int numero = scanner.nextInt();
+
+        if (numero < 0) {
+            System.out.println("El número debe ser positivo.");
+        } else {
+            long resultado = calcularFactorial(numero); // Llamada a la función modular
+            System.out.println("El factorial de " + numero + " es: " + resultado);
+        }
+
+        scanner.close();
+    }
+
+    public static long calcularFactorial(int num) {
+        long factorial = 1;
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+}
+```
+✅ **Explicación:**  
+- `calcularFactorial(int num)` usa un bucle `for` para calcular el factorial.  
+- `main()` maneja la entrada del usuario y las validaciones.
+
+-----------------------------------------------------------------------------------
+
+### 📌 **Resumen:**
+| Ejercicio             | Método Modular                             |
+|-----------            |--------------------------------------------|
+| Área de un rectángulo | `calcularArea(double base, double altura)` |
+| Número par o impar    | `esPar(int num)`                           |
+| Factorial de un número| `calcularFactorial(int num)`               |
+
+Estos ejercicios demuestran la importancia de la **modularidad**, mejorando la **reutilización** y la **legibilidad** del código. 🚀  

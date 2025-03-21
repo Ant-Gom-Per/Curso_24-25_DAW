@@ -1,12 +1,21 @@
 /*
  * Propuesta de ejercicio para repaso de Ra3.
-   Este ejercicio reune todos los elementos del la Ut2 e implementa elementos de la Ut7
+   Este ejercicio reune todos los elementos del la Ut2 e incluye elementos de la Ut7
  */
 package ra3_ejercicios;
 
 import java.util.Scanner;
 
 public class Ra3_propuestaEjer {
+    
+    //Excepcion personalizada
+    static class InvalidSNexception extends Exception{
+        
+        //Constructor
+        public InvalidSNexception(){
+            super();
+        }
+    }
 
     public static void main(String[] args) {
         
@@ -15,7 +24,7 @@ public class Ra3_propuestaEjer {
         //Variables
         int altTri = 0, opcion = 0;
         final char ESPACIO = ' ', ASTERISCO = '*';
-        boolean seguir = true;
+        boolean seguir = true, seguir2 =false;
         String continuar = "n";
         
         while(seguir){            
@@ -86,14 +95,27 @@ public class Ra3_propuestaEjer {
                     }
                     System.out.println("");
             }
-            System.out.print("¿Quieres continuar s/n? ");
-            continuar = teclado.nextLine();
-            if(continuar.equalsIgnoreCase("s")){
-                seguir = true;
-            }else{
-                System.out.println("Fin del programa...");
-            }
-            System.out.println("");
+            do{
+                try{
+                    System.out.print("¿Quieres continuar s/n? ");
+                    continuar = teclado.nextLine();
+                    if(continuar.equalsIgnoreCase("s")){
+                        seguir = true;
+                        seguir2 = false;
+                    }else if(continuar.equalsIgnoreCase("n")){
+                        System.out.println("Fin del programa...");
+                        seguir = false;
+                        seguir2 = false;
+                    }else{
+                        throw new InvalidSNexception();
+                    }
+                }catch(InvalidSNexception e){
+                    seguir2 = true;
+                    System.out.println("-----------------------\nError, debe introducir s ó n");
+                }finally{
+                    System.out.println("");
+                }
+            }while(seguir2);            
         }
         teclado.close();
     }    
