@@ -6,11 +6,14 @@
         <title>Booleanos</title>
     </head>
     <body>
-        <script>
-            const USUARIO_LOG = true;
-            const TEXTO = documento.querySelector('.text');
-            if(USUARIO_LOG){
-                TEXTO.innerHTML=''
+        <p class="text"></p>
+        <script type="text/javascript">
+            const USER_LOGGED = false;
+            const TEXT = document.querySelector('.text');
+            if(USER_LOGGED){
+                TEXT.innerHTML='<p>Haz click <a href="#>aqui</a>para ver el contenido</<p>'
+            }else{
+                TEXT.innerHTML="<p> Te has de registrar para leer el articulo</p>"
             }
         </script>
     </body>

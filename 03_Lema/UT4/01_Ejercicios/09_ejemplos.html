@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Condicionales, Bucles y Switch</title>
+    </head>
+    <body>
+        <script>
+            var mivariable = 9;
+            if(mivariable < 10){
+                alert("El valor es menor de 10");
+            }
+
+            if(mivariable < 10){
+                alert("El valor es menos de 10");
+            }else{
+                alert("el valor es igual o mayor de 10");
+            }
+
+            mivariable = 3;
+            for(var f = 0; f < mivariable; f++){
+                alert("El valor actual de mivariable es: " + f);
+            }
+
+            mivariable = 9;
+            do{
+                mivariable ++;
+            }while(mivariable <100);
+            alert("el valor final de mivariable es: " + mivariable);
+
+            mivariable = 9;
+            while(mivariable < 100){
+                mivariable++;
+            }
+            alert("El valor final de mivariable es: " + mivariable);
+
+            mivariable = mivariable- 93;
+            switch(mivariable){
+                case 5:
+                    alert("El valor es 5");
+                    break;
+                case 8:
+                    alert("El valor es 5");
+                    break;
+                case 10:
+                    alert("El valor es 5");
+                    break;
+                default:
+                    alert("El valor es " + mivariable);
+            }
+        </script>
+        
+    </body>
+</html>

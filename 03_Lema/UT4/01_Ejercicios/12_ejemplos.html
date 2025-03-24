@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Objetos y constructores</title>
+    </head>
+    <body>
+        <script>
+            function miObjeto(nombreInicial, edadInicial){
+                this.nombre = nombreInicial;
+                this.edad = edadInicial;
+                this.mostrarNombre = function(){
+                    alert(this.nombre);
+                };
+                this.cambiarNombre = function(nuevoNombre){
+                    this.nombre =nuevoNombre;
+                };
+            }
+            var empleado = new miObjeto("Genaro", 65);
+            empleado.mostrarNombre();
+        </script>        
+    </body>
+</html>

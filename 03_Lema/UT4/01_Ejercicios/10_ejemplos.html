@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Objetos 1</title>
+    </head>
+    <body>
+        <script>
+            var miobjeto = {
+                nombre: "Juan",
+                edad: 30,
+                mostrarnombre: function(){
+                    alert(this.nombre);
+                },
+                cambiarnombre: function(nuevonombre){
+                    this.nombre = nuevonombre;
+                }
+            };
+            var empleado = Object.create(miobjeto);
+            empleado.cambiarnombre('Roberto');
+            empleado.mostrarnombre();
+            miobjeto.mostrarnombre();
+        </script>
+        
+    </body>
+</html>

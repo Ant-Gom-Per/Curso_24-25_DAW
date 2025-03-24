@@ -1,2 +1,4 @@
 Un diagrama de grant
-Metodologias ágiles
+diagrama de pert
+Ejemplo web proyecto en figma
+
