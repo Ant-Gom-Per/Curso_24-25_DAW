@@ -9,7 +9,7 @@ public class Ejercicio2UT4 {
     }
 
     public void inicio() {
-        // Ací el codi per a provar els mètodes.
+        // CODIGO
     }
     
     
@@ -18,3 +18,5 @@ public class Ejercicio2UT4 {
         return laPalabra;
     }
 }
+
+

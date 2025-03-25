@@ -1,0 +1,273 @@
+
+
+public class Ejercicio1UT4 {
+    public static void main(String[] args) {
+        Ejercicio1UT4 programa = new Ejercicio1UT4();
+        programa.inicio();
+    }
+
+    public void inicio() {
+        inicializarCola();
+        encolar();
+        desencolar();
+        System.out.println(mostrarCola());
+    }
+
+    public String[] inicializarCola(){
+        String[] nombres = {"pepe", "carla", "juan", "maria"};
+        return nombres;
+    }
+
+    public String[] encolar(){
+        String[] anyadir = {"pedro", "liliana"};
+        return anyadir;        
+    }
+
+    public String[] desencolar(){
+        String[] quitar ={};
+        return quitar;
+    }
+
+    public String mostrarCola(){
+        String algo = " algo";
+        return algo;
+    }
+    
+}
+
+-------------------------------------------------------------------------
+CHGPT
+
+¡Gracias por compartir el ejercicio! A continuación, te proporcionaré un ejercicio similar en Java. Este nuevo ejercicio tendrá como tema una **pila (stack)** en lugar de una cola (queue), y realizará operaciones como **apilar** (push), **desapilar** (pop), y mostrar el contenido de la pila.
+
+### Ejercicio Similar en Java: **Operaciones con Pila**
+
+```java
+public class EjercicioPila {
+    public static void main(String[] args) {
+        EjercicioPila programa = new EjercicioPila();
+        programa.inicio();
+    }
+
+    public void inicio() {
+        inicializarPila();
+        apilar();
+        desapilar();
+        System.out.println(mostrarPila());
+    }
+
+    // Método para inicializar la pila con algunos valores
+    public String[] inicializarPila() {
+        String[] elementos = {"juan", "carla", "maria", "pepe"};
+        return elementos;
+    }
+
+    // Método para apilar nuevos elementos en la pila
+    public String[] apilar() {
+        String[] elementosNuevos = {"pedro", "liliana"};
+        return elementosNuevos;
+    }
+
+    // Método para desapilar (eliminar) el último elemento de la pila
+    public String[] desapilar() {
+        String[] pilaVacia = {};  // En este caso, desapilamos todos los elementos
+        return pilaVacia;
+    }
+
+    // Método para mostrar el contenido de la pila
+    public String mostrarPila() {
+        String pilaContenido = "La pila está vacía.";
+        return pilaContenido;
+    }
+}
+```
+
+### Explicación del código:
+
+1. **Método `inicializarPila()`**: Inicializa una pila con un conjunto de valores predefinidos, similar a la cola en tu ejemplo.
+2. **Método `apilar()`**: Simula la acción de agregar elementos nuevos a la pila.
+3. **Método `desapilar()`**: Simula la acción de eliminar el último elemento de la pila.
+4. **Método `mostrarPila()`**: Devuelve el contenido de la pila en forma de una cadena de texto.
+
+Al igual que en tu ejercicio de la cola, puedes agregar lógica adicional para simular una pila más funcional, como mantener el estado de la pila en todo momento, pero este es un buen punto de partida. Si necesitas una versión más avanzada (usando una estructura de datos real, como `Stack` o `Deque`), también podemos hacerlo.
+
+------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+CHGPT
+
+¡Entendido! El ejercicio solicita un programa que, dado un texto y una letra, devuelva un array de enteros que contenga los índices donde se encuentra la letra en el texto. Si la letra no aparece, debe devolver un array vacío.
+
+Voy a ayudarte a implementar la solución a este ejercicio de acuerdo con el formato que has planteado. El método que se debe implementar debe buscar la letra en el texto y devolver los índices de aparición. Aquí te dejo una posible solución:
+
+### Solución:
+
+```java
+import java.util.ArrayList;
+
+public class Ejercicio2UT4 {
+    public static void main(String[] args) {
+        Ejercicio2UT4 programa = new Ejercicio2UT4();
+        programa.inicio();
+    }
+
+    public void inicio() {
+        String texto = palabra(); // Obtenemos el texto
+        char letra = 'a'; // La letra que buscamos
+        int[] indices = buscarIndices(texto, letra); // Buscamos los índices de la letra
+        
+        // Imprimir los índices encontrados
+        if (indices.length > 0) {
+            System.out.print("Los índices donde aparece la letra '" + letra + "' son: ");
+            for (int indice : indices) {
+                System.out.print(indice + " ");
+            }
+        } else {
+            System.out.println("La letra no aparece en el texto.");
+        }
+    }
+
+    // Método que devuelve la palabra o texto
+    public String palabra() {
+        return "algo"; // El texto en el que vamos a buscar
+    }
+
+    // Método que busca los índices de la letra en el texto
+    public int[] buscarIndices(String texto, char letra) {
+        ArrayList<Integer> indicesList = new ArrayList<>(); // Lista para almacenar los índices
+        
+        // Recorremos cada carácter del texto y verificamos si es igual a la letra
+        for (int i = 0; i < texto.length(); i++) {
+            if (texto.charAt(i) == letra) {
+                indicesList.add(i); // Si encontramos la letra, almacenamos el índice
+            }
+        }
+        
+        // Convertimos la lista de índices a un array de enteros
+        int[] indices = new int[indicesList.size()];
+        for (int i = 0; i < indicesList.size(); i++) {
+            indices[i] = indicesList.get(i);
+        }
+        
+        return indices; // Devolvemos el array de índices
+    }
+}
+```
+
+### Explicación del código:
+
+1. **Método `palabra()`**: Devuelve la palabra o texto en el que buscaremos los índices de la letra.
+
+2. **Método `buscarIndices(String texto, char letra)`**: Este método recorre el texto carácter por carácter. Si encuentra la letra, guarda su índice en una lista. Al final, convierte la lista de índices en un array de enteros y lo devuelve.
+
+3. **Método `inicio()`**: Este es el punto de entrada donde:
+   - Se obtiene el texto llamando a `palabra()`.
+   - Se define la letra a buscar.
+   - Se llama al método `buscarIndices()` para obtener los índices de la letra en el texto.
+   - Se imprime el resultado, ya sea los índices encontrados o un mensaje indicando que la letra no aparece.
+
+### Ejemplo de salida:
+Si ejecutamos el programa con el texto `"algo"` y la letra `'a'`, la salida sería:
+
+```
+Los índices donde aparece la letra 'a' son: 0 
+```
+
+Si ejecutamos el programa con una letra que no está en el texto, como `'z'`, la salida sería:
+
+```
+La letra no aparece en el texto.
+```
+
+### Mejoras:
+Este código maneja la búsqueda de la letra en el texto de forma eficiente, y si no se encuentra la letra, devuelve un array vacío. Esto satisface los requisitos del ejercicio. Si necesitas más detalles o ajustes, no dudes en preguntar. ¡Espero que te sea útil!
+
+
+--------------------------------------------------------------------------------------------------------
+CHGPT
+
+Entendido. Este ejercicio requiere implementar un método que verifique de forma recursiva si dos arrays tienen el mismo contenido. Vamos a resolverlo usando recursión para comparar los elementos de los arrays uno a uno. Si todos los elementos coinciden, devolveremos `true`; si en algún momento encontramos una diferencia, devolveremos `false`.
+
+Aquí está la implementación de la solución:
+
+### Solución con Recursión:
+
+```java
+public class Ejercicio3UT4 {
+    public static void main(String[] args) {
+        Ejercicio3UT4 programa = new Ejercicio3UT4();
+        programa.inici();
+    }
+
+    // Método de inicio que ejecuta la lógica
+    public void inici() {
+        int[] array1 = {1, 2, 3, 4};  // Primer array
+        int[] array2 = {1, 2, 3, 4};  // Segundo array
+
+        // Llamamos al método recursivo para verificar si los arrays son iguales
+        boolean iguales = sonIguales(array1, array2, 0);
+
+        // Imprimimos el resultado
+        if (iguales) {
+            System.out.println("Los arrays son iguales.");
+        } else {
+            System.out.println("Los arrays no son iguales.");
+        }
+    }
+
+    // Método recursivo que verifica si dos arrays son iguales
+    public boolean sonIguales(int[] array1, int[] array2, int index) {
+        // Caso base: Si llegamos al final de ambos arrays y todos los elementos coinciden
+        if (index == array1.length) {
+            return true;  // Ambos arrays tienen el mismo tamaño y contenido
+        }
+
+        // Si los arrays tienen diferentes tamaños o los elementos en el índice no coinciden
+        if (array1.length != array2.length || array1[index] != array2[index]) {
+            return false;  // Los arrays son diferentes
+        }
+
+        // Llamada recursiva para comparar el siguiente índice
+        return sonIguales(array1, array2, index + 1);
+    }
+}
+```
+
+### Explicación del código:
+
+1. **Método `inici()`**: 
+   - Define dos arrays `array1` y `array2`.
+   - Llama al método recursivo `sonIguales()` pasando los arrays y el índice inicial (`0`).
+
+2. **Método `sonIguales(int[] array1, int[] array2, int index)`**:
+   - **Caso base**: Si el índice (`index`) es igual a la longitud del primer array, significa que hemos llegado al final de ambos arrays y todos los elementos hasta ese punto coinciden. Entonces, se devuelve `true`.
+   - **Comprobación de desigualdad**: Si en cualquier momento los tamaños de los arrays no coinciden o los elementos en el índice actual no son iguales, se devuelve `false`.
+   - **Recursión**: Si ninguno de los casos anteriores se cumple, la función se llama recursivamente para verificar los elementos en el siguiente índice (`index + 1`).
+
+3. **Resultado**: Si los arrays son iguales, se imprime `"Los arrays son iguales."`, de lo contrario, se imprime `"Los arrays no son iguales."`.
+
+### Ejemplo de ejecución:
+
+1. Si los arrays son `{1, 2, 3, 4}` y `{1, 2, 3, 4}`, el programa imprimirá:
+   
+   ```
+   Los arrays son iguales.
+   ```
+
+2. Si los arrays son `{1, 2, 3, 4}` y `{1, 2, 3, 5}`, el programa imprimirá:
+
+   ```
+   Los arrays no son iguales.
+   ```
+
+3. Si los arrays son de diferentes tamaños, como `{1, 2, 3}` y `{1, 2, 3, 4}`, el programa también imprimirá:
+
+   ```
+   Los arrays no son iguales.
+   ```
+
+### Detalles adicionales:
+- Este enfoque es recursivo y compara los elementos de los arrays en cada llamada recursiva. A medida que aumenta el índice, se verifica cada par de elementos, y si en algún punto hay una diferencia, se devuelve `false` inmediatamente.
+- La recursión garantiza que todos los elementos sean verificados sin necesidad de bucles adicionales.
+
+Espero que esto te ayude a entender cómo resolver este problema de manera recursiva. Si tienes más preguntas o deseas alguna mejora en el código, ¡no dudes en preguntar!

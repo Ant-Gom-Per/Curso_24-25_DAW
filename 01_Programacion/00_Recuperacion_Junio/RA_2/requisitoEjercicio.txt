@@ -1,0 +1,3 @@
+Paso por referencia y paso por valor
+una cambia el valor de las variables y el otro hace una copia
+no usar vectores.

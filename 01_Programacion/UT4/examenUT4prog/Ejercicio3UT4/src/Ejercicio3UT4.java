@@ -9,7 +9,7 @@ public class Ejercicio3UT4 {
     }
 
     public void inici() {
-        // Ací el codi per a provar els mètodes.
+        // codigo
     }
 
     public boolean sonIguales(){
@@ -17,3 +17,5 @@ public class Ejercicio3UT4 {
         return iguales;
     }
 }
+
+
