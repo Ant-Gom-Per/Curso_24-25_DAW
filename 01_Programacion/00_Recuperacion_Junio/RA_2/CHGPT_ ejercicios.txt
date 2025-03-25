@@ -1,121 +1,278 @@
-Aquí tienes **tres ejercicios sencillos** de **programación modular en Java**, cada uno con su respectiva solución. 
-La **programación modular** se basa en dividir el código en métodos reutilizables para mejorar la organización y la legibilidad.
-
-### **Ejercicio 1: Calcular el área de un rectángulo**
-**Descripción:**  
-Crea un programa que solicite la base y la altura de un rectángulo, y luego calcule su área usando un método separado.
-
-#### **Solución:**
-
 import java.util.Scanner;
 
-public class AreaRectangulo {
+public class VolumenCubo {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Ingrese la base del rectángulo: ");
-        double base = scanner.nextDouble();
-
-        System.out.print("Ingrese la altura del rectángulo: ");
-        double altura = scanner.nextDouble();
-
-        double area = calcularArea(base, altura); // Llamada al método modular
-        System.out.println("El área del rectángulo es: " + area);
-
-        scanner.close();
+        VolumenCubo programa = new VolumenCubo();
+        programa.inicio();
     }
 
-    public static double calcularArea(double base, double altura) {
-        return base * altura;
+    public void inicio() {
+        System.out.println("El volumen es: " + calcularVolumen(leerEntero()));
+        System.out.println("El volumen es " + (esPar(calcularVolumen(leerEntero())) ? "par" : "impar"));
+    }
+
+    public int calcularVolumen(int lado) {
+        return lado * lado * lado;
+    }
+
+    public boolean esPar(int numero) {
+        return numero % 2 == 0;
+    }
+
+    public int leerEntero() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Introduce un número entero: ");
+        return teclado.nextInt();
     }
 }
-```
-✅ **Explicación:**  
-- Se crea un método `calcularArea(double base, double altura)` que encapsula la lógica de cálculo.  
-- `main()` se encarga solo de recibir datos e imprimir resultados.
 
-------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
-### **Ejercicio 2: Determinar si un número es par o impar**
-**Descripción:**  
-Escribe un programa que solicite un número entero y determine si es **par** o **impar** utilizando un método.
-
-#### **Solución:**
+Este programa calculará el factorial de un número, verificará si el resultado es 
+par o impar y repetirá el proceso hasta que el usuario decida salir.
 
 import java.util.Scanner;
 
-public class NumeroParImpar {
+public class FactorialParImpar {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Ingrese un número entero: ");
-        int numero = scanner.nextInt();
-
-        if (esPar(numero)) { // Llamada a la función modular
-            System.out.println("El número " + numero + " es par.");
-        } else {
-            System.out.println("El número " + numero + " es impar.");
-        }
-
-        scanner.close();
+        FactorialParImpar programa = new FactorialParImpar();
+        programa.inicio();
     }
 
-    public static boolean esPar(int num) {
-        return num % 2 == 0;
-    }
-}
-```
-✅ **Explicación:**  
-- Se crea el método `esPar(int num)`, que devuelve `true` si el número es par y `false` si es impar.  
-- `main()` simplemente obtiene el número, llama al método y muestra el resultado.
-
---------------------------------------------------------------------------------------------
-
-### **Ejercicio 3: Calcular el factorial de un número**
-**Descripción:**  
-Haz un programa que solicite un número entero positivo y calcule su **factorial** utilizando un método separado.
-
-#### **Solución:**
-
-import java.util.Scanner;
-
-public class Factorial {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Ingrese un número entero positivo: ");
-        int numero = scanner.nextInt();
-
-        if (numero < 0) {
-            System.out.println("El número debe ser positivo.");
-        } else {
-            long resultado = calcularFactorial(numero); // Llamada a la función modular
+    public void inicio() {
+        Scanner teclado = new Scanner(System.in);
+        char continuar;
+        
+        do {
+            int numero = leerEntero();
+            int resultado = calcularFactorial(numero);
             System.out.println("El factorial de " + numero + " es: " + resultado);
-        }
-
-        scanner.close();
+            
+            if (esPar(resultado)) {
+                System.out.println("El resultado es un número PAR.");
+            } else {
+                System.out.println("El resultado es un número IMPAR.");
+            }
+            
+            System.out.print("¿Quieres calcular otro factorial? (s/n): ");
+            continuar = teclado.next().charAt(0);
+            
+        } while (continuar == 's' || continuar == 'S');
+        
+        System.out.println("Programa finalizado.");
     }
 
-    public static long calcularFactorial(int num) {
-        long factorial = 1;
+    public int calcularFactorial(int num) {
+        int factorial = 1;
         for (int i = 1; i <= num; i++) {
             factorial *= i;
         }
         return factorial;
     }
+
+    public boolean esPar(int numero) {
+        return numero % 2 == 0;
+    }
+
+    public int leerEntero() {
+        Scanner teclado = new Scanner(System.in);
+        int num;
+        
+        do {
+            System.out.print("Introduce un número entero positivo: ");
+            num = teclado.nextInt();
+            
+            if (num < 0) {
+                System.out.println("Error: El número debe ser positivo.");
+            }
+        } while (num < 0);
+        
+        return num;
+    }
 }
-```
-✅ **Explicación:**  
-- `calcularFactorial(int num)` usa un bucle `for` para calcular el factorial.  
-- `main()` maneja la entrada del usuario y las validaciones.
 
------------------------------------------------------------------------------------
+Explicación:
 
-### 📌 **Resumen:**
-| Ejercicio             | Método Modular                             |
-|-----------            |--------------------------------------------|
-| Área de un rectángulo | `calcularArea(double base, double altura)` |
-| Número par o impar    | `esPar(int num)`                           |
-| Factorial de un número| `calcularFactorial(int num)`               |
+    Bucle do-while en inicio(): Permite repetir el proceso hasta que el usuario decida salir.
 
-Estos ejercicios demuestran la importancia de la **modularidad**, mejorando la **reutilización** y la **legibilidad** del código. 🚀  
+    Condicional if-else: Determina si el resultado del factorial es par o impar.
+
+    Validación con do-while en leerEntero(): Evita que el usuario ingrese un número negativo.
+
+    Uso de for en calcularFactorial(): Calcula el factorial iterativamente.
+
+-----------------------------------------------------------------------------------------------------
+
+El programa pedirá al usuario una cantidad de números, los almacenará en un vector, 
+calculará la suma de todos ellos y determinará si la suma es par o impar.
+
+import java.util.Scanner;
+
+public class SumaNumerosVector {
+
+    public static void main(String[] args) {
+        SumaNumerosVector programa = new SumaNumerosVector();
+        programa.inicio();
+    }
+
+    public void inicio() {
+        int cantidad = leerEntero("Introduce la cantidad de números a ingresar: ");
+        int[] numeros = leerVector(cantidad);
+        
+        int suma = calcularSuma(numeros);
+        System.out.println("La suma de los números ingresados es: " + suma);
+
+        if (esPar(suma)) {
+            System.out.println("El resultado es un número PAR.");
+        } else {
+            System.out.println("El resultado es un número IMPAR.");
+        }
+    }
+
+    public int[] leerVector(int tamaño) {
+        int[] vector = new int[tamaño];
+        for (int i = 0; i < tamaño; i++) {
+            vector[i] = leerEntero("Introduce un número entero para la posición " + (i + 1) + ": ");
+        }
+        return vector;
+    }
+
+    public int calcularSuma(int[] vector) {
+        int suma = 0;
+        for (int num : vector) {
+            suma += num;
+        }
+        return suma;
+    }
+
+    public boolean esPar(int numero) {
+        return numero % 2 == 0;
+    }
+
+    public int leerEntero(String mensaje) {
+        Scanner teclado = new Scanner(System.in);
+        int num;
+        
+        do {
+            System.out.print(mensaje);
+            num = teclado.nextInt();
+
+            if (num < 0) {
+                System.out.println("Error: El número debe ser positivo.");
+            }
+        } while (num < 0);
+
+        return num;
+    }
+}
+
+Explicación:
+
+    Se usa un vector (int[] numeros) para almacenar los valores ingresados por el usuario.
+
+    Se utiliza un bucle for en leerVector() para llenar el vector con números enteros.
+
+    Otro for-each en calcularSuma() para sumar todos los elementos del vector.
+
+    Condicional if-else para determinar si la suma es par o impar.
+
+    Se valida la entrada del usuario con do-while en leerEntero() para evitar números negativos.
+
+------------------------------------------------------------------------------------------------------
+
+El programa pedirá al usuario una cantidad de nombres, los almacenará en un vector de String, 
+mostrará todos los nombres ingresados, contará cuántos nombres tienen más de 5 caracteres 
+y determinará si ese número es par o impar.
+
+import java.util.Scanner;
+
+public class NombresVector {
+
+    public static void main(String[] args) {
+        NombresVector programa = new NombresVector();
+        programa.inicio();
+    }
+
+    public void inicio() {
+        int cantidad = leerEntero("Introduce la cantidad de nombres a ingresar: ");
+        String[] nombres = leerVectorNombres(cantidad);
+        
+        System.out.println("\nNombres ingresados:");
+        mostrarVector(nombres);
+
+        int contador = contarNombresLargos(nombres);
+        System.out.println("\nCantidad de nombres con más de 5 caracteres: " + contador);
+
+        if (esPar(contador)) {
+            System.out.println("El resultado es un número PAR.");
+        } else {
+            System.out.println("El resultado es un número IMPAR.");
+        }
+    }
+
+    public String[] leerVectorNombres(int tamaño) {
+        Scanner teclado = new Scanner(System.in);
+        String[] vector = new String[tamaño];
+
+        for (int i = 0; i < tamaño; i++) {
+            System.out.print("Introduce un nombre para la posición " + (i + 1) + ": ");
+            vector[i] = teclado.nextLine();
+        }
+
+        return vector;
+    }
+
+    public void mostrarVector(String[] vector) {
+        for (String nombre : vector) {
+            System.out.println("- " + nombre);
+        }
+    }
+
+    public int contarNombresLargos(String[] vector) {
+        int contador = 0;
+        for (String nombre : vector) {
+            if (nombre.length() > 5) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    public boolean esPar(int numero) {
+        return numero % 2 == 0;
+    }
+
+    public int leerEntero(String mensaje) {
+        Scanner teclado = new Scanner(System.in);
+        int num;
+
+        do {
+            System.out.print(mensaje);
+            num = teclado.nextInt();
+            teclado.nextLine(); // Consumir el salto de línea
+
+            if (num <= 0) {
+                System.out.println("Error: Debes ingresar un número mayor a 0.");
+            }
+        } while (num <= 0);
+
+        return num;
+    }
+}
+
+Explicación:
+
+    Se usa un vector de String (String[] nombres) para almacenar los nombres ingresados.
+
+    El método leerVectorNombres() solicita nombres al usuario y los guarda en el vector.
+
+    El método mostrarVector() imprime todos los nombres ingresados.
+
+    El método contarNombresLargos() cuenta cuántos nombres tienen más de 5 caracteres.
+
+    Condicional if-else verifica si la cantidad de nombres largos es par o impar.
+
+    El método leerEntero() se asegura de que el usuario ingrese un número válido y usa 
+    teclado.nextLine(); para evitar problemas con el salto de línea al leer nombres.

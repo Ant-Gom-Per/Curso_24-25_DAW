@@ -7,15 +7,6 @@ package ra3_ejercicios;
 import java.util.Scanner;
 
 public class Ra3_propuestaEjer {
-    
-    //Excepcion personalizada
-    static class InvalidSNexception extends Exception{
-        
-        //Constructor
-        public InvalidSNexception(){
-            super();
-        }
-    }
 
     public static void main(String[] args) {
         
@@ -107,9 +98,9 @@ public class Ra3_propuestaEjer {
                         seguir = false;
                         seguir2 = false;
                     }else{
-                        throw new InvalidSNexception();
+                        throw new Ra3_InvalidSNexceptio();
                     }
-                }catch(InvalidSNexception e){
+                }catch(Ra3_InvalidSNexceptio e){
                     seguir2 = true;
                     System.out.println("-----------------------\nError, debe introducir s ó n");
                 }finally{
