@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Funciones 2</title>
+    </head>
+    <body>
+        <p id="text">Hola esto es otro parrafo de mi web (haz doble click sobre mi)</p>
+        <script type="text/javascript">
+            var contador = 1;
+            let parrafo = document.getElementById('text');
+            parrafo.style.fontSize = contador + "rem"
+            parrafo.addEventListener("dblclick", () => {parrafo.style.fontSize = ++contador + "rem"});
+        </script>
+    </body>
+</html>

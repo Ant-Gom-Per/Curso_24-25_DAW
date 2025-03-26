@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Funciones</title>
+    </head>
+    <body>
+        <p id="text">Hola, esto es un parrafo de mi web (haz doble click sobre mi)</p>
+        <script type="text/javascript">
+            var contador = 1;
+            let parrafo = document.getElementById('text');
+            parrafo.style.fontSize = contador + "rem";
+            parrafo.addEventListener("dblclick", function(){
+                contador++;
+                parrafo.style.fontSize = contador + "rem";
+            });
+        </script>
+    </body>
+</html>

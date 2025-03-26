@@ -1,0 +1,79 @@
+set SERVEROUTPUT on;
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+EJERCICIO 02
+
+DECLARE
+    v_nombre VARCHAR2(50);
+    v_apellido1 VARCHAR2(50);
+    v_apellido2 VARCHAR2(50);
+    v_email VARCHAR2(100);
+    v_anyo_nac number;
+    v_telef NUMBER(9);
+    v_ultDigitos NUMBER(2);
+
+BEGIN
+    v_nombre := 'Benito';
+    v_apellido1 := 'Camelas';
+    v_apellido2 := 'Bolas';
+    v_anyo_nac := 1965;
+    v_ultDigitos := mod (v_anyo_nac,100);--Mod es una función matemática que devuelve el resto (módulo) de una división.
+    dbms_output.put_line('Nombre: ' || v_nombre || ' '|| v_apellido1 || ' ' || v_apellido2 || ' ' || v_anyo_nac);   
+    dbms_output.put_line( 'Correo: ' || lower(v_apellido1) || '_' || lower(v_apellido2) || '@iespacomolla.es');
+    dbms_output.put_line( 'Password: ' || lower(v_nombre) || '_' || lower(v_ultDigitos));
+    
+END;
+
+---------------------------------------------------------------------------------------------------------------------
+
+EJERCICIO 03
+
+--Crea un bloque que realice la división de dos variables y muestre una excepción ZERO_DIVIDE si el divisor es cero
+
+DECLARE
+    v_dividendo NUMBER;
+    v_divisor NUMBER;
+    v_cociente NUMBER; 
+    
+
+BEGIN
+    v_dividendo := 1;
+    v_divisor := 0;
+    v_cociente := v_dividendo / v_divisor;
+    EXCEPTION
+        WHEN ZERO_DIVIDE THEN
+        dbms_output.put_line('Error, no se puede dividir por 0');   
+        
+END;
+
+---------------------------------------------------------------------------------------------------------------------
+
+--Crea un programa que procesa una transacción bancaria. Antes de permitir retirar 500€ 
+--de la cuenta 3, se asegura de que la cuenta tenga fondos suficientes para cubrir la retirada. 
+--Si los fondos están disponibles, el programa debita la cuenta. De lo contrario, 
+--el programa inserta un registro en una tabla de auditoría.
+
+DECLARE
+    v_cuenta_1 NUMBER;
+    v_cuenta_2 NUMBER;
+    v_cuenta_3 NUMBER;       
+
+BEGIN
+    v_cuenta_1 := 200;
+    v_cuenta_2 := 900;
+    v_cuenta_3 := 600;
+    
+    IF (v_cuenta_3 - 500) < 0 THEN          
+        dbms_output.put_line('Error, no hay saldo suficiente.');
+    ELSE
+        v_cuenta_3 := v_cuenta_3 - 500;
+        dbms_output.put_line('Su saldo actual es: '|| v_cuenta_3 || ' €');
+    END IF;
+        
+END;
+
+---------------------------------------------------------------------------------------------------------------------
+
