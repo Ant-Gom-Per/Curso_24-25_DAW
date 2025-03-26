@@ -1,0 +1,171 @@
+Ejercicio 1: Paso por Valor con Tipos Primitivos
+
+En Java, los tipos primitivos (int, double, boolean, etc.) se pasan por valor, lo que significa que se copia su contenido y no se modifica la variable original.
+
+public class PasoPorValor {
+    public static void main(String[] args) {
+        int numero = 10;
+        System.out.println("Antes de llamar a la función: " + numero);
+        
+        cambiarValor(numero);
+        
+        System.out.println("Después de llamar a la función: " + numero);
+    }
+    
+    public static void cambiarValor(int num) {
+        num = 20; // Cambia el valor localmente, pero no afecta la variable original
+        System.out.println("Dentro de la función: " + num);
+    }
+}
+
+Salida esperada:
+Antes de llamar a la función: 10  
+Dentro de la función: 20  
+Después de llamar a la función: 10  
+
+Explicación:
+Aunque cambiamos num dentro del método, numero en main sigue siendo 10 porque solo se pasó una copia del valor.
+
+-----------------------------------------------------------------------------------
+
+Ejercicio 2: Paso por Referencia con Objetos
+
+Los objetos en Java se pasan por referencia, lo que significa que la función puede modificar los atributos del objeto original.
+
+class Persona {
+    String nombre;
+    
+    Persona(String nombre) {
+        this.nombre = nombre;
+    }
+}
+
+public class PasoPorReferencia {
+    public static void main(String[] args) {
+        Persona persona = new Persona("Juan");
+        System.out.println("Antes de llamar a la función: " + persona.nombre);
+        
+        cambiarNombre(persona);
+        
+        System.out.println("Después de llamar a la función: " + persona.nombre);
+    }
+    
+    public static void cambiarNombre(Persona p) {
+        p.nombre = "Carlos"; // Se cambia el atributo del objeto original
+        System.out.println("Dentro de la función: " + p.nombre);
+    }
+}
+
+Salida esperada:
+Antes de llamar a la función: Juan  
+Dentro de la función: Carlos  
+Después de llamar a la función: Carlos  
+
+Explicación:
+Como persona es un objeto, la referencia se pasa a la función, permitiendo modificar directamente su atributo nombre.
+
+-----------------------------------------------------------------------------------
+
+Ejercicio 3: Paso por Referencia con Arrays
+
+Los arrays en Java también se pasan por referencia, por lo que las modificaciones dentro de un método afectan el array original.
+
+public class PasoPorReferenciaArray {
+    public static void main(String[] args) {
+        int[] numeros = {1, 2, 3};
+        System.out.println("Antes de llamar a la función: " + numeros[0]);
+        
+        modificarArray(numeros);
+        
+        System.out.println("Después de llamar a la función: " + numeros[0]);
+    }
+    
+    public static void modificarArray(int[] arr) {
+        arr[0] = 99; // Se modifica el array original
+        System.out.println("Dentro de la función: " + arr[0]);
+    }
+}
+
+Salida esperada:
+Antes de llamar a la función: 1  
+Dentro de la función: 99  
+Después de llamar a la función: 99  
+
+Explicación:
+Los arrays en Java se comportan como objetos, por lo que la función accede directamente a su contenido y puede modificarlo.
+
+-----------------------------------------------------------------------------------
+
+Ejercicio: Modificar un objeto desde otro objeto
+
+Imaginemos que un banco tiene la capacidad de modificar el saldo de una cuenta bancaria. Crearemos dos clases:
+
+    · CuentaBancaria, que representa una cuenta con un saldo.
+
+    · Banco, que tiene un método para transferir dinero de una cuenta a otra.
+
+class CuentaBancaria {
+    String titular;
+    double saldo;
+
+    public CuentaBancaria(String titular, double saldo) {
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+
+    public void mostrarSaldo() {
+        System.out.println("Titular: " + titular + " - Saldo: $" + saldo);
+    }
+}
+
+class Banco {
+    public void transferir(CuentaBancaria origen, CuentaBancaria destino, double monto) {
+        if (origen.saldo >= monto) {
+            origen.saldo -= monto;
+            destino.saldo += monto;
+            System.out.println("Transferencia de $" + monto + " realizada con éxito.");
+        } else {
+            System.out.println("Saldo insuficiente para la transferencia.");
+        }
+    }
+}
+
+public class PasoPorReferenciaObjetos {
+    public static void main(String[] args) {
+        CuentaBancaria cuenta1 = new CuentaBancaria("Juan", 500);
+        CuentaBancaria cuenta2 = new CuentaBancaria("María", 300);
+
+        System.out.println("Antes de la transferencia:");
+        cuenta1.mostrarSaldo();
+        cuenta2.mostrarSaldo();
+
+        Banco banco = new Banco();
+        banco.transferir(cuenta1, cuenta2, 200);
+
+        System.out.println("Después de la transferencia:");
+        cuenta1.mostrarSaldo();
+        cuenta2.mostrarSaldo();
+    }
+}
+
+Salida esperada:
+Antes de la transferencia:
+Titular: Juan - Saldo: $500.0
+Titular: María - Saldo: $300.0
+Transferencia de $200.0 realizada con éxito.
+Después de la transferencia:
+Titular: Juan - Saldo: $300.0
+Titular: María - Saldo: $500.0
+
+Explicación:
+
+    1.-Creamos dos objetos de CuentaBancaria: cuenta1 y cuenta2.
+
+    2.-Creamos un objeto Banco, que tiene el método transferir.
+
+    3.-La función transferir recibe dos objetos CuentaBancaria y un monto,          modificando el saldo de ambos.
+
+    4.- Como los objetos en Java se pasan por referencia, los cambios realizados dentro del método transferir afectan directamente a cuenta1 y cuenta2.
+
+Conclusión:
+En Java, cuando pasamos objetos a un método, pasamos su referencia, lo que significa que podemos modificar sus atributos dentro del método.
