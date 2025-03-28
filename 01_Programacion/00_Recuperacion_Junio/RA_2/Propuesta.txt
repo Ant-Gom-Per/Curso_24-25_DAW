@@ -1,0 +1,88 @@
+Necesito un ejercicio en java que incluya paso por valor de un double y paso por referencia de un vector de Strings
+Añade al ejercicio entrada por teclado para la variable número y para el vector.
+Elege mediante entrada por teclado en que posición del vector se quiere cambiar la palabra y la palabra a introducir
+
+import java.util.Scanner;
+
+public class PasoPorValorYReferencia {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Entrada por teclado para el número
+        System.out.print("Ingrese un número double: ");
+        double numero = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        // Entrada por teclado para el vector de Strings
+        System.out.print("Ingrese el tamaño del vector de palabras: ");
+        int tamaño = scanner.nextInt();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        String[] palabras = new String[tamaño];
+        for (int i = 0; i < tamaño; i++) {
+            System.out.print("Ingrese la palabra " + (i + 1) + ": ");
+            palabras[i] = scanner.nextLine();
+        }
+
+        // Entrada de la posición que el usuario quiere modificar
+        System.out.print("Ingrese la posición del vector que desea modificar (1 - " + tamaño + "): ");
+        int posicion = scanner.nextInt();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        System.out.print("Ingrese la nueva palabra: ");
+        String nuevaPalabra = scanner.nextLine();
+
+        System.out.println("\nAntes de llamar al método:");
+        System.out.println("Número: " + numero);
+        System.out.println("Vector: " + java.util.Arrays.toString(palabras));
+
+        modificarNumero(numero);
+        modificarVector(palabras, posicion - 1, nuevaPalabra); // Restamos 1 para adaptar a índice de array
+
+        System.out.println("\nDespués de llamar a los métodos:");
+        System.out.println("Número (no cambia): " + numero);
+        System.out.println("Vector (cambia): " + java.util.Arrays.toString(palabras));
+
+        scanner.close(); // Cerramos el scanner
+    }
+
+    // Método que intenta modificar el double (pero no lo hace realmente)
+    public static void modificarNumero(double valor) {
+        valor *= 2; // Se modifica solo dentro de este método
+        System.out.println("\nDentro de modificarNumero (valor local cambiado): " + valor);
+    }
+
+    // Método que modifica la palabra en la posición elegida del vector
+    public static void modificarVector(String[] vector, int indice, String nuevaPalabra) {
+        if (indice >= 0 && indice < vector.length) {
+            vector[indice] = nuevaPalabra; // Modifica la palabra en la posición indicada
+        } else {
+            System.out.println("Posición fuera de rango. No se realizó ninguna modificación.");
+        }
+        System.out.println("Dentro de modificarVector (vector cambiado): " + java.util.Arrays.toString(vector));
+    }
+}
+
+Ejemplo de ejecución
+
+Ingrese un número double: 12.3
+Ingrese el tamaño del vector de palabras: 3
+Ingrese la palabra 1: Hola
+Ingrese la palabra 2: Mundo
+Ingrese la palabra 3: Java
+Ingrese la posición del vector que desea modificar (1 - 3): 2
+Ingrese la nueva palabra: Programación
+
+Antes de llamar al método:
+Número: 12.3
+Vector: [Hola, Mundo, Java]
+
+Dentro de modificarNumero (valor local cambiado): 24.6
+Dentro de modificarVector (vector cambiado): [Hola, Programación, Java]
+
+Después de llamar a los métodos:
+Número (no cambia): 12.3
+Vector (cambia): [Hola, Programación, Java]
+
+

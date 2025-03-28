@@ -1,0 +1,63 @@
+Fases del Proyecto
+
+El proyecto sigue estas etapas principales:
+
+    Requerimientos (Recopilación y análisis)
+
+    Diseño (Arquitectura y prototipos)
+
+    Desarrollo (Programación y pruebas unitarias)
+
+    Pruebas (Integración y corrección de errores)
+
+    Despliegue (Implementación y mantenimiento)
+
+Tarea	Descripción	                    Predecesoras	Duración (días)
+A	    Definir requisitos	                -	            5
+B	    Crear diagramas UML	                A	            4
+C	    Diseñar prototipo UI	            A	            6
+D	    Configurar entorno de desarrollo	B, C	        3
+E	    Programar backend	                D	            10
+F	    Programar frontend	                D	            8
+G	    Pruebas unitarias	                E, F	        5
+H	    Pruebas de integración	            G	            4
+I	    Despliegue final	                H	            3
+
+
+  (Inicio)
+     ↓
+    [A] Definir requisitos
+     ↓
+  +------+
+  |      |  
+ [B]    [C] 
+  |      |
+  +------+
+     ↓
+  [D] Configurar entorno
+     ↓
+  +------+
+  |      |
+ [E]    [F] 
+  |      |
+  +------+
+     ↓
+  [G] Pruebas unitarias
+     ↓
+  [H] Pruebas de integración
+     ↓
+  [I] Despliegue final
+     ↓
+  (Fin)
+
+
+  Explicación
+
+    Tareas paralelas: B y C pueden realizarse simultáneamente.
+
+    Ruta crítica: A → C → D → E → G → H → I
+
+    Duración total del proyecto: 35 días (según la ruta crítica).
+
+
+
