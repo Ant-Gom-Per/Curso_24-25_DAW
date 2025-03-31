@@ -86,3 +86,34 @@ Número (no cambia): 12.3
 Vector (cambia): [Hola, Programación, Java]
 
 
+
+
+----------------------------------------------------------------
+
+
+do{
+            String[] consigna = new String[numObjet()];
+            llenaConsig(consigna.length, consigna);
+            mostrarCont(consigna);
+            System.out.print("¿quieres cambiar algún objeto? ");
+            if(contProg()){
+                cambObj(consigna);
+                mostrarCont(consigna);
+            }
+            System.out.print("¿Quieres continuar con el programa? ");
+        }while(contProg());
+        System.out.println("Programa finalizado.");
+
+
+ //Metodos empleados
+    /**public double ingresaNumero(){
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Ingresa un número de tipo Double: ");
+        double numIngres = teclado.nextDouble();
+        teclado.nextLine();
+        return numIngres;
+    }**/
+
+ /**double numIngres = ingresaNumero();        **/
+        /**System.out.println("numIngres: " + numIngres);**/
+
