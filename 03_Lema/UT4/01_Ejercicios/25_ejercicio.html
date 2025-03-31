@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manejadores</title>
+    </head>
+    <p>Manejadores</p>
+    <body>
+        <button onclick="mostrar()">Ejecuta</button>
+        <button id="boton1">Activar</button>
+        <button id="boton2">Igición</button>
+        <script>
+            function mostrar(){
+                alert("Alerta!!");
+            };
+
+            document.getElementById("boton1").onclick = () => {
+                alert("Atención!!");
+            };
+
+            function mostrarAlerta(){
+                alert("Alarma!!");
+            }
+            document.getElementById("boton2").addEventListener("click", mostrarAlerta);
+        </script>
+    </body>
+</html>

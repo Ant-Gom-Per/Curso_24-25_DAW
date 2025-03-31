@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DOM por nombre</title>
+        <title>DOM Etiqueta</title>
     </head>
     <body>
         <p>Primer parrafo</p>
@@ -11,9 +11,9 @@
         <p>Tercer parrafo</p>
         <script>
             let parafgrafs = document.getElementsByTagName("p");
-            for(let i=0; i<parafgrafs.length; i++){
-                console.log(parafgrafs[i].innerHTML);
+            for(let parafgraf of parafgrafs){
+                parafgraf.onclick = alert("Contenido: " + parafgraf.innerHTML);
             }
-        </script>
+        </script>        
     </body>
 </html>

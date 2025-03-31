@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM class</title>
+    </head>
+    <body>
+        <p class="verde">Primer parrafo</p>
+        <p class="verde destacado">Segundo parrafo</p>
+        <p class="destacado">Tercer parrafo</p>
+        <button onclick="cambiar()">Cambia los verdes</button>;
+        <script>
+            function cambiar(){
+                let verdes = document.getElementsByClassName('verde');
+                for(let i=0; i<verdes.length; i++){
+                    if(verdes[i].style.color != 'red'){
+                       verdes[i].style.color = 'red';
+                    }else{
+                        verdes[i].style.color = 'green';
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

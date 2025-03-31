@@ -1,4 +1,8 @@
-Un diagrama de grant
-diagrama de pert
-Ejemplo web proyecto en figma
+Un diagrama de grant(justificación)
+diagrama de pert(justificación)
+Prototipo interfaz con proyecto en figma
+Argumentar el por que no hay aplicación para móvil
 
+objetivos
+propósitos
+características

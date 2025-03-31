@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>querySelector</title>
+    </head>
+    <body>
+        <p class="destacado">Primer parrafo</p>
+        <section>
+            <p class="destacado">Segundo parrafo</p>
+            <p class="destacado">Tercer parrafo</p>
+        </section>
+        <button onclick="cambiar()">Ejecuta</button>
+        <script>
+            function cambiar(){
+                let element = document.querySelector("section > .destacado");
+                element.style.backgroundColor = "pink";
+            }
+        </script>
+    </body>
+</html>

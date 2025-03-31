@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM id</title>
+    </head>
+    <body>
+        <p id="primero">Primer parrafo</p>
+        <p id="segundo">Segundo parrafo</p>
+        <p id="tercero">Tercer parrafo</p>
+        <button onclick="cambiar()">Cambia el segundo</button>;
+        <script>
+            function cambiar(){
+                let segundo = document.getElementById('segundo');
+                if(segundo.style.color == 'red'){
+                    segundo.style.color = 'black';
+                }else{
+                    segundo.style.color = 'red';
+                }
+            }
+        </script>
+    </body>
+</html>
