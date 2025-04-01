@@ -1,0 +1,182 @@
+Ejercicio 1: Clase Coche
+
+Crea una clase llamada Coche con los siguientes atributos y métodos:
+
+    Atributos: marca, modelo, año y velocidad.
+
+    Métodos:
+
+        acelerar(int incremento): aumenta la velocidad.
+
+        frenar(int decremento): reduce la velocidad (sin que sea menor a 0).
+
+        mostrarInformacion(): imprime la información del coche.
+
+
+Código de ejemplo
+
+class Coche {
+    private String marca;
+    private String modelo;
+    private int año;
+    private int velocidad;
+
+    public Coche(String marca, String modelo, int año) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        this.velocidad = 0;
+    }
+
+    public void acelerar(int incremento) {
+        velocidad += incremento;
+        System.out.println("El coche aceleró a " + velocidad + " km/h.");
+    }
+
+    public void frenar(int decremento) {
+        velocidad = Math.max(0, velocidad - decremento);
+        System.out.println("El coche frenó a " + velocidad + " km/h.");
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("Coche: " + marca + " " + modelo + " (" + año + "), Velocidad: " + velocidad + " km/h");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Coche miCoche = new Coche("Toyota", "Corolla", 2022);
+        miCoche.mostrarInformacion();
+        miCoche.acelerar(50);
+        miCoche.frenar(20);
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------
+
+Este ejercicio te ayudará a comprender los principios básicos de la Programación Orientada a Objetos (POO) en Java.
+
+1. Creación de la Clase Coche
+
+class Coche {
+
+Aquí declaramos una clase llamada Coche. En POO, una clase es como un molde que define un objeto.
+
+
+2. Definición de Atributos
+
+    private String marca;
+    private String modelo;
+    private int año;
+    private int velocidad;
+
+Estos son los atributos (variables de instancia) de la clase Coche.
+
+    marca: nombre del fabricante del coche (ej. "Toyota").
+
+    modelo: modelo específico (ej. "Corolla").
+
+    año: año de fabricación (ej. 2022).
+
+    velocidad: velocidad actual del coche (inicialmente 0).
+
+Los atributos son private para aplicar encapsulación, es decir, protegerlos para que solo puedan ser modificados dentro de la propia clase.
+
+
+3. Constructor
+
+    public Coche(String marca, String modelo, int año) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        this.velocidad = 0;
+    }
+
+El constructor es un método especial que se llama cuando creamos un objeto de la clase.
+
+    Recibe tres parámetros (marca, modelo, año) y los asigna a los atributos del coche usando this.
+
+    La velocidad se inicializa en 0 porque el coche empieza detenido.
+
+
+4. Métodos de la Clase
+
+Los métodos son acciones que el coche puede realizar.
+
+
+Método acelerar(int incremento)
+
+    public void acelerar(int incremento) {
+        velocidad += incremento;
+        System.out.println("El coche aceleró a " + velocidad + " km/h.");
+    }
+
+    Recibe un número (incremento) que se suma a la velocidad actual.
+
+    Luego imprime la nueva velocidad del coche.
+
+Ejemplo de uso:
+Si el coche tenía 0 km/h y llamamos acelerar(50), ahora tendrá 50 km/h.
+
+
+Método frenar(int decremento)
+
+    public void frenar(int decremento) {
+        velocidad = Math.max(0, velocidad - decremento);
+        System.out.println("El coche frenó a " + velocidad + " km/h.");
+    }
+
+    Reduce la velocidad del coche según el valor de decremento.
+
+    Usamos Math.max(0, velocidad - decremento) para asegurarnos de que la velocidad no sea negativa (no puede ser menor a 0).
+
+Ejemplo de uso:
+Si la velocidad es 50 km/h y llamamos frenar(20), la nueva velocidad será 30 km/h.
+Si intentamos frenar 50 cuando la velocidad es 30, la velocidad quedará en 0 (no en -20).
+
+
+Método mostrarInformacion()
+
+    public void mostrarInformacion() {
+        System.out.println("Coche: " + marca + " " + modelo + " (" + año + "), Velocidad: " + velocidad + " km/h");
+    }
+
+    Muestra en la consola los detalles del coche: marca, modelo, año y velocidad actual.
+
+
+5. Creación y Uso del Objeto en Main
+
+public class Main {
+    public static void main(String[] args) {
+        Coche miCoche = new Coche("Toyota", "Corolla", 2022);
+
+    Creamos un objeto de la clase Coche llamado miCoche con la marca "Toyota", modelo "Corolla" y año 2022.
+
+        miCoche.mostrarInformacion();
+
+    Llamamos a mostrarInformacion() para ver los datos del coche.
+
+        miCoche.acelerar(50);
+        miCoche.frenar(20);
+    }
+}
+
+    Aceleramos 50 km/h, luego frenamos 20 km/h.
+
+
+6. Ejecución y Salida Esperada
+
+Cuando ejecutamos el programa, obtenemos algo como esto:
+
+Coche: Toyota Corolla (2022), Velocidad: 0 km/h
+El coche aceleró a 50 km/h.
+El coche frenó a 30 km/h.
+
+Primero, el coche está detenido (0 km/h). Luego, acelera a 50 km/h y después frena a 30 km/h.
+¿Qué Aprendimos?
+
+✅ Cómo definir clases y atributos en Java.
+✅ Cómo usar un constructor para inicializar valores.
+✅ Cómo crear y usar métodos para modificar el estado del objeto.
+✅ Cómo aplicar encapsulación para proteger los datos.
+✅ Cómo instanciar (crear) un objeto y llamar a sus métodos.

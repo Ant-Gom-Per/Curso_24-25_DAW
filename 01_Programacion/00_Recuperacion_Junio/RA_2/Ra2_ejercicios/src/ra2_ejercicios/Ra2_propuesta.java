@@ -1,10 +1,6 @@
 /*
-consigna: crea un programa para guardar una serie de artículos enuna consigna automática. 
-primero seleccionamos el tamaño que queremos de consigna, el numero de artículos a guardar.
-Introduciendo el numero asignado al artículo guardado, podemos sacarlo de la consigna y almacenar otro en su lugar.
-El coste de almacenaje por articulo es fijo, pero varía si almacenas más de 3 artículos. 
-Cada vez que almacenas un nuevo artículo se te cobra el coste.
-Al final de su uso se te pasa el total de la factura.
+Este programa simula el sistema se alquiler de un videobank.
+Si se alquilan 2 o más peliculas se aplica un descuento del 10%
  */
 package ra2_ejercicios;
 
@@ -19,90 +15,55 @@ public class Ra2_propuesta {
     }
     
     public void inicio(){
+        double alquiler = 2.99;
+        String[] peliculas = {"Regreso al futuro",
+                              "El bueno, el feo y el malo",
+                              "Terminator",
+                              "Rocky",
+                              "El Gran Torino"};
         
-        String[] consigna = new String[numObjet()];
-        llenaConsig(consigna.length, consigna);
-        mostrarCont(consigna);        
-        do{
-            System.out.print("\n¿Quieres cambiar algún objeto? ");
-            if(contProg()){
-                cambObj(consigna);
-                mostrarCont(consigna);
-            }
-            System.out.print("¿Quieres continuar con el programa? ");
-        }while(contProg());        
-        System.out.println("Programa finalizado.");
-        
-        
-        
-        
-       
-        System.out.println("\nnumObjet guardados: " + consigna.length);
-        System.out.println("Array" + java.util.Arrays.toString(consigna));
-    }
-    
-    
-    
-    
-   
-    
-    
+        mostrarCont(peliculas,alquiler);
+        precioAlquiler(sacPelis(peliculas), alquiler);        
+        mostrarCont(peliculas, alquiler);        
+    }   
     
     /**
-     * Asigna un tamaño a un vector.
-     * @return Devuelve el tamaño del vector que vamos a crear
+     * Muestra el contenido del menú principal.
+     * @param peliculas: Es el vector con valores dentro.
+     * @param alquiler: Coste del alquiler de una pelicula.
      */
-    public int numObjet(){
-        Scanner teclado =new Scanner(System.in);
-        System.out.print("Ingresa un número de artículos a guardar: ");
-        int numObjet = teclado.nextInt();
-        teclado.nextLine();
-        return numObjet;
-    }    
-    /** 
-     * Llena el vector vacío que hemos creado
-     * @param tamanyo: Hace referencia al tamaño del vector que hemos creado. 
-     * @param consigna Es el vector vacío que hemos creado
-     */
-    public void llenaConsig(int tamanyo, String consigna[]){
-        System.out.println(" ");
-        for(int i =0; i < tamanyo; i++){
-            Scanner teclado =new Scanner(System.in);
-            System.out.print("Ingresa el nombre de " + (i+1) + " de "+ tamanyo + " artículos: ");
-            consigna[i] = teclado.nextLine();
-        }
-    }
-    /**
-     * Muestra el vector que hemos llenado.
-     * @param consigna: Es el vector con valores dentro.
-     */
-    public void mostrarCont(String[] consigna){
-        System.out.println("Tienes almacenados:");
-        for(int i = 0; i < consigna.length ;i++){
-            System.out.println((i+1) + ".-" + consigna[i]); 
+    public void mostrarCont(String[] peliculas, double alquiler){
+        System.out.println("Precio por pelicula: " + alquiler);
+        System.out.println("Titulos disponibles:");
+        for(int i = 0; i < peliculas.length ;i++){
+            System.out.println((i+1) + ".- " + peliculas[i]); 
         }        
+        System.out.println(" ");
     }
-    /**
-     * Permite cambiar un articulo por otro dentreo del vector.
-     * @param consigna: Es el vector con valores dentro.
+    
+      /**
+     * Permite cambiar un objeto por otro dentro del vector.
+     * @param peliculas: Es el vector con valores dentro.
      */
-    public void cambObj(String[] consigna){
+    public void cambObj(String[] peliculas){
         Scanner teclado =new Scanner(System.in);
-        System.out.print("Indica el número de artículo a sacar: ");
+        System.out.print("Indica el número de pelicula a alquilar: ");
         int numero = teclado.nextInt();
         teclado.nextLine();
-        System.out.print("Indica el nuevo artículo a introducir: ");
-        String articulo = teclado.nextLine();
-        consigna[numero-1] = articulo;
+        System.out.println("Has sacado la película: " + peliculas[numero-1]);
+       /** System.out.print("Indica el nuevo artículo a introducir: ");**/
+        String articulo = peliculas[numero-1] + " (En alquiler)";
+        peliculas[numero-1] = articulo;
     }
-    /**
-     * Pregunta si/no para seguir con algo o no
-     * @return Seguir: Devuelve un booleano, empleado como semáforo.
+    
+       /**
+     * Pregunta si/no para seguir con el programa.
+     * @return Seguir: Devuelve un booleano empleado como semáforo.
      */
     public boolean contProg(){
         Scanner teclado =new Scanner(System.in);
         boolean seguir ;
-        System.out.print("No = 0, Si = 1: ");
+        System.out.print("Quieres sacar otra pelicula? No = 0, Si = 1: ");
         int numero = teclado.nextInt();
         if(numero == 0){
             seguir = false;
@@ -112,5 +73,37 @@ public class Ra2_propuesta {
         return seguir;
     }
     
+    /**
+     * Este metodo permite sacar peliculas y modifica el vector.
+     * @param peliculas: Es el vector con valores dentro.
+     * @return: Devuelve la cantidad de peliculas alquiladas
+     */
+    public int sacPelis(String[] peliculas){
+        int seguir = 0 ;
+        do{            
+            cambObj(peliculas);            
+            seguir ++;
+            if(seguir >= 5) break;
+        }while(contProg());
+        return seguir;
+    }
     
+    /**
+     * Este metodo calcula el precio del alquiler en funcion a la cantidad de peliculas.
+     * @param cantPelis: cantidad de peliculas seleccionadas
+     * @param precioAlqui: Precio del alquiler 
+     */
+    public void precioAlquiler(int cantPelis, double precioAlqui){        
+        System.out.println("\nCantidad de peliculas: " + cantPelis);
+        if(cantPelis >= 2){
+            double descuento = precioAlqui * 10/100;
+            System.out.printf("Descuento por película: %.2f\n",descuento);
+            precioAlqui = (precioAlqui - descuento);
+            System.out.printf("Precio por pelicula: %.2f\n",precioAlqui);
+            double precioTotAlqui = (precioAlqui - descuento) * cantPelis;
+            System.out.printf("Coste del aquiler: %.2f\n\n",precioTotAlqui);
+        }else{
+            System.out.println("Coste alquiler: " + precioAlqui * cantPelis + " \n");
+        }
+    }    
 }

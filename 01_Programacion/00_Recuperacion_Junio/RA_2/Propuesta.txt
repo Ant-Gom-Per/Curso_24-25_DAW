@@ -117,3 +117,13 @@ do{
  /**double numIngres = ingresaNumero();        **/
         /**System.out.println("numIngres: " + numIngres);**/
 
+
+   cambObj(peliculas);
+        
+        int seguir = 0;
+        while(contProg() && seguir <= 2){
+            cambObj(peliculas);            
+            seguir ++;     
+            System.out.println("\n" + seguir);
+        }
+
