@@ -15,6 +15,11 @@ public class CuentaBancaria {
         this.saldo = saldoInicial;
     }
     
+    public CuentaBancaria(CuentaBancaria otraCuenta){
+        this.titular = otraCuenta.titular;
+        this.saldo = otraCuenta.saldo;
+    }
+    
     //Metodos
     public void depositar(double cantidad){
         this.saldo += cantidad;
@@ -30,7 +35,8 @@ public class CuentaBancaria {
         }
     }
     
-    public void verSaldo(){
+    public void verInfo(){
+        System.out.println("El titular de la cuenta es: " + titular);
         System.out.println("Su saldo actual es: " + saldo + " €");
     }
 }

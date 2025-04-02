@@ -1,0 +1,104 @@
+necesito un ejercicio sencillo de programación orientada a objetos en java que utilice el constructor de copia.
+
+EJERCICIO: CLONACIÓN DE CUENTAS BANCARIAS
+
+Crea una clase CuentaBancaria que tenga los siguientes atributos y métodos:
+
+    Atributos: titular (nombre del dueño), saldo.
+
+    Métodos:
+
+        Un constructor normal para inicializar una cuenta.
+
+        Un constructor de copia para crear una cuenta a partir de otra.
+
+        Un método depositar(double cantidad).
+
+        Un método retirar(double cantidad).
+
+        Un método mostrarInfo() que imprime los datos de la cuenta.
+
+
+CÓDIGO EN JAVA
+
+class CuentaBancaria {
+    String titular;
+    double saldo;
+
+    // Constructor normal
+    public CuentaBancaria(String titular, double saldo) {
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+
+    // Constructor de copia
+    public CuentaBancaria(CuentaBancaria otraCuenta) {
+        this.titular = otraCuenta.titular;
+        this.saldo = otraCuenta.saldo;
+    }
+
+    // Método para depositar dinero
+    public void depositar(double cantidad) {
+        saldo += cantidad;
+        System.out.println("Depósito realizado. Nuevo saldo: $" + saldo);
+    }
+
+    // Método para retirar dinero
+    public void retirar(double cantidad) {
+        if (cantidad > saldo) {
+            System.out.println("Saldo insuficiente.");
+        } else {
+            saldo -= cantidad;
+            System.out.println("Retiro realizado. Nuevo saldo: $" + saldo);
+        }
+    }
+
+    // Método para mostrar información de la cuenta
+    public void mostrarInfo() {
+        System.out.println("Titular: " + titular + " | Saldo: $" + saldo);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Crear una cuenta original
+        CuentaBancaria cuenta1 = new CuentaBancaria("Juan Pérez", 1000);
+        cuenta1.mostrarInfo();
+
+        // Crear una nueva cuenta usando el constructor de copia
+        CuentaBancaria cuenta2 = new CuentaBancaria(cuenta1);
+        cuenta2.mostrarInfo();
+
+        // Realizar transacciones en la cuenta clonada
+        cuenta2.depositar(500);
+        cuenta2.retirar(300);
+
+        System.out.println("\nDespués de modificar la cuenta copiada:");
+        cuenta1.mostrarInfo(); // No debe cambiar
+        cuenta2.mostrarInfo(); // Debe reflejar los cambios
+    }
+}
+
+
+EXPLICACIÓN
+
+    CuentaBancaria(String titular, double saldo) → Constructor normal.
+
+    CuentaBancaria(CuentaBancaria otraCuenta) → Constructor de copia.
+
+    Métodos depositar() y retirar() → Modifican el saldo.
+
+    La cuenta copiada (cuenta2) es independiente de cuenta1 → Esto demuestra que el constructor de copia creó una nueva instancia.
+
+SALIDA ESPERADA
+
+Titular: Juan Pérez | Saldo: $1000.0
+Titular: Juan Pérez | Saldo: $1000.0
+Depósito realizado. Nuevo saldo: $1500.0
+Retiro realizado. Nuevo saldo: $1200.0
+
+Después de modificar la cuenta copiada:
+Titular: Juan Pérez | Saldo: $1000.0
+Titular: Juan Pérez | Saldo: $1200.0
+
+
