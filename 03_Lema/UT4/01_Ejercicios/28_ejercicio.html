@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            img{width: 200px; height: 200px; border: 1px solid blue;}
+        </style>
+    </head>
+    <body>
+        <section>
+            <img src="snoopy.jpg" alt="snoopy">
+            <p>Un texto del section</p>
+        </section>
+        <script>
+            let section = document.querySelector("section");
+            let imagen = document.querySelector("img");
+            section.addEventListener("click", soySection, true);
+            imagen.addEventListener("click", soyImagen, false);
+
+            function soySection(){
+                alert("Soy el section");
+            }
+            function soyImagen(){
+                alert("Soy la imagen");
+            }
+        </script>
+    </body>
+</html>

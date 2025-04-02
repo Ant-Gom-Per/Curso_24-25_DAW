@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            img{width: 100px; height: 100px; border: 1px solid blue;}
+        </style>
+    </head>
+    <body>
+        <img src="snoopy.jpg" alt="Snoopy">
+        <img src="snoopy2.jpg" alt="Snoopy">
+        <img src="snoopy3.jpg" alt="Snoopy">
+        <script>
+            let imagenes =document.getElementsByClassName("img");
+            for(let i=0; i<imagenes.length; i++){
+                imagenes[i].addEventListener("mouseover")
+            }
+        </script>
+    </body>
+</html>

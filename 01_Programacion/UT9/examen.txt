@@ -1,0 +1,72 @@
+1.- Funció "filtrador" 	
+No crea correctament la constant, el seu contingut no és correspon amb el que demana l'enunciat o bé no funciona per als exemples proposats.
+0punts
+	
+Crea correctament la constant i defineix un contingut que funciona en la majoria dels casos pero no en tots.
+1punts
+	
+Crea correctament la constant de tipus Function, amb el contingut que cal segons l'enunciat i funciona per a tots els casos.
+2punts
+2.- Funció "mitjana"	
+No crea correctament la constant, el seu contingut no és correspon amb el que demana l'enunciat o bé no funciona per als exemples proposats.
+0punts
+	
+Crea correctament la constant i li defineix un contingut que funciona amb algun xicotet error de càlcul.
+1.5punts
+	
+Crea correctament la constant i li defineix un contingut que fa exactament el que demana l'enunciat.
+2punts
+3.- A	
+Incorrecta
+0punts
+	
+Resultat correcte. Ús incorrecte d'operacions.
+0.2punts
+	
+Correcta
+0.5punts
+3.- B	
+Incorrecta
+0punts
+	
+Resultat correcte. Ús incorrecte d'operacions.
+0.2punts
+	
+Correcta
+0.5punts
+3.- C	
+Incorrecta
+0punts
+	
+Resultat correcte. Ús incorrecte d'operacions.
+0.4punts
+	
+Correcta
+1punts
+3.- D	
+Incorrecta
+0punts
+	
+Resultat correcte. Ús incorrecte d'operacions.
+0.4punts
+	
+Correcta
+1punts
+3.- E	
+Incorrecta
+0punts
+	
+Resultat correcte. Ús incorrecte d'operacions.
+0.7punts
+	
+Correcta
+1.5punts
+3.- F	
+Incorrecta
+0punts
+	
+Resultat correcte. Ús incorrecte d'operacions.
+0.7punts
+	
+Correcta
+1.5punts

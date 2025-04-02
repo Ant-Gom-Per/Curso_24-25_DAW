@@ -108,3 +108,31 @@ END;
 
 ---------------------------------------------------------------------------------------------------------------------
 
+EJERCICIO 06
+
+--Define la función edad vista en el ejemplo, que permite saber la edad de una persona.
+
+--Primero ejecutar este
+create or replace function edad (p_fecha date) return number
+is
+    edad_devuelta number;
+begin
+    edad_devuelta := trunc(months_between(sysdate,p_fecha)/12);
+    return edad_devuelta;
+end;
+
+--Probando función
+
+--Luego ejecutar este.
+DECLARE
+    v_fecha date;
+BEGIN
+    v_fecha:=TO_DATE('08/08/1985','Dd/MM/YYYY');
+    dbms_output.put_line(edad(v_fecha));
+END;
+
+---------------------------------------------------------------------------------------------------------------------
+
+EJERCICIO 07
+
+
