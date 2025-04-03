@@ -1,0 +1,28 @@
+Clase String
+    .charAt
+    .compareTo
+    .concat
+    .contains
+    .copyValueOf
+    .equals
+    .equalsIgnoreCase
+    .indexOf
+    .isEmpty
+    .lastIndexOf
+    .length
+    .toLowerCase
+    .toString
+    .toUpperCase
+    .valueOf
+
+Clase Math
+    .abs
+    .max
+    .min
+    .pow
+    .round
+    .sqrt
+
+Clase Random
+    .nextInt
+    .nextDouble
