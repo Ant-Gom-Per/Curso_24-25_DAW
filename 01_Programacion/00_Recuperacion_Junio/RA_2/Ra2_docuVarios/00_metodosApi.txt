@@ -1,28 +1,36 @@
-Clase String
-    .charAt
-    .compareTo
-    .concat
-    .contains
-    .copyValueOf
-    .equals
-    .equalsIgnoreCase
-    .indexOf
-    .isEmpty
-    .lastIndexOf
-    .length
-    .toLowerCase
-    .toString
-    .toUpperCase
+Clase String (inmutable)
+Clase StringBuilder (objeto mutable)
+    .charAt             .compareTo
+    .concat             .contains
+    .copyValueOf        .equals
+    .equalsIgnoreCase   .indexOf
+    .isEmpty            .lastIndexOf
+    .length             .toLowerCase
+    .toString           .toUpperCase
     .valueOf
 
-Clase Math
-    .abs
-    .max
-    .min
-    .pow
-    .round
-    .sqrt
+Clase Math (estatica)
+    .abs    .max
+    .min    .pow
+    .round  .sqrt
 
 Clase Random
     .nextInt
     .nextDouble
+
+LocalDate -> Muestra la fecha
+LocalTime -> Muestra la hora
+LocalDateTime -> Muestra la fecha y la hora
+    .now    .gethour
+    .getMonth
+
+Clases envoltorio: Permiten tratar un dato de tipo básico como un objeto.
+    Tienen el nombre de un tipo de dato primitivo pero en letra capital.
+    Al tratarse de un objeto admiten valores null.
+        .parseXX()  .valueOf()
+        .compare()  .compareTo()
+        .hashCode() .toString()
+
+
+
+
