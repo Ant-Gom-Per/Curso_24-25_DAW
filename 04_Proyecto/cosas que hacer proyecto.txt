@@ -6,3 +6,29 @@ Argumentar el por que no hay aplicación para móvil
 objetivos
 propósitos
 características
+
+--------------------------------------------
+
+Analisis dafo
+
+        Delibilidades       ->     factores internos, aspectos negativos
+        Amenazas            ->     factores externos, aspectos negativos
+        Fortalezas          ->     factores internos, aspectos positivos
+        Oportunidades       ->     factores externos, aspectos positivos
+
+El objetivo del DAFO es ser el capaz de tomar decisiones estratégicas.
+
+- Prorizar debilidades
+- Fortaleza debilita amaneza
+
+**Buscar plantilla DAFO**
+
+
+--------------------------------------------
+
+
+DESING THIKING
+
+--------------------------------------------
+
+MAPAS DE EMPATIA
