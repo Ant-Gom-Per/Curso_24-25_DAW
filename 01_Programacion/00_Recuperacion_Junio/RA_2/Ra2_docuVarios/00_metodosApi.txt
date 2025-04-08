@@ -21,8 +21,7 @@ Clase Random
 LocalDate -> Muestra la fecha
 LocalTime -> Muestra la hora
 LocalDateTime -> Muestra la fecha y la hora
-    .now    .gethour
-    .getMonth
+    .now    .gethour    .getMonth
 
 Clases envoltorio: Permiten tratar un dato de tipo básico como un objeto.
     Tienen el nombre de un tipo de dato primitivo pero en letra capital.
