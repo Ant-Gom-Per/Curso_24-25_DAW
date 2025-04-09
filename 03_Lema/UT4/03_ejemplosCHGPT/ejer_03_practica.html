@@ -1,0 +1,94 @@
+/**
+Lee una cadena de texto de una área de texto de un formulario. Al hacer clic en un botón
+"Examinar", crea un ARRAY a través de la función split (). A continuación, abre una ventana
+con un alert que muestre la siguiente información: 
+a) Número de palabras, primera palabra, última palabra.
+b) Texto, pero con las palabras invertidas
+
+Ejercicio:
+
+HTML + JavaScript:
+**/
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Array con split()</title>
+    <script>
+        function procesarTexto() {
+            // Obtener el texto del área de texto
+            var texto = document.getElementById("areaTexto").value.trim();
+            
+            // Verificar si el campo está vacío
+            if (texto === "") {
+                alert("Por favor, ingresa un texto.");
+                return;
+            }
+
+            // Crear el array a través de la función split(), separando por espacio
+            var arrayTexto = texto.split(" ");
+
+            // Obtener la primera palabra y la última palabra
+            var primeraPalabra = arrayTexto[0];
+            var ultimaPalabra = arrayTexto[arrayTexto.length - 1];
+
+            // Crear el texto con las palabras invertidas
+            var textoInvertido = arrayTexto.reverse().join(" ");
+
+            // Mostrar la información en un alert
+            alert("Número de palabras: " + arrayTexto.length + 
+                  "\nPrimera palabra: " + primeraPalabra + 
+                  "\nÚltima palabra: " + ultimaPalabra + 
+                  "\nTexto con palabras invertidas: " + textoInvertido);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Ejercicio de Array con split()</h1>
+    
+    <!-- Formulario con un área de texto -->
+    <form action="javascript:void(0);">
+        <label for="areaTexto">Ingresa un texto:</label><br>
+        <textarea id="areaTexto" rows="4" cols="50"></textarea><br><br>
+        
+        <!-- Botón para ejecutar la función -->
+        <button type="button" onclick="procesarTexto()">Examinar</button>
+    </form>
+
+</body>
+</html>
+
+/**
+Explicación del código:
+
+    HTML:
+
+        Un formulario que contiene un área de texto (textarea) donde el usuario ingresa su texto.
+
+        Un botón que, al hacer clic, llama a la función procesarTexto().
+
+    JavaScript:
+
+Obtener el texto: Se obtiene el valor del área de texto mediante document.getElementById("areaTexto").value.trim() y se utiliza .trim() para eliminar posibles espacios al principio o al final.
+
+        Separar el texto en un array: Usamos split(" ") para separar el texto en un array de palabras, usando los espacios como delimitadores.
+
+        Obtener la primera y última palabra: Accedemos a las primeras y últimas palabras del array utilizando arrayTexto[0] (primera palabra) y arrayTexto[arrayTexto.length - 1] (última palabra).
+
+        Invertir el texto: Usamos arrayTexto.reverse().join(" ") para invertir las palabras y luego unirlas de nuevo en una cadena.
+
+        Mostrar la información: Un alert muestra el número de palabras, la primera y última palabra, y el texto con las palabras invertidas.
+
+Ejemplo de funcionamiento:
+
+    Si el usuario ingresa el texto: "Hola cómo estás hoy", el resultado sería:
+**/
+
+Número de palabras: 4
+Primera palabra: Hola
+Última palabra: hoy
+Texto con palabras invertidas: hoy estás cómo Hola
+

@@ -6,14 +6,25 @@
         <title>a3</title>
     </head>
     <body>
-        <form>
-            <label>Introduce un texto</label><br>
-            <textarea id="texto">Introduce un texto</textarea>
-        </form>        
-        <script>
-            let textoEj = document.getElementById('texto');
-            document.write(`<p>${textoEj}</p>`);                                
+        <h2>Introduce un texto</h2>
+        <textarea id="texto" cols="30" rows="10"></textarea><br><br>
+        <button onclick="examinarTexto()">Examinar</button>
+        <script>                                            
+            function examinarTexto(){
+                const texto = document.getElementById("texto").value.trim();
+                const palabras = texto.split(" ");
+                const numPalabras = palabras.length;
+                const primeraPalabra = palabras[0];
+                const ultimaPalabra = palabras[palabras.length-1];
+                const palabrasInvertidas = palabras.reverse().join(" ");
 
+                alert(
+                    "Numero de palabras: " + numPalabras +
+                    "\nPrimera palabra: " + primeraPalabra + 
+                    "\nÚltima palabra: " + ultimaPalabra + 
+                    "\nTexto con con las palabras invertidas:\n" + palabrasInvertidas
+                );
+            }            
         </script>
     </body>
 </html>

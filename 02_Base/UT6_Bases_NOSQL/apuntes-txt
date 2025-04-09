@@ -1,0 +1,30 @@
+MONGO BD
+
+Todos los objetos van dentro de llaves
+
+Se ejecutan comados desde la terminal mongosh
+
+"-id" : {
+    "ord:" 46879875865434
+    },
+    "Nombre": "Inma",
+    "Altura": 1.57
+
+    "PAreja":{
+        "nombre": "Benito",
+        "edad": 38
+    }    
+}
+
+"aficiones": ["correr", "cocinar", "estudios"],  //Esto es un vector.
+"amigos": [
+{
+    "nombre": "Noe",
+    "edad": 27
+},
+{
+    "apellidos": "nanito",
+    "peso": 56
+}]
+
+---------------------------------------------------------------------------------

@@ -6,14 +6,21 @@
         <title>Ejercicio a1b</title>
     </head>
     <body>
-        <script>                   
+        <script>
+            let primos = [];
             for (let i=2; i <= 100; i++){
+                let esPrimo = true;
                 for (let j=2; j < i; j++){                    
-                    if(i%j == 0){
-                        document.write(`<p>${i}</p>`);
-                    }
-                }            
+                    if(i%j === 0){
+                        esPrimo = false;
+                        break;
+                    }                     
+                } 
+                if(esPrimo){
+                    primos.push(i);
+                }                        
             }
+            document.write(`${primos}`);
         </script>
     </body>
 </html>
