@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>a4</title>
+    </head>
+    <body>
+        <script>
+            let contador = 0;
+            let sumaPar = 0;
+            let sumaImpar = 0;
+            while(contador < 200){
+                contador++;
+                if(contador % 2 === 0){
+                    sumaPar = sumaPar + contador;
+                }else{
+                    sumaImpar = sumaImpar + contador;
+                }
+            }
+            document.write(`<p>Suma de los pares: ${sumaPar}</p>\n`);
+            document.write(`<p>Suma de los impares: ${sumaImpar}</p>\n`);
+        </script>
+    </body>
+</html>

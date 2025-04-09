@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Carrito de Compras</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { width: 300px; margin: 20px auto; }
+        input, button, textarea { display: block; width: 100%; margin: 15px 0; padding: 10px; }
+        textarea { height: 150px; resize: none; }
+		button { width: 315px;  }
+    </style>
+</head>
+<body>
+
+    <h2>Agregar Producto al Carrito</h2>
+
+    <form id="shopForm">
+        <label>Producto:</label>
+        <input id="prod"></input>
+        <label>Cantidad:</label>
+        <input id="cant"></input>
+        <label>Precio unitário (€):</label>
+        <input id="preUnit"></input>
+        <button type="submit">Agregar al Carrito</button>
+    </form>
+
+    <h2>Carrito de Compras</h2>
+    <textarea id="cartOutput" readonly></textarea>
+    <h3>Total: €<span id="totalPrice">0.00</span></h3>
+    
+
+    <script>
+        let total = 0;
+        let cartText = "";
+
+        document.getElementById("shopForm").addEventListener("submit", function(event) {
+			event.preventDefault();
+            // Capturar valores            
+            let product = document.getElementById("prod");
+            let quantity = parseInt(document.getElementById("cant"));
+            let price = parseFloatdocument.getElementById("preUnit");
+
+         
+			//Utilizar .toFixed(2)
+            let subtotal = quantity * price;
+            cartText += `..........................................`;
+            total += subtotal
+            
+
+
+
+
+            // Limpiar formulario
+            document.getElementById("shopForm").reset();
+            
+        });       
+    </script>
+
+</body>
+</html>
