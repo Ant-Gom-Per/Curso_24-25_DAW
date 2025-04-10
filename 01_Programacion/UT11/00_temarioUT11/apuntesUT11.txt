@@ -1,0 +1,12 @@
+MODELO
+-DTO (dominio)
+-DAO (infraestructura)
+
+CONTROLADOR
+-Servlets (Clases de java que se usan como controlador)
+-Clases auxiliares (Lógica de negocio)
+
+VISTA
+- JPS
+- HTML + CSS + JS
+- Otros ficheros dela interfaz
