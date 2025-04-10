@@ -5,4 +5,4 @@ function mifuncion(){
 document.write("Hola!");
 confirm("¿Quieres continuar?");
 prompt("Introduce tu edad");
-console.log("Escrbe en la consola");//ESto aparece en la consola del navegador
+console.log("Escribe en la consola");//ESto aparece en la consola del navegador
