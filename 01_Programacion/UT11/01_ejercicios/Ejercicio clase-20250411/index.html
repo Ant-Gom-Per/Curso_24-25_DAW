@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <title>Rectangle</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            margin-top: 1rem;
+            display: block;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="number"],
+        input[type="color"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #colorPreview {
+            margin-top: 0.5rem;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="CalculQuadrat">
+        <h1>Informació del rectangle</h1>
+        <label for="base">Base:</label>
+        <input type="number" name="base" id="base" required step=".001" autofocus />
+        
+        <label for="altura">Altura:</label>
+        <input type="number" name="altura" id="altura" required step=".001" />
+        
+        <label for="color">Color:</label>
+        <input type="color" name="color" id="color" />
+        <div id="colorPreview"></div>
+        
+        <input type="submit" name="enviar" id="enviar" value="Enviar" />
+    </form>
+
+    <script>
+        const colorInput = document.getElementById("color");
+        const colorPreview = document.getElementById("colorPreview");
+
+        colorInput.addEventListener("input", function () {
+            colorPreview.style.backgroundColor = this.value;
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            colorPreview.style.backgroundColor = colorInput.value;
+        });
+    </script>
+</body>
+</html>
