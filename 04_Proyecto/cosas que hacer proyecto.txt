@@ -29,6 +29,19 @@ El objetivo del DAFO es ser el capaz de tomar decisiones estratégicas.
 
 DESING THIKING
 
+· Metodología de resolución de problemas
+
+- Empatia
+- Creatividad
+- Experimentación
+
+· Consta de 5 fases:
+    - Empatizar     | Se investiga el problema
+    - Definir       |
+    - Idear
+    - Prototipar
+    - Idear
+
 --------------------------------------------
 
 MAPAS DE EMPATIA
