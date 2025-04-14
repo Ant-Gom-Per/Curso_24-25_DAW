@@ -14,7 +14,15 @@
         </style>
         <script>
             function muestra() {
-                
+                let adicional = document.getElementById("adicional");
+                let enlace = document.getElementById("enlace");
+                if(adicional.className === "oculto"){
+                    adicional.className = "visible";
+                    enlace.innerHTML = "Ocultar";
+                }else{
+                    adicional.className = "oculto";
+                    enlace.innerHTML = "Seguir leyendo"
+                }                
             }
         </script>
     </head>

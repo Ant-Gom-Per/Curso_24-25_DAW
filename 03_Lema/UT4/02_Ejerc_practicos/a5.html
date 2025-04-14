@@ -19,10 +19,13 @@
     <form id="shopForm">
         <label>Producto:</label>
         <input id="prod"></input>
+
         <label>Cantidad:</label>
         <input id="cant"></input>
+
         <label>Precio unitário (€):</label>
         <input id="preUnit"></input>
+
         <button type="submit">Agregar al Carrito</button>
     </form>
 
@@ -38,19 +41,19 @@
         document.getElementById("shopForm").addEventListener("submit", function(event) {
 			event.preventDefault();
             // Capturar valores            
-            let product = document.getElementById("prod");
-            let quantity = parseInt(document.getElementById("cant"));
-            let price = parseFloatdocument.getElementById("preUnit");
+            let product = document.getElementById("prod").value;
+            let quantity = parseInt(document.getElementById("cant").value);
+            let price = parseFloat(document.getElementById("preUnit").value);
 
          
 			//Utilizar .toFixed(2)
-            let subtotal = quantity * price;
-            cartText += `..........................................`;
-            total += subtotal
-            
+            let subtotal = (quantity * price).toFixed(2);
+            cartText += `Producto: ${product} | Cantidad: ${quantity} | Precio: ${price.toFixed(2)}€ | Subtotal: ${subtotal} €\n`;            
+            total += parseFloat(subtotal);            
 
-
-
+            document.getElementById("cartOutput").value = cartText;
+            document.getElementById("totalPrice").textContent = total.toFixed(2);
+        
 
             // Limpiar formulario
             document.getElementById("shopForm").reset();
