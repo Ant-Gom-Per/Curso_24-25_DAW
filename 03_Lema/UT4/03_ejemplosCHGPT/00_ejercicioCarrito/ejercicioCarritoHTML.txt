@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Compras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .productos, .carrito {
+      margin-top: 20px;
+    }
+
+    .producto {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+    .producto button {
+      padding: 6px 12px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .producto button:hover {
+      background-color: #0056b3;
+    }
+
+    .carrito {
+      background-color: #fff;
+      border: 1px solid #28a745;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tienda Online</h1>
+
+  <div class="productos">
+    <div class="producto">
+      <span>Producto A - $10</span>
+      <button onclick="agregarAlCarrito('Producto A', 10)">Agregar</button>
+    </div>
+    <div class="producto">
+      <span>Producto B - $15</span>
+      <button onclick="agregarAlCarrito('Producto B', 15)">Agregar</button>
+    </div>
+    <div class="producto">
+      <span>Producto C - $20</span>
+      <button onclick="agregarAlCarrito('Producto C', 20)">Agregar</button>
+    </div>
+  </div>
+
+  <h2>Carrito de Compras</h2>
+  <div class="carrito">
+    <ul id="lista-carrito">
+      <!-- Productos añadidos aparecerán aquí -->
+    </ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+  </div>
+
+  <script>
+    let carrito = [];
+    let total = 0;
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      total += precio;
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const lista = document.getElementById("lista-carrito");
+      const totalSpan = document.getElementById("total");
+
+      lista.innerHTML = ""; // Limpiar lista
+
+      carrito.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nombre} - $${item.precio}`;
+        lista.appendChild(li);
+      });
+
+      totalSpan.textContent = total;
+    }
+  </script>
+
+</body>
+</html>
+
