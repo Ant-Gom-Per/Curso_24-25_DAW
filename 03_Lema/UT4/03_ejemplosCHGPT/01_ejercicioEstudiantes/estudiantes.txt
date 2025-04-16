@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Estudiantes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      margin: 5px;
+    }
+    .output {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📘 Registro de Estudiantes</h2>
+
+  <form id="formularioEstudiante">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="number" id="edad" placeholder="Edad" required>
+    <input type="number" id="promedio" placeholder="Promedio" step="0.1" required>
+    <button type="submit">Agregar Estudiante</button>
+  </form>
+
+  <button onclick="mostrarEstudiantes()">📋 Mostrar Todos</button>
+  <button onclick="mostrarEstudiantesDestacados()">🌟 Mostrar Destacados (≥8)</button>
+  <button onclick="calcularPromedioGeneral()">📊 Promedio General</button>
+
+  <div class="output" id="resultado"></div>
+
+  <script>
+    let estudiantes = [];
+
+    document.getElementById("formularioEstudiante").addEventListener("submit", function(e) {
+      e.preventDefault(); // Evita recargar la página
+
+      const nombre = document.getElementById("nombre").value;
+      const edad = parseInt(document.getElementById("edad").value);
+      const promedio = parseFloat(document.getElementById("promedio").value);
+
+      estudiantes.push({ nombre, edad, promedio });
+
+      document.getElementById("formularioEstudiante").reset();
+      document.getElementById("resultado").textContent = "✅ Estudiante agregado.";
+    });
+
+    function mostrarEstudiantes() {
+      let texto = "📋 Lista de estudiantes:\n";
+      estudiantes.forEach(e => {
+        texto += `- ${e.nombre}, Edad: ${e.edad}, Promedio: ${e.promedio}\n`;
+      });
+      document.getElementById("resultado").textContent = texto;
+    }
+
+    function mostrarEstudiantesDestacados() {
+      let destacados = estudiantes.filter(e => e.promedio >= 8);
+      let texto = "🌟 Estudiantes destacados:\n";
+      destacados.forEach(e => {
+        texto += `- ${e.nombre} (${e.promedio})\n`;
+      });
+      document.getElementById("resultado").textContent = texto || "No hay estudiantes destacados.";
+    }
+
+    function calcularPromedioGeneral() {
+      if (estudiantes.length === 0) {
+        document.getElementById("resultado").textContent = "⚠️ No hay estudiantes registrados.";
+        return;
+      }
+      let suma = estudiantes.reduce((acc, e) => acc + e.promedio, 0);
+      let promedioGeneral = suma / estudiantes.length;
+      document.getElementById("resultado").textContent = `📊 Promedio general del grupo: ${promedioGeneral.toFixed(2)}`;
+    }
+  </script>
+
+</body>
+</html>
+

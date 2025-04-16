@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" async></script>
+    </head>
+    <body>
+        <h2>Registro de estudiantes</h2>
+        <form id="formularioEstudiante">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="edad" id="edad" placeholder="Edad" required>
+            <input type="promedio" id="promedio" placeholder="Promedio" step="0.1" required>
+            <button type="submit">Agregar Estudiante</button>
+        </form>
+        <button onclick="mostrarEstudiantes()">Mostrar todos</button>
+        <button onclick="mostrarEstudiantesDestacados()">Mostrar Destacados</button>
+        <button onclick="calcularPromedioGeneral()">Promedio General</button>
+
+        <div class="output" id="resultado"></div>
+    </body>
+</html>
