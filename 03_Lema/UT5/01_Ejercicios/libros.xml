@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libreria>
+    <libro profundidad="basico">
+        <codigoIsbn>123-456-9876-2-1</codigoIsbn>
+        <titulo>El principito</titulo>
+        <autor>Antoine de Saint-Exupéry</autor>
+        <editorial>Duomo ediciones</editorial>
+        <añoPublicacion>1943</añoPublicacion>
+        <precio>4,70€</precio>
+    </libro>
+    <libro profundidad="basico">
+        <codigoIsbn>978-841-69971-5-2</codigoIsbn>
+        <titulo>¿Quién se ha llevado mi queso?</titulo>
+        <autor>Spencer Johnson</autor>
+        <editorial>EMPRESA ACTIVA</editorial>
+        <añoPublicacion>1999</añoPublicacion>
+        <precio>8,50€</precio>
+    </libro>    
+    <libro profundidad="medio">
+        <codigoIsbn>197-884-975925-8-1</codigoIsbn>
+        <titulo>El nombre de la rosa</titulo>
+        <autor>Umberto Eco</autor>
+        <editorial>Debolsillo</editorial>
+        <añoPublicacion>1982</añoPublicacion>
+        <precio>12,30€</precio>
+    </libro>
+    <libro profundidad="basico">
+        <codigoIsbn>978-840-82562-3-6</codigoIsbn>
+        <titulo>El método</titulo>
+        <autor>Neil Strauss</autor>
+        <editorial>Booklet</editorial>
+        <añoPublicacion>2005</añoPublicacion>
+        <precio>10,40€</precio>
+    </libro>    
+    <libro profundidad="basico">
+        <codigoIsbn>123-456-9876-2-1</codigoIsbn>
+        <titulo>El principito</titulo>
+        <autor>Antoine de Saint-Exupéry</autor>
+        <editorial>Duomo ediciones</editorial>
+        <añoPublicacion>1943</añoPublicacion>
+        <precio>4,70€</precio>
+    </libro>
+    <libro profundidad="basico">
+        <codigoIsbn>123-456-9876-2-1</codigoIsbn>
+        <titulo>El principito</titulo>
+        <autor>Antoine de Saint-Exupéry</autor>
+        <editorial>Duomo ediciones</editorial>
+        <añoPublicacion>1943</añoPublicacion>
+        <precio>4,70€</precio>
+    </libro>
+</libreria>
