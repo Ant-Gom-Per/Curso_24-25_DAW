@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="libros.css"?>
 <libreria>
     <libro profundidad="basico">
-        <codigoIsbn>123-456-9876-2-1</codigoIsbn>
+        <codigoIsbn>978-841-03469-2-5</codigoIsbn>
         <titulo>El principito</titulo>
         <autor>Antoine de Saint-Exupéry</autor>
         <editorial>Duomo ediciones</editorial>
@@ -16,15 +17,15 @@
         <añoPublicacion>1999</añoPublicacion>
         <precio>8,50€</precio>
     </libro>    
-    <libro profundidad="medio">
-        <codigoIsbn>197-884-975925-8-1</codigoIsbn>
+    <libro profundidad="intermedio">
+        <codigoIsbn>197-884-97525-8-1</codigoIsbn>
         <titulo>El nombre de la rosa</titulo>
         <autor>Umberto Eco</autor>
         <editorial>Debolsillo</editorial>
         <añoPublicacion>1982</añoPublicacion>
         <precio>12,30€</precio>
     </libro>
-    <libro profundidad="basico">
+    <libro profundidad="avanzado">
         <codigoIsbn>978-840-82562-3-6</codigoIsbn>
         <titulo>El método</titulo>
         <autor>Neil Strauss</autor>
@@ -32,20 +33,20 @@
         <añoPublicacion>2005</añoPublicacion>
         <precio>10,40€</precio>
     </libro>    
-    <libro profundidad="basico">
-        <codigoIsbn>123-456-9876-2-1</codigoIsbn>
-        <titulo>El principito</titulo>
-        <autor>Antoine de Saint-Exupéry</autor>
-        <editorial>Duomo ediciones</editorial>
-        <añoPublicacion>1943</añoPublicacion>
-        <precio>4,70€</precio>
+    <libro profundidad="intermedio">
+        <codigoIsbn>978-844-80439-8-8</codigoIsbn>
+        <titulo>La galaxia en llamas</titulo>
+        <autor>Ben Counter</autor>
+        <editorial>Timun Mas Narrativa</editorial>
+        <añoPublicacion>2006</añoPublicacion>
+        <precio>19,90€</precio>
     </libro>
-    <libro profundidad="basico">
-        <codigoIsbn>123-456-9876-2-1</codigoIsbn>
-        <titulo>El principito</titulo>
-        <autor>Antoine de Saint-Exupéry</autor>
-        <editorial>Duomo ediciones</editorial>
+    <libro profundidad="avanzado">
+        <codigoIsbn>978-849-10575-3-6</codigoIsbn>
+        <titulo>Don Quijote de las mancha</titulo>
+        <autor>Miguel de Cervantes Saavedra</autor>
+        <editorial>Peguin clásicos</editorial>
         <añoPublicacion>1943</añoPublicacion>
-        <precio>4,70€</precio>
+        <precio>16.10€</precio>
     </libro>
 </libreria>

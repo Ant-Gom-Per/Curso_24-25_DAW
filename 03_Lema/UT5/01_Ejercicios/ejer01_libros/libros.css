@@ -1,0 +1,31 @@
+*{        
+    margin: 0px;
+    padding: 0xp;
+    text-decoration: none;
+    border: none;
+}
+libro{
+    background: -moz-radial-gradient(center, ellipse, white, aqua);
+    border: 1px solid blue;
+    display: flex;
+    font-style: arial;     
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+}
+
+codigoIsbn, autor,añoPublicacion{
+    background-color: aquamarine;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 3px;       
+}
+
+titulo,editorial,precio{
+    background-color: lightgreen;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 3px;
+    
+    
+}
