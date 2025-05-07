@@ -28,3 +28,12 @@ Se ejecutan comados desde la terminal mongosh
 }]
 
 ---------------------------------------------------------------------------------
+
+EJERCICIO
+1. Insertar colecciones Jugador, Entenador, equipo, y partidos
+2. Modifica Stephen curry para que tenga una array de premios
+3. Modifica Lebrom James para que tenga un array familia
+    nombre: Brown James
+    posicion: Escolta
+    edad: 19
+4. Borra a todos los jugadores de nacionalidad serbia
