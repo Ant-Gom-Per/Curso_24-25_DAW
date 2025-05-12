@@ -1,49 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="libros.css"?>
 <libreria>
-    <libro profundidad="basico">
-        <codigoIsbn>978-841-03469-2-5</codigoIsbn>
+    <libro profundidad="basico">        
         <titulo>El principito</titulo>
+        <codigoIsbn>978-841-03469-2-5</codigoIsbn>
         <autor>Antoine de Saint-Exupéry</autor>
         <editorial>Duomo ediciones</editorial>
         <añoPublicacion>1943</añoPublicacion>
         <precio>4,70€</precio>
     </libro>
-    <libro profundidad="basico">
-        <codigoIsbn>978-841-69971-5-2</codigoIsbn>
+
+    <libro profundidad="basico">        
         <titulo>¿Quién se ha llevado mi queso?</titulo>
+        <codigoIsbn>978-841-69971-5-2</codigoIsbn>
         <autor>Spencer Johnson</autor>
         <editorial>EMPRESA ACTIVA</editorial>
         <añoPublicacion>1999</añoPublicacion>
         <precio>8,50€</precio>
     </libro>    
-    <libro profundidad="intermedio">
-        <codigoIsbn>197-884-97525-8-1</codigoIsbn>
+
+    <libro profundidad="intermedio">        
         <titulo>El nombre de la rosa</titulo>
+        <codigoIsbn>197-884-97525-8-1</codigoIsbn>
         <autor>Umberto Eco</autor>
         <editorial>Debolsillo</editorial>
         <añoPublicacion>1982</añoPublicacion>
         <precio>12,30€</precio>
     </libro>
-    <libro profundidad="avanzado">
-        <codigoIsbn>978-840-82562-3-6</codigoIsbn>
+
+    <libro profundidad="avanzado">            
         <titulo>El método</titulo>
+        <codigoIsbn>978-840-82562-3-6</codigoIsbn>
         <autor>Neil Strauss</autor>
         <editorial>Booklet</editorial>
         <añoPublicacion>2005</añoPublicacion>
         <precio>10,40€</precio>
     </libro>    
-    <libro profundidad="intermedio">
-        <codigoIsbn>978-844-80439-8-8</codigoIsbn>
+
+    <libro profundidad="intermedio">        
         <titulo>La galaxia en llamas</titulo>
+        <codigoIsbn>978-844-80439-8-8</codigoIsbn>
         <autor>Ben Counter</autor>
         <editorial>Timun Mas Narrativa</editorial>
         <añoPublicacion>2006</añoPublicacion>
         <precio>19,90€</precio>
     </libro>
-    <libro profundidad="avanzado">
-        <codigoIsbn>978-849-10575-3-6</codigoIsbn>
+
+    <libro profundidad="avanzado">        
         <titulo>Don Quijote de las mancha</titulo>
+        <codigoIsbn>978-849-10575-3-6</codigoIsbn>
         <autor>Miguel de Cervantes Saavedra</autor>
         <editorial>Peguin clásicos</editorial>
         <añoPublicacion>1943</añoPublicacion>

@@ -5,27 +5,22 @@
     border: none;
 }
 libro{
-    background: -moz-radial-gradient(center, ellipse, white, aqua);
+    background: linear-gradient(to bottom right, aqua, white);
     border: 1px solid blue;
-    display: flex;
+    display: block;
     font-style: arial;     
     justify-content: space-between;
     margin: 10px;
     padding: 5px;
 }
 
-codigoIsbn, autor,añoPublicacion{
-    background-color: aquamarine;
-    border: 1px solid blue;
-    border-radius: 5px;
+codigoIsbn, autor,añoPublicacion,editorial,precio{
+    display: block;   
     padding: 3px;       
 }
 
-titulo,editorial,precio{
-    background-color: lightgreen;
-    border: 1px solid blue;
-    border-radius: 5px;
+titulo{
+    display: block;   
     padding: 3px;
-    
-    
+    font-size: 26px;
 }
