@@ -1,2 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="libros.css"?>
+<?xml-stylesheet type="text/css" href="alojamientos.css"?>
+<alojamientos>
+    <descripcion tipo= "hotel">
+        <localizacion>
+            <nombre>Gran Hotel</nombre>
+            <provincia>Huelva</provincia>
+            <ciudad>Lepe</ciudad>
+            <calle>Piruleta Nª 23</calle>
+        </localizacion>
+        <servicios>
+            <delapropiedad>aparcamiento, gimnasio, piscina</delapropiedad>
+            <delahabitacion>aire acondicionado, habitaciones no fumadores</delahabitacion>            
+        </servicios>
+        <tipoHabitacion>suit, doble, simple</tipoHabitacion>
+        <precioNoche>
+            <suit>300€</suit>
+            <doble>150€</doble>
+            <simple>75€</simple>
+        </precioNoche>
+    </descripcion>
+
+     <descripcion tipo= "hostal">
+        <nombre>Hostal la vieira</nombre>
+        <localizacion>
+            <provincia>La Coruña</provincia>
+            <ciudad>A Coruña</ciudad>
+            <calle>Percebe nª33</calle>
+        </localizacion>
+        <servicios>
+            <delapropiedad>aparcamiento</delapropiedad>
+            <delahabitacion>aire acondicionado, television</delahabitacion>            
+        </servicios>
+        <tipoHabitacion>doble, simple</tipoHabitacion>
+        <precioNoche>            
+            <doble>50€</doble>
+            <simple>25€</simple>
+        </precioNoche>
+    </descripcion>
+
+     <descripcion tipo= "hotel">
+        <nombre>Gran Madrid</nombre>
+        <localizacion>
+            <provincia>Madrid</provincia>
+            <ciudad>Madrid</ciudad>
+            <calle>Salamanca Nª 123</calle>
+        </localizacion>
+        <servicios>
+            <delapropiedad>aparcamiento, piscina</delapropiedad>
+            <delahabitacion>aire acondicionado, minibar, television, vistas a la cuidad</delahabitacion>            
+        </servicios>
+        <tipoHabitacion>suit, doble, simple</tipoHabitacion>
+        <precioNoche>
+            <suit>750€</suit>
+            <doble>500€</doble>
+            <simple>250€</simple>
+        </precioNoche>
+    </descripcion>
+
+     <descripcion tipo= "Pension">
+        <nombre>Pension la piedra</nombre>
+        <localizacion>
+            <provincia>Cuenca</provincia>
+            <ciudad>Cuenca</ciudad>
+            <calle>nueva Nª 15</calle>
+        </localizacion>
+        <servicios>
+            <delapropiedad>ascensor</delapropiedad>
+            <delahabitacion>television</delahabitacion>            
+        </servicios>
+        <tipoHabitacion>simple</tipoHabitacion>
+        <precioNoche>          
+            <simple>15€</simple>
+        </precioNoche>
+    </descripcion>
+
+     <descripcion tipo= "hotel">
+        <nombre>Barna gran Hotel</nombre>
+        <localizacion>
+            <provincia>Barcelona</provincia>
+            <ciudad>Barcelona</ciudad>
+            <calle>Diagonal Nª 273</calle>
+        </localizacion>
+        <servicios>
+            <delapropiedad>aparcamiento, piscina</delapropiedad>
+            <delahabitacion>aire acondicionado, minibar, television, vistas a la cuidad</delahabitacion>            
+        </servicios>
+        <tipoHabitacion>suit, doble, simple</tipoHabitacion>
+        <precioNoche>
+            <suit>600€</suit>
+            <doble>250€</doble>
+            <simple>125€</simple>
+        </precioNoche>
+
+    </descripcion>
+     <descripcion tipo= "hostal">
+        <nombre>Hostal Carrizo</nombre>
+        <localizacion>
+            <provincia>Alicante</provincia>
+            <ciudad>Elda</ciudad>
+            <calle>Jardines Nª 68</calle>
+        </localizacion>
+        <servicios>
+            <delapropiedad>terraza</delapropiedad>
+            <delahabitacion>aire acondicionado,television</delahabitacion>            
+        </servicios>
+        <tipoHabitacion>doble, simple</tipoHabitacion>
+        <precioNoche>           
+            <doble>50€</doble>
+            <simple>25€</simple>
+        </precioNoche>
+    </descripcion>
+</alojamientos>
