@@ -1,2 +1,3 @@
-<!ELEMENT remitente (a)>
-    <!
+<!ELEMENT mensajes (mensaje+)>
+<!ELEMENT mensaje (de, para+, cc*, cco*, asunto, texto,adjunto*)>
+<!ELEMENT de (#PCDATA)>
