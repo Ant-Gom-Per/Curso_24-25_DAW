@@ -1,0 +1,8 @@
+CREATE OR REPLACE TRIGGER pedidoAutomatico
+AFTER UPDATE OR INSERT FOR EARCH ROW
+
+BEGIN
+    -- Comprobae que la cantidade disponible está por debajo de la cantidad monima
+    -- Inseertar un pedido en la tabla pedido. NUMPEDIDO será eelmiutiplo ma grande + 1 y la fecha de hoy SYSDATE
+        -> Crear una funcionque permita obtener dado un número de piedza el vendedor que nos pueda proporcionar el
+           pedido mas barato (

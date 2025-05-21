@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mensajes SYSTEM "mensajes.dtd">
+<mensajes>
+    <mensaje>
+        <de>Benito Camelas</de>
+        <para>Elena Nito</para>
+        <cc>ElenaNito@delBosque.com</cc>
+        <cco>ElenaNito@delBosque.com</cco>
+        <asunto>Cita del Sabado</asunto>
+        <texto>Este sabado vamos a cenar al bar del oro, te espero.</texto>
+        <adjunto>cartaRestaurante.jpg</adjunto>
+    </mensaje>
+
+        <mensaje>
+        <de>Tomas Turbado</de>
+        <para>Benito Camelas</para>
+        <cc>TomasTurbado@hotmail.com</cc>
+        <cco>ElenaNito@delBosque.com</cco>
+        <asunto>Saldar deuda</asunto>
+        <texto>Tomas, me debes 5000 ptas de whisky. Pagame.</texto>        
+    </mensaje>
+
+        <mensaje>
+        <de>Benito Camelas</de>
+        <para>Elena Nito</para>
+        <cc>ElenaNito@delBosque.com</cc>
+        <cco>ElenaNito@delBosque.com</cco>
+        <asunto>Cita del Sabado</asunto>
+        <texto>Este sabado vamos a cenar al bar del oro, te espero.</texto>
+        <adjunto>cartaRestaurante.jpg</adjunto>
+    </mensaje>
+
+        <mensaje>
+        <de>Benito Camelas</de>
+        <para>Elena Nito</para>
+        <cc>ElenaNito@delBosque.com</cc>
+        <cco>ElenaNito@delBosque.com</cco>
+        <asunto>Cita del Sabado</asunto>
+        <texto>Este sabado vamos a cenar al bar del oro, te espero.</texto>
+        <adjunto>cartaRestaurante.jpg</adjunto>
+    </mensaje>
+
+        <mensaje>
+        <de>Benito Camelas</de>
+        <para>Elena Nito</para>
+        <cc>ElenaNito@delBosque.com</cc>
+        <cco>ElenaNito@delBosque.com</cco>
+        <asunto>Cita del Sabado</asunto>
+        <texto>Este sabado vamos a cenar al bar del oro, te espero.</texto>
+        <adjunto>cartaRestaurante.jpg</adjunto>
+    </mensaje>
+
+        <mensaje>
+        <de>Benito Camelas</de>
+        <para>Elena Nito</para>
+        <cc>ElenaNito@delBosque.com</cc>
+        <cco>ElenaNito@delBosque.com</cco>
+        <asunto>Cita del Sabado</asunto>
+        <texto>Este sabado vamos a cenar al bar del oro, te espero.</texto>
+        <adjunto>cartaRestaurante.jpg</adjunto>
+    </mensaje>
+</mensajes>

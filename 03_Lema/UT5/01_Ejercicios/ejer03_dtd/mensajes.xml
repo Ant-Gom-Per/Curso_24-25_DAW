@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mensajes SYSTEM "mensajes.dtd">
-<mensaje>
-    <de>Benito Camelas</de>
-    <para>Elena Nito</para>
-    <cc>ElenaNito@delBosque.com</cc>
-    <cco>ElenaNito@delBosque.com</cco>
-    <asunto>Cita del Sabado</asunto>
-    <texto>Este sabado vamos a cenar al bar del oro, te espero.</texto>
-    <adjunto>cartaRestaurante.jpg</adjunto>
-</mensaje>
+<mensajes>
+    <mensaje>
+        <de>Benito Camelas</de>
+        <para>Elena Nito</para>
+        <cc>ElenaNito@delBosque.com</cc>
+        <cco>ElenaNito@delBosque.com</cco>
+        <asunto>Cita del Sabado</asunto>
+        <texto>Este sabado vamos a cenar al bar del oro, te espero.</texto>
+        <adjunto>cartaRestaurante.jpg</adjunto>
+    </mensaje>       
+</mensajes>
