@@ -1,3 +1,9 @@
 <!ELEMENT mensajes (mensaje+)>
-<!ELEMENT mensaje (de, para+, cc*, cco*, asunto, texto,adjunto*)>
+<!ELEMENT mensaje (de, para?, cc*, cco*, asunto, texto, adjunto*)>
 <!ELEMENT de (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT cc (#PCDATA)>
+<!ELEMENT cco (#PCDATA)>
+<!ELEMENT asunto (#PCDATA)>
+<!ELEMENT texto (#PCDATA)>
+<!ELEMENT adjunto (#PCDATA)>
